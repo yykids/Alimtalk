@@ -1,4 +1,4 @@
-## Upcoming Products > Kakao Allimtalk > Developer's Guide
+## Upcoming Products > Kakao Alimtalk > Developer's Guide
 
 ## 알림톡
 
@@ -6,7 +6,7 @@
 
 |환경|	도메인|
 |---|---|
-|Real|	https://api-allimtalk.cloud.toast.com|
+|Real|	https://api-alimtalk.cloud.toast.com|
 
 ## 알림톡 발송
 
@@ -16,13 +16,23 @@
 
 |Http method| URI|
 |---|---|
-|POST|	/allimtalk/v1.0/appkeys/{appkey}/messages |
+|POST|	/alimtalk/v1.0/appkeys/{appkey}/messages |
 
 [Path parameter]
 
 |값|	타입|	설명|
 |---|---|
 |appkey|	String|	고유의 appkey|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|X-Secret-Key|	String| O | [CONSOLE]에서 생성할 수 있다. [[참고](./Getting Started/#xsecretkey)] 참고하시기 바랍니다. |
 
 [Request body]
 
