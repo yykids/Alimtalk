@@ -1,1 +1,1 @@
-# Kakao Alimtalk
+# KaKao Alimtalk
