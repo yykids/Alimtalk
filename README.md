@@ -1,1 +1,1 @@
-# Kakao-Allimtalk
+# Kakao Allimtalk
