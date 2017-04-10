@@ -270,7 +270,6 @@
 	</tr>
 	<tr>
 		<td>E900</td>
-		<td rowspan=24>Invalid-IB</td>
 		<td>전송키가 없는 경우</td>
 	</tr>
 	<tr>
