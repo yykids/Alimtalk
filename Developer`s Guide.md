@@ -1,4 +1,4 @@
-## Upcoming Products > KaKao Alimtalk > Developer's Guide
+## Upcoming Products > Alimtalk > Developer's Guide
 
 ## 알림톡
 
