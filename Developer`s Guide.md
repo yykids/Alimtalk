@@ -32,7 +32,7 @@
 ```
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|X-Secret-Key|	String| O | [CONSOLE]에서 생성할 수 있다. [[참고](./Getting Started/#xsecretkey)] 참고하시기 바랍니다. |
+|X-Secret-Key|	String| O | [CONSOLE]에서 생성할 수 있다. [[참고](./Getting Started/#xsecretkey)] |
 
 [Request body]
 
