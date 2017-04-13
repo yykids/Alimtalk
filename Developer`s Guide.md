@@ -4,11 +4,11 @@
 
 ### [API 도메인]
 
-|환경|	도메인|
-|---|---|
-|Real|	https://api-alimtalk.cloud.toast.com|
+|	도메인|
+|---|
+|	https://api-alimtalk.cloud.toast.com|
 
-## Alimtalk 발송
+## 메시지 발송
 
 #### 요청
 
