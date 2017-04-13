@@ -1,6 +1,6 @@
-## Upcoming Products > KaKao Alimtalk > Developer's Guide
+## Upcoming Products > Alimtalk > Developer's Guide
 
-## 알림톡
+## Alimtalk
 
 ### [API 도메인]
 
@@ -8,7 +8,7 @@
 |---|---|
 |Real|	https://api-alimtalk.cloud.toast.com|
 
-## 알림톡 발송
+## Alimtalk 발송
 
 #### 요청
 
@@ -32,7 +32,7 @@
 ```
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|X-Secret-Key|	String| O | [CONSOLE]에서 생성할 수 있다. [[참고](./Getting Started/#xsecretkey)] 참고하시기 바랍니다. |
+|X-Secret-Key|	String| O | [CONSOLE]에서 생성할 수 있다. [[참고](./Getting Started/#xsecretkey)] |
 
 [Request body]
 

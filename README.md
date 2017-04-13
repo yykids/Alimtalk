@@ -1,1 +1,1 @@
-# KaKao Alimtalk
+# Alimtalk
