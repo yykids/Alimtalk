@@ -1,6 +1,6 @@
 ## Upcoming Products > Alimtalk > Developer's Guide
 
-## 알림톡
+## Alimtalk
 
 ### [API 도메인]
 
@@ -8,7 +8,7 @@
 |---|---|
 |Real|	https://api-alimtalk.cloud.toast.com|
 
-## 알림톡 발송
+## Alimtalk 발송
 
 #### 요청
 
