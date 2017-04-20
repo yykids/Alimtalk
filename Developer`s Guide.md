@@ -2,11 +2,20 @@
 
 ## Alimtalk
 
-### [API 도메인]
+#### [API 도메인]
 
-|	도메인|
-|---|
-|	https://api-alimtalk.cloud.toast.com|
+<table>
+<thead>
+<tr>
+<th>도메인</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>https://api-alimtalk.cloud.toast.com</td>
+</tr>
+</tbody>
+</table>
 
 ## 메시지 발송
 
