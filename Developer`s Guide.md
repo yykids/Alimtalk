@@ -4,9 +4,11 @@
 
 ### [API 도메인]
 
+
 |도메인|
-|---|
+|-|
 |https://api-alimtalk.cloud.toast.com|
+
 
 ## 메시지 발송
 
