@@ -50,12 +50,12 @@
 
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|templateCode|	String|	X| 등록한 발송 템플릿 코드 |
+|templateCode|	String|	O| 등록한 발송 템플릿 코드 |
 |recipientList|	List|	O|	수신자 리스트 |
 |- recipientNo|	String|	O|	수신번호 |
-|- templateParameter|	Object|	X|	템플릿 파라미터 |
-|-- key|	String|	X|	치환 키(#{key})|
-|-- value| String |	X|	치환 키에 매핑되는 Value값|
+|- templateParameter|	Object|	O|	템플릿 파라미터 |
+|-- key|	String|	O |	치환 키(#{key})|
+|-- value| String |	O |	치환 키에 매핑되는 Value값|
 
 #### 응답
 
