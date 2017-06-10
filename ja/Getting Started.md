@@ -29,7 +29,9 @@ Console에 접속하여 SecretKey를 생성합니다.
 <center>[그림 4] SecretKey 생성</center>
 
 ### 플러스 친구 등록
-플러스 친구 등록이 완료되면 관리자 핸드폰으로 카카오 토큰 메시지가 전달됩니다.
+플러스 친구 등록이 완료되면 관리자 핸드폰으로 카카오 토큰 메시지가 전달됩니다.<br>
+관리자로 등록된 핸드폰으로만 카카오톡 토큰 메시지가 전달됩니다.
+
 ![[그림 5] 플러스 친구 등록](http://static.toastoven.net/prod_alimtalk/img05.png)
 <center>[그림 5] 플러스 친구 등록</center>
 
