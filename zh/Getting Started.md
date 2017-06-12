@@ -64,7 +64,7 @@ Console에 접속하여 SecretKey를 생성합니다.
 ![[그림 12] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/img12.png)
 <center>[그림 12] 템플릿 등록</center>
 
-### 발송 실패 설정
+## 발송 실패 설정
 ### SMS 정보 입력
 ![[그림 13] SMS 정보 입력 ](http://static.toastoven.net/prod_alimtalk/img13.png)
 <center>[그림 13] SMS 정보 입력</center>
