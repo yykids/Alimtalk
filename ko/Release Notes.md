@@ -1,4 +1,15 @@
-## Upcoming Products > Alimtalk > Release Notes
+## Notification > Alimtalk > Release Notes
+### 2017.06.22
+### 기능 개선/변경
+* [Console] 발신프로필 관리 페이지 추가
+* [Console] 테스트 발송 페이지 추가
+* [Console] 템플릿 등록 조회 페이지 추가
+
+### 기능 추가
+* [Console] 발송 실패 설정 추가
+  - 알림톡 발송 실패 시, LMS로 대체 발송하는 기능
+* [Console] 템플릿 자유 버튼 타입에 링크 치환 기능
+  - 템플릿 자유 버튼 타입일 경우, 버튼 링크를 치환자로 등록 가능. ex) buttonURL: #{url}
 
 
 ### 2017.05.25

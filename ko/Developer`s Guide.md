@@ -1,4 +1,4 @@
-## Upcoming Products > Alimtalk > Developer's Guide
+## Notification > Alimtalk > Developer's Guide
 
 ## Alimtalk
 

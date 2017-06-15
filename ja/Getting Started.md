@@ -1,4 +1,4 @@
-## Upcoming Products > Alimtalk > Getting Started
+## Notification > Alimtalk > Getting Started
 
 ## 준비 사항
 ### 옐로 아이디 생성
