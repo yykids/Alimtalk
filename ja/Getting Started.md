@@ -44,30 +44,38 @@ Console에 접속하여 SecretKey를 생성합니다.
 <center>[그림 7] 토큰 등록</center>
 
 ## 발신 프로필 관리
-![[그림 8] 발신 프로필 관리](http://static.toastoven.net/prod_alimtalk/img08.png)
+![[그림 8] 발신 프로필 관리](http://static.toastoven.net/prod_alimtalk/img08_1.png)
 <center>[그림 8] 발신 프로필 관리</center>
 
 ## 알림톡 발송
-![[그림 9] 알림톡 발송](http://static.toastoven.net/prod_alimtalk/img09.png)
+![[그림 9] 알림톡 발송](http://static.toastoven.net/prod_alimtalk/img09_1.png)
 <center>[그림 9] 알림톡 발송</center>
+
+## 발송 결과 조회
+![[그림 10] 알림톡 발송 결과 조회](http://static.toastoven.net/prod_alimtalk/img10_1.png)
+<center>[그림 10] 알림톡 발송 결과 조회</center>
+
+### 발송 결과 상세조회
+![[그림 11] 발송결과 상세 조회](http://static.toastoven.net/prod_alimtalk/img11_1.png)
+<center>[그림 11] 발송 결과 상세 조회</center>
 
 ## 템플릿 관리
 ### 템플릿 리스트 조회
-![[그림 10] 템플릿 리스트 조회](http://static.toastoven.net/prod_alimtalk/img10.png)
-<center>[그림 10] 템플릿 리스트 조회</center>
+![[그림 12] 템플릿 리스트 조회](http://static.toastoven.net/prod_alimtalk/img12_1.png)
+<center>[그림 12] 템플릿 리스트 조회</center>
 
 ### 템플릿 상세내역
-![[그림 11] 템플릿 상세내역](http://static.toastoven.net/prod_alimtalk/img11.png)
-<center>[그림 11] 템플릿 상세내역</center>
+![[그림 13] 템플릿 상세내역](http://static.toastoven.net/prod_alimtalk/img13_1.png)
+<center>[그림 13] 템플릿 상세내역</center>
 
 ### 템플릿 등록
-![[그림 12] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/img12.png)
-<center>[그림 12] 템플릿 등록</center>
+![[그림 14] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/img14.png)
+<center>[그림 14] 템플릿 등록</center>
 
 ## 발송 실패 설정
 ### SMS 정보 입력
-![[그림 13] SMS 정보 입력 ](http://static.toastoven.net/prod_alimtalk/img13.png)
-<center>[그림 13] SMS 정보 입력</center>
+![[그림 15] SMS 정보 입력 ](http://static.toastoven.net/prod_alimtalk/img15.png)
+<center>[그림 15] SMS 정보 입력</center>
 
 ## 개인정보 수탁사 고지 안내
 '고객'이 TOAST Cloud > Alimtalk 상품 이용 시, '고객' - '당사' 간 개인정보 처리에 관한 업무 위수탁 관계가 발생하는 바 정보통신망법 및 개인정보보호법에 따라 위탁자인 '고객'은 개인정보처리방침을 통해 '당사'에 개인정보를 위탁한 현황(수탁자 및 업무의내용)을 공개하여야 합니다.
