@@ -23,9 +23,10 @@
 
 [URL]
 
-|Http method| URI|
-|---|---|
-|POST|	/alimtalk/v1.0/appkeys/{appkey}/messages |
+```
+POST  /alimtalk/v1.0/appkeys/{appkey}/messages
+Content-Type: application/json;charset=UTF-8
+```
 
 [Path parameter]
 
