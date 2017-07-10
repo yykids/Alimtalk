@@ -72,6 +72,11 @@ Console에 접속하여 SecretKey를 생성합니다.
 ![[그림 14] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/img14.png)
 <center>[그림 14] 템플릿 등록</center>
 
+#### [주의 사항]
+* 템플릿 코드는 10글자 이내의 영문/숫자만 등록 가능합니다.
+* 템플릿 내용은 한/영 구분없이 변수 및 URL 포함 1000자까지 등록 가능합니다.
+* 템플릿 치환자는 ex) #{치환자} 로 등록해주시면 됩니다.
+
 ## 발송 실패 설정
 ### SMS 정보 입력
 ![[그림 15] SMS 정보 입력 ](http://static.toastoven.net/prod_alimtalk/img15.png)
