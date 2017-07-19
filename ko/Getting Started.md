@@ -34,6 +34,9 @@ Console에 접속하여 SecretKey를 생성합니다.
 
 ![[그림 5] 플러스 친구 등록](http://static.toastoven.net/prod_alimtalk/img05.png)
 <center>[그림 5] 플러스 친구 등록</center>
+#### [참고 사항]
+* 옐로 아이디는 플러스친구 개설 시, 등록한 검색용 아이디를 입력해야 합니다.
+* 고객이 받는 알림톡 메세지는 카카오톡에 등록한 플러스 친구 이름으로 노출됩니다.
 
 ![[그림 6] 카카오톡 토큰](http://static.toastoven.net/prod_alimtalk/img06.png)
 <center>[그림 6] 카카오톡 토큰</center>
@@ -71,6 +74,11 @@ Console에 접속하여 SecretKey를 생성합니다.
 ### 템플릿 등록
 ![[그림 14] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/img14.png)
 <center>[그림 14] 템플릿 등록</center>
+
+#### [주의 사항]
+* 템플릿 코드는 10글자 이내의 영문/숫자만 등록 가능합니다.
+* 템플릿 내용은 한/영 구분없이 변수 및 URL 포함 1000자까지 등록 가능합니다.
+* 템플릿 치환자는 ex) #{치환자} 로 등록해주시면 됩니다.
 
 ## 발송 실패 설정
 ### SMS 정보 입력
