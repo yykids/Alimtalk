@@ -85,6 +85,14 @@ Console에 접속하여 SecretKey를 생성합니다.
 ![[그림 15] SMS 정보 입력 ](http://static.toastoven.net/prod_alimtalk/img15.png)
 <center>[그림 15] SMS 정보 입력</center>
 
+## 통계
+### 통계 조회
+![[그림 16] 통계 조회 ](http://static.toastoven.net/prod_alimtalk/img16.png)
+<center>[그림 16] 통계 조회</center>
+
+* 발송 요청 기간, 템플릿 별로 통계를 조회할 수 있습니다.
+* 발송요청, 성공, 실패, 대체발송건을 그래프와 표로 확인할 수 있습니다.
+
 ## 개인정보 수탁사 고지 안내
 '고객'이 TOAST Cloud > Alimtalk 상품 이용 시, '고객' - '당사' 간 개인정보 처리에 관한 업무 위수탁 관계가 발생하는 바 정보통신망법 및 개인정보보호법에 따라 위탁자인 '고객'은 개인정보처리방침을 통해 '당사'에 개인정보를 위탁한 현황(수탁자 및 업무의내용)을 공개하여야 합니다.
 
