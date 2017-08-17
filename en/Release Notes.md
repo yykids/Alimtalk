@@ -7,8 +7,8 @@
 
 #### 기능 개선/변경
 * [Console] 자유버튼 템플릿 등록 시 URL 검증 변경
-    - 자유버튼에 URL 등록 시, http:// or https:// 가 필수로 포함 -> #{url}과 같이 템플릿 치환자도 등록할 수 있게 변경하였습니다.
-    - #{url} 형식의 템플릿 치환자가 아닐 경우 http:// or https:// 검증은 유지됩니다.
+    - 자유버튼에 URL 등록 시, http:// or https:// 가 필수로 포함 -> `#{url}`과 같이 템플릿 치환자도 등록할 수 있게 변경하였습니다.
+    - `#{url}` 형식의 템플릿 치환자가 아닐 경우 http:// or https:// 검증은 유지됩니다.
 * [API] Content-type 에러 응답 메세지 수정
     - 요청 header에 Content-type: application/json이 아닐 경우 실패 응답 메세지 수정되었습니다.
 
