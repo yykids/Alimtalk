@@ -1,4 +1,17 @@
 ## Notification > Alimtalk > Release Notes
+### 2017.08.24
+#### 기능 추가
+* [Console] 알림톡 발송 통계 화면 제공
+    - 날짜별/시간대별/요일별 통계 화면이 제공됩니다.
+    - 발송한 일자와 템플릿으로 조회할 수 있습니다.
+
+#### 기능 개선/변경
+* [Console] 자유버튼 템플릿 등록 시 URL 검증 변경
+    - 자유버튼에 URL 등록 시, http:// or https:// 가 필수로 포함 -> #{url}과 같이 템플릿 치환자도 등록할 수 있게 변경하였습니다.
+    - 템플릿 치환자 #{url} 형식의 템플릿 치환자가 아닐 경우 http:// or https:// 검증은 유지됩니다.
+* [API] Content-type 에러 응답 메세지 수정
+    - 요청 header에 Content-type: application/json이 아닐 경우 실패 응답 메세지 수정되었습니다.
+
 ### 2017.07.20
 #### 기능 추가
 * [Console] 알림톡 발송 결과 조회 추가
