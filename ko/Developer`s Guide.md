@@ -48,6 +48,7 @@ Content-Type: application/json;charset=UTF-8
 
 ```
 {
+    "plusFriendId": String,
     "templateCode": String,
     "recipientList": [{
         "recipientNo": String,
