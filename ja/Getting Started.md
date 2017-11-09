@@ -51,7 +51,7 @@ Console에 접속하여 SecretKey를 생성합니다.
 <center>[그림 8] 발신 프로필 관리</center>
 
 ## 알림톡 발송
-![[그림 9] 알림톡 발송](http://static.toastoven.net/prod_alimtalk/imgage09.png)
+![[그림 9] 알림톡 발송](http://static.toastoven.net/prod_alimtalk/image09.png)
 <center>[그림 9] 알림톡 발송</center>
 
 ## 발송 결과 조회
