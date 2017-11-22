@@ -48,6 +48,7 @@ Content-Type: application/json;charset=UTF-8
 
 ```
 {
+    "plusFriendId": String,
     "templateCode": String,
     "recipientList": [{
         "recipientNo": String,
@@ -60,6 +61,7 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	필수|	설명|
 |---|---|---|---|
+|plusFriendId|	String|	X | 플러스친구 아이디 |
 |templateCode|	String|	O | 등록한 발송 템플릿 코드 |
 |recipientList|	List|	O|	수신자 리스트 |
 |- recipientNo|	String|	O|	수신번호 |
@@ -67,6 +69,7 @@ Content-Type: application/json;charset=UTF-8
 |-- key|	String|	X |	치환 키(#{key})|
 |-- value| String |	X |	치환 키에 매핑되는 Value값|
 
+* <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
 
 #### 응답
 
