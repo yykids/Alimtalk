@@ -42,7 +42,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|X-Secret-Key|	String| O | [CONSOLE]에서 생성할 수 있다. [[참고](./console-guide/#xsecretkey)] |
+|X-Secret-Key|	String| O | [CONSOLE]에서 생성할 수 있다. [[참고](./console-guide/#x-secret-key)] |
 
 [Request body]
 
@@ -120,7 +120,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|X-Secret-Key|	String| O | [CONSOLE]에서 생성할 수 있다. [[참고](./console-guide/#xsecretkey)] |
+|X-Secret-Key|	String| O | [CONSOLE]에서 생성할 수 있다. [[참고](./console-guide/#x-secret-key)] |
 
 [Query parameter] 1번 or 2번 조건 필수
 
