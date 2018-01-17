@@ -63,9 +63,9 @@ Content-Type: application/json;charset=UTF-8
 |---|---|---|---|
 |plusFriendId|	String|	X | 플러스친구 아이디 |
 |templateCode|	String|	O | 등록한 발송 템플릿 코드 |
-|recipientList|	List|	O|	수신자 리스트 |
+|recipientList|	List|	O|	수신자 리스트 (최대 1000명) |
 |- recipientNo|	String|	O|	수신번호 |
-|- templateParameter|	Object|	X|	템플릿 파라미터 |
+|- templateParameter|	Object|	X|	템플릿 파라미터<br>(템플릿에 치환할 변수 포함 시, 필수) |
 |-- key|	String|	X |	치환 키(#{key})|
 |-- value| String |	X |	치환 키에 매핑되는 Value값|
 
