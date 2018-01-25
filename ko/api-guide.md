@@ -134,6 +134,8 @@ Content-Type: application/json;charset=UTF-8
 |templateCode|	String|	X |	템플릿 코드|
 |messageStatus| String |	X | 요청 상태 ( COMPLETED -> 성공, FAILED -> 실패 )	|
 |resultCode| String |	X | 발송 결과 ( MRC01 -> 성공 MRC02 -> 실패 )	|
+|pageNum|	Integer|	X|	페이지 번호(Default : 1)|
+|pageSize|	Integer|	X|	조회 건수(Default : 15)|
 
 #### 응답
 ```
