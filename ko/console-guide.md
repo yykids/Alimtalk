@@ -51,29 +51,67 @@ Console에 접속하여 SecretKey를 생성합니다.
 <center>[그림 8] 발신 프로필 관리</center>
 
 ## 알림톡 발송
-![[그림 9] 알림톡 발송](http://static.toastoven.net/prod_alimtalk/image09.png)
+![[그림 9] 알림톡 발송](http://static.toastoven.net/prod_alimtalk/img09.png)
 <center>[그림 9] 알림톡 발송</center>
 
+## 알림톡 대량 발송
+![[그림 10] 알림톡 발송](http://static.toastoven.net/prod_alimtalk/img10.png)
+<center>[그림 10] 알림톡 대량 발송</center>
+#### [참고 사항]
+* 템플릿을 선택 후, 템플릿 다운로드 버튼을 클릭 시 템플릿 치환자가 포함된 CSV 파일을 다운로드할 수 있습니다. 템플릿 치환자가 포함되지 않을 경우 발송 실패처리 됩니다.
+* CSV 파일을 엑셀로 열어 저장할 시, 한글이 정상적으로 저장되지 않을 수 있으므로 검수 후 발송으로 치환이 정상적으로 되었는지 확인을 권장합니다.
+* 파일 업로드는 CSV 파일만 가능하며, 크기는 최대 20MB입니다.
+
+![[그림 11] 발송 선택](http://static.toastoven.net/prod_alimtalk/img11.png)
+<center>[그림 11] 발송 선택</center>
+#### [참고 사항]
+* 검수 후 발송, 즉시 발송 2가지를 선택하여 발송할 수 있습니다.
+
+![[그림 12] CSV 파일 작성](http://static.toastoven.net/prod_alimtalk/img12.png)
+<center>[그림 12] CSV 파일 작성</center>
+
+### 조회/발송/취소
+![[그림 13] 대량 발송 조회](http://static.toastoven.net/prod_alimtalk/img13.png)
+<center>[그림 13] 대량 발송 조회</center>
+#### [참고 사항]
+* 발송 중 상태에서 취소 버튼을 누를 시, 일부 수신자에게 발송이 진행될 수 있습니다.
+
+![[그림 14] 수신자 내용 확인](http://static.toastoven.net/prod_alimtalk/img14.png)
+<center>[그림 14] 수신자 내용 확인</center>
+#### [참고 사항]
+* 수신자 별 조회에서 해당 수신자를 선택하여, 발송 내용이 정상적으로 치환되었는지 확인할 수 있습니다.
+
+### 대량 발송 진행 상태
+대기: 템플릿 파일 데이터를 읽는 작업을 진행하기 전 상태입니다.
+발송 준비: 템플릿 파일 데이터를 로드 중인 상태입니다.
+발송 준비 완료: 템플릿 파일 데이터를 모두 로드하여 SMS발송 준비가 완료된 상태입니다. 예약 건(리스트의 행)을 선택하면 하단의 리스트에서 수신번호와 발송내용을 확인할 수 있습니다.
+발송 대기: 발송 작업을 진행하기 전 상태입니다.
+발송 중: 발송이 진행 중인 상태입니다.
+발송 완료: 발송 요청이 정상적으로 완료된 상태입니다.
+발송 실패: 발송 진행 중 발송 오류가 발생한 경우입니다.
+발송 취소: 사용자가 발송을 취소한 상태입니다.
+
+
 ## 발송 결과 조회
-![[그림 10] 알림톡 발송 결과 조회](http://static.toastoven.net/prod_alimtalk/image10.png)
-<center>[그림 10] 알림톡 발송 결과 조회</center>
+![[그림 15] 알림톡 발송 결과 조회](http://static.toastoven.net/prod_alimtalk/img15.png)
+<center>[그림 15] 알림톡 발송 결과 조회</center>
 
 ### 발송 결과 상세조회
-![[그림 11] 발송결과 상세 조회](http://static.toastoven.net/prod_alimtalk/image11.png)
-<center>[그림 11] 발송 결과 상세 조회</center>
+![[그림 16] 발송결과 상세 조회](http://static.toastoven.net/prod_alimtalk/img16.png)
+<center>[그림 16] 발송 결과 상세 조회</center>
 
 ## 템플릿 관리
 ### 템플릿 리스트 조회
-![[그림 12] 템플릿 리스트 조회](http://static.toastoven.net/prod_alimtalk/image12.png)
-<center>[그림 12] 템플릿 리스트 조회</center>
+![[그림 17] 템플릿 리스트 조회](http://static.toastoven.net/prod_alimtalk/img17.png)
+<center>[그림 17] 템플릿 리스트 조회</center>
 
 ### 템플릿 상세내역
-![[그림 13] 템플릿 상세내역](http://static.toastoven.net/prod_alimtalk/image13.png)
-<center>[그림 13] 템플릿 상세내역</center>
+![[그림 18] 템플릿 상세내역](http://static.toastoven.net/prod_alimtalk/img18.png)
+<center>[그림 18] 템플릿 상세내역</center>
 
 ### 템플릿 등록
-![[그림 14] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image14.png)
-<center>[그림 14] 템플릿 등록</center>
+![[그림 19] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/img19.png)
+<center>[그림 19] 템플릿 등록</center>
 
 #### [주의 사항]
 * 템플릿 코드는 10글자 이내의 영문/숫자만 등록 가능합니다.
@@ -85,11 +123,11 @@ Console에 접속하여 SecretKey를 생성합니다.
 
 ## 발송 실패 설정
 ### SMS 정보 입력
-![[그림 15] SMS 정보 입력 ](http://static.toastoven.net/prod_alimtalk/image15.png)
-<center>[그림 15] SMS 정보 입력</center>
+![[그림 20] SMS 정보 입력 ](http://static.toastoven.net/prod_alimtalk/img20.png)
+<center>[그림 20] SMS 정보 입력</center>
 
-![[그림 16] 플러스친구 발송 실패 설정 ](http://static.toastoven.net/prod_alimtalk/image16.png)
-<center>[그림 16] 플러스친구 발송 실패 설정</center>
+![[그림 21] 플러스친구 발송 실패 설정 ](http://static.toastoven.net/prod_alimtalk/img21.png)
+<center>[그림 21] 플러스친구 발송 실패 설정</center>
 
 * 플러스친구 별, 발송 실패 설정을 할 수 있습니다.
 * 발송 실패 설정을 한 플러스친구의 알림톡 메세지만 LMS로 대체 발송됩니다.
@@ -97,8 +135,8 @@ Console에 접속하여 SecretKey를 생성합니다.
 
 ## 통계
 ### 통계 조회
-![[그림 17] 통계 조회 ](http://static.toastoven.net/prod_alimtalk/image17.png)
-<center>[그림 17] 통계 조회</center>
+![[그림 22] 통계 조회 ](http://static.toastoven.net/prod_alimtalk/img22.png)
+<center>[그림 22] 통계 조회</center>
 
 * 발송 요청 기간, 플러스친구, 템플릿 별로 통계를 조회할 수 있습니다.
 * 발송요청, 성공, 실패, 대체발송건을 그래프와 표로 확인할 수 있습니다.
