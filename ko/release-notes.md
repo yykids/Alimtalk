@@ -1,4 +1,8 @@
-## Notification > Alimtalk > 릴리스 노트
+## Notification > Alimtalk > Release Notes
+### 2018.02.22
+* [Console] 대량 발송 기능 추가
+    - csv 파일을 이용하여, 대량 발송 기능이 추가되었습니다.
+
 ### 2018.01.22
 #### 기능 개선/변경
 * [Console] 템플릿 등록 개선
