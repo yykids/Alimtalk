@@ -1,4 +1,4 @@
-## Notification > Alimtalk > 콘솔 사용 가이드
+## Notification > Alimtalk > Console Guide
 
 ## 준비 사항
 ### 플러스친구 생성
