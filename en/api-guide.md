@@ -155,6 +155,7 @@ Content-Type: application/json;charset=UTF-8
       "content" :  String,
       "requestDate" :  String,
       "resendStatus" :  String,
+      "resendStatusName" :  String,
       "messageStatus" :  String,
       "resultCode" :  String,
       "resultCodeName" : String,
