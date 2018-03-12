@@ -119,17 +119,33 @@ Console에 접속하여 SecretKey를 생성합니다.
 ![[그림 19] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image19.png)
 <center>[그림 19] 템플릿 등록</center>
 
+<h4>[참고 사항]</h4>
+* 템플릿 등록 시, 요청 -> 검수 중 -> 승인/반려 상태로 업데이트 진행됩니다.
+* 템플릿 반려 시, 문의 등록 및 수정 기능으로 재검수 가능합니다.
+* 반려된 템플릿을 새로 등록하고 싶으신 경우, 삭제 후 재등록 가능합니다.
+
 ### 템플릿 수정
 ![[그림 20] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image20.png)
 <center>[그림 20] 템플릿 등록</center>
+
+<h4>[참고 사항]</h4>
+* 반려 상태의 템플릿만 수정 가능합니다.
 
 ### 템플릿 삭제
 ![[그림 21] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image21.png)
 <center>[그림 21] 템플릿 등록</center>
 
+<h4>[참고 사항]</h4>
+* 요청/반려 상태의 템플릿만 삭제 가능합니다.
+
 ### 템플릿 문의 등록
 ![[그림 22] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image22.png)
 <center>[그림 22] 템플릿 등록</center>
+
+<h4>[참고 사항]</h4>
+* 검수 중/반려 상태의 템플릿만 문의 등록이 가능합니다.
+* 등록한 문의는 검수 결과에 추가되며, 카카오 검수자가 이를 확인합니다.
+* 검수 결과에 템플릿 용도에 관한 문의, 반려 사유 내용이 추가됩니다.
 
 <h4>[주의 사항]</h4>
 * 템플릿 코드는 10글자 이내의 영문/숫자만 등록 가능합니다.
