@@ -119,33 +119,6 @@ Console에 접속하여 SecretKey를 생성합니다.
 ![[그림 19] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image19.png)
 <center>[그림 19] 템플릿 등록</center>
 
-<h4>[참고 사항]</h4>
-* 템플릿 등록 시, <b>요청 -> 검수 중 -> 승인/반려</b> 상태 순서로 업데이트됩니다.
-* 템플릿 반려 시, <b>문의 등록</b> 및 <b>수정</b> 기능으로 재검수 가능합니다.
-* 반려된 템플릿은 <b>삭제</b> 후, 재등록 가능합니다.
-
-### 템플릿 수정
-![[그림 20] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image20.png)
-<center>[그림 20] 템플릿 등록</center>
-
-<h4>[참고 사항]</h4>
-* <b><span style="color:red">반려</span></b> 상태의 템플릿만 수정 가능합니다.
-
-### 템플릿 삭제
-![[그림 21] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image21.png)
-<center>[그림 21] 템플릿 등록</center>
-
-<h4>[참고 사항]</h4>
-* <b><span style="color:red">요청/반려</span></b> 상태의 템플릿만 삭제 가능합니다.
-
-### 템플릿 문의 등록
-![[그림 22] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image22.png)
-<center>[그림 22] 템플릿 등록</center>
-
-<h4>[참고 사항]</h4>
-* <b><span style="color:red">검수 중/반려</span></b> 상태의 템플릿만 문의 등록이 가능합니다.
-* 등록한 문의는 검수 결과에 추가되며, 카카오 검수자가 이를 확인합니다.
-* 검수 결과에 템플릿 용도에 관한 문의, 반려 사유 내용이 추가됩니다.
 
 <h4>[주의 사항]</h4>
 * 템플릿 코드는 10글자 이내의 영문/숫자만 등록 가능합니다.
@@ -153,7 +126,32 @@ Console에 접속하여 SecretKey를 생성합니다.
 * 템플릿 내용은 한/영 구분없이 변수 및 URL 포함 1000자까지 등록 가능합니다.
 * 버튼링크 URL은 100자까지 등록 가능합니다.
 * 템플릿 치환자는 ex) #{치환자} 로 등록해주시면 됩니다.
+* 템플릿 등록 시, <b>요청 -> 검수 중 -> 승인/반려</b> 상태 순서로 업데이트됩니다.
+* 템플릿 반려 시, <b>문의 등록</b> 및 <b>수정</b> 기능으로 재검수 가능합니다.
+* 반려된 템플릿은 <b>삭제</b> 후, 재등록 가능합니다.
 
+### 템플릿 수정
+![[그림 20] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image20.png)
+<center>[그림 20] 템플릿 수정</center>
+
+<h4>[참고 사항]</h4>
+* <b><span style="color:red">반려</span></b> 상태의 템플릿만 수정 가능합니다.
+
+### 템플릿 삭제
+![[그림 21] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image21.png)
+<center>[그림 21] 템플릿 삭제</center>
+
+<h4>[참고 사항]</h4>
+* <b><span style="color:red">요청/반려</span></b> 상태의 템플릿만 삭제 가능합니다.
+
+### 템플릿 문의 등록
+![[그림 22] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image22.png)
+<center>[그림 22] 템플릿 문의 등록</center>
+
+<h4>[참고 사항]</h4>
+* <b><span style="color:red">검수 중/반려</span></b> 상태의 템플릿만 문의 등록이 가능합니다.
+* 등록한 문의는 검수 결과에 추가되며, 카카오 검수자가 이를 확인합니다.
+* 검수 결과에 템플릿 용도에 관한 문의, 반려 사유 내용이 추가됩니다.
 
 ## 발송 실패 설정
 ### SMS 정보 입력
