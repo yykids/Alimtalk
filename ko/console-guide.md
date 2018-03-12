@@ -108,16 +108,28 @@ Console에 접속하여 SecretKey를 생성합니다.
 
 ## 템플릿 관리
 ### 템플릿 리스트 조회
-![[그림 17] 템플릿 리스트 조회](http://static.toastoven.net/prod_alimtalk/img17.png)
+![[그림 17] 템플릿 리스트 조회](http://static.toastoven.net/prod_alimtalk/image17.png)
 <center>[그림 17] 템플릿 리스트 조회</center>
 
 ### 템플릿 상세내역
-![[그림 18] 템플릿 상세내역](http://static.toastoven.net/prod_alimtalk/img18.png)
+![[그림 18] 템플릿 상세내역](http://static.toastoven.net/prod_alimtalk/image18.png)
 <center>[그림 18] 템플릿 상세내역</center>
 
 ### 템플릿 등록
-![[그림 19] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/img19.png)
+![[그림 19] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image19.png)
 <center>[그림 19] 템플릿 등록</center>
+
+### 템플릿 수정
+![[그림 20] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image20.png)
+<center>[그림 20] 템플릿 등록</center>
+
+### 템플릿 삭제
+![[그림 21] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image21.png)
+<center>[그림 21] 템플릿 등록</center>
+
+### 템플릿 문의 등록
+![[그림 22] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image22.png)
+<center>[그림 22] 템플릿 등록</center>
 
 <h4>[주의 사항]</h4>
 * 템플릿 코드는 10글자 이내의 영문/숫자만 등록 가능합니다.
@@ -129,11 +141,11 @@ Console에 접속하여 SecretKey를 생성합니다.
 
 ## 발송 실패 설정
 ### SMS 정보 입력
-![[그림 20] SMS 정보 입력 ](http://static.toastoven.net/prod_alimtalk/img20.png)
-<center>[그림 20] SMS 정보 입력</center>
+![[그림 23] SMS 정보 입력 ](http://static.toastoven.net/prod_alimtalk/image23.png)
+<center>[그림 23] SMS 정보 입력</center>
 
-![[그림 21] 플러스친구 발송 실패 설정 ](http://static.toastoven.net/prod_alimtalk/img21.png)
-<center>[그림 21] 플러스친구 발송 실패 설정</center>
+![[그림 24] 플러스친구 발송 실패 설정 ](http://static.toastoven.net/prod_alimtalk/image24.png)
+<center>[그림 24] 플러스친구 발송 실패 설정</center>
 
 * 플러스친구 별, 발송 실패 설정을 할 수 있습니다.
 * 발송 실패 설정을 한 플러스친구의 알림톡 메세지만 LMS로 대체 발송됩니다.
@@ -141,8 +153,8 @@ Console에 접속하여 SecretKey를 생성합니다.
 
 ## 통계
 ### 통계 조회
-![[그림 22] 통계 조회 ](http://static.toastoven.net/prod_alimtalk/img22.png)
-<center>[그림 22] 통계 조회</center>
+![[그림 25] 통계 조회 ](http://static.toastoven.net/prod_alimtalk/image25.png)
+<center>[그림 25] 통계 조회</center>
 
 * 발송 요청 기간, 플러스친구, 템플릿 별로 통계를 조회할 수 있습니다.
 * 발송요청, 성공, 실패, 대체발송건을 그래프와 표로 확인할 수 있습니다.
