@@ -130,7 +130,7 @@ Content-Type: application/json;charset=UTF-8
 |-- ordering|	Integer|	X |	버튼 순서 (버튼이 있는 경우 필수)|
 |-- type| String |	X |	버튼 타입 (버튼이 있는 경우 필수)|
 |-- name| String |	X |	버튼 이름 (버튼이 있는 경우 필수)|
-|-- linkMo| String |	X |	버튼 링크 (버튼이 있는 경우 필수)|
+|-- linkMo| String |	X |	버튼 링크|
 
 * <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
 * <b>내용(content)과 버튼 정보(buttons)는 템플릿에 등록된 내용과 동일해야 합니다.</b>
