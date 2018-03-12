@@ -19,7 +19,7 @@
 
 ## 메시지 발송
 
-#### 요청
+#### 치환 발송 요청
 
 [URL]
 
@@ -70,6 +70,31 @@ Content-Type: application/json;charset=UTF-8
 |-- value| String |	X |	치환 키에 매핑되는 Value값|
 
 * <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
+
+#### 전문 발송 요청
+
+[URL]
+
+```
+POST  /alimtalk/v1.0/appkeys/{appkey}/raw-messages
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+|값|	타입|	설명|
+|---|---|---|
+|appkey|	String|	고유의 appkey|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|X-Secret-Key|	String| O | [CONSOLE]에서 생성할 수 있다. [[참고](./console-guide/#x-secret-key)] |
 
 #### 응답
 

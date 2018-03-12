@@ -35,7 +35,7 @@ Console에 접속하여 SecretKey를 생성합니다.
 ![[그림 5] 플러스 친구 등록](http://static.toastoven.net/prod_alimtalk/image05.png)
 <center>[그림 5] 플러스 친구 등록</center>
 
-#### [참고 사항]
+<h4>[참고 사항]</h4>
 * 플러스친구 아이디는 플러스친구 개설 시, 등록한 검색용 아이디를 입력해야 합니다.
 * 고객이 받는 알림톡 메세지는 카카오톡에 등록한 플러스 친구 이름으로 노출됩니다.
 
@@ -60,7 +60,7 @@ Console에 접속하여 SecretKey를 생성합니다.
 ![[그림 10] 알림톡 발송](http://static.toastoven.net/prod_alimtalk/img10.png)
 <center>[그림 10] 알림톡 대량 발송</center>
 
-#### [참고 사항]
+<h4>[참고 사항]</h4>
 * 템플릿을 선택 후, 템플릿 다운로드 버튼을 클릭 시 템플릿 치환자가 포함된 CSV 파일을 다운로드할 수 있습니다. 템플릿 치환자가 포함되지 않을 경우 발송 실패처리 됩니다.
 * CSV 파일을 엑셀로 열어 저장할 시, 한글이 정상적으로 저장되지 않을 수 있으므로 검수 후 발송으로 치환이 정상적으로 되었는지 확인을 권장합니다.
 * 파일 업로드는 CSV 파일만 가능하며, 크기는 최대 20MB이고, 발송할 수 있는 최대 수신자 수는 10,000명입니다.
@@ -68,7 +68,7 @@ Console에 접속하여 SecretKey를 생성합니다.
 ![[그림 11] 발송 선택](http://static.toastoven.net/prod_alimtalk/img11.png)
 <center>[그림 11] 발송 선택</center>
 
-#### [참고 사항]
+<h4>[참고 사항]</h4>
 * 검수 후 발송, 즉시 발송 2가지를 선택하여 발송할 수 있습니다.
 
 ![[그림 12] CSV 파일 작성](http://static.toastoven.net/prod_alimtalk/img12.png)
@@ -78,13 +78,13 @@ Console에 접속하여 SecretKey를 생성합니다.
 ![[그림 13] 대량 발송 조회](http://static.toastoven.net/prod_alimtalk/img13.png)
 <center>[그림 13] 대량 발송 조회</center>
 
-#### [참고 사항]
+<h4>[참고 사항]</h4>
 * 발송 중 상태에서 취소 버튼을 누를 시, 일부 수신자에게 발송이 진행될 수 있습니다.
 
 ![[그림 14] 수신자 내용 확인](http://static.toastoven.net/prod_alimtalk/img14.png)
 <center>[그림 14] 수신자 내용 확인</center>
 
-#### [참고 사항]
+<h4>[참고 사항]</h4>
 * 수신자 별 조회에서 해당 수신자를 선택하여, 발송 내용이 정상적으로 치환되었는지 확인할 수 있습니다.
 
 ### 대량 발송 진행 상태
@@ -119,7 +119,7 @@ Console에 접속하여 SecretKey를 생성합니다.
 ![[그림 19] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/img19.png)
 <center>[그림 19] 템플릿 등록</center>
 
-#### [주의 사항]
+<h4>[주의 사항]</h4>
 * 템플릿 코드는 10글자 이내의 영문/숫자만 등록 가능합니다.
 * 템플릿명은 20글자까지 등록 가능합니다.
 * 템플릿 내용은 한/영 구분없이 변수 및 URL 포함 1000자까지 등록 가능합니다.
