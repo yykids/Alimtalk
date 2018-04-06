@@ -301,6 +301,7 @@ Content-Type: application/json;charset=UTF-8
 |X-Secret-Key|	String| O | [CONSOLE]에서 생성할 수 있다. [[참고](./console-guide/#x-secret-key)] |
 
 [Query parameter]
+
 |값|	타입|	필수|	설명|
 |---|---|---|---|
 |plusFriendId|	String|	X |	플러스 친구 아이디 |
