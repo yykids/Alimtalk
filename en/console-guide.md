@@ -48,7 +48,7 @@ Console에 접속하여 SecretKey를 생성합니다.
 <center>[그림 7] 토큰 등록</center>
 
 ## 발신 프로필 관리
-![[그림 8] 발신 프로필 관리](http://static.toastoven.net/prod_alimtalk/image08.png)
+![[그림 8] 발신 프로필 관리](http://static.toastoven.net/prod_alimtalk/img08.png)
 <center>[그림 8] 발신 프로필 관리</center>
 
 ## 알림톡 발송
