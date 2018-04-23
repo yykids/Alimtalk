@@ -25,14 +25,14 @@ Console에 접속하여 Alimtalk을 활성화 합니다.
 ### X-Secret-Key 생성
 Console에 접속하여 SecretKey를 생성합니다.
 
-![[그림 4] SecretKey 생성](http://static.toastoven.net/prod_alimtalk/img04.png)
+![[그림 4] SecretKey 생성](http://static.toastoven.net/prod_alimtalk/image04.png)
 <center>[그림 4] SecretKey 생성</center>
 
 ### 플러스 친구 등록
 플러스 친구 등록이 완료되면 관리자 핸드폰으로 카카오 토큰 메시지가 전달됩니다.<br>
 관리자로 등록된 핸드폰으로만 카카오톡 토큰 메시지가 전달됩니다.
 
-![[그림 5] 플러스 친구 등록](http://static.toastoven.net/prod_alimtalk/image05.png)
+![[그림 5] 플러스 친구 등록](http://static.toastoven.net/prod_alimtalk/img05.png)
 <center>[그림 5] 플러스 친구 등록</center>
 
 <h4>[참고 사항]</h4>
@@ -44,11 +44,11 @@ Console에 접속하여 SecretKey를 생성합니다.
 
 ### 토큰 등록
 관리자 핸드폰으로 받은 토큰 메시지를 입력하면 등록이 완료됩니다.
-![[그림 7] 토큰 등록](http://static.toastoven.net/prod_alimtalk/image07.png)
+![[그림 7] 토큰 등록](http://static.toastoven.net/prod_alimtalk/img07.png)
 <center>[그림 7] 토큰 등록</center>
 
 ## 발신 프로필 관리
-![[그림 8] 발신 프로필 관리](http://static.toastoven.net/prod_alimtalk/image08.png)
+![[그림 8] 발신 프로필 관리](http://static.toastoven.net/prod_alimtalk/img08.png)
 <center>[그림 8] 발신 프로필 관리</center>
 
 ## 알림톡 발송
@@ -99,11 +99,11 @@ Console에 접속하여 SecretKey를 생성합니다.
 
 
 ## 발송 결과 조회
-![[그림 15] 알림톡 발송 결과 조회](http://static.toastoven.net/prod_alimtalk/img15.png)
+![[그림 15] 알림톡 발송 결과 조회](http://static.toastoven.net/prod_alimtalk/image15.png)
 <center>[그림 15] 알림톡 발송 결과 조회</center>
 
 ### 발송 결과 상세조회
-![[그림 16] 발송결과 상세 조회](http://static.toastoven.net/prod_alimtalk/img16.png)
+![[그림 16] 발송결과 상세 조회](http://static.toastoven.net/prod_alimtalk/image16.png)
 <center>[그림 16] 발송 결과 상세 조회</center>
 
 ## 템플릿 관리
@@ -116,7 +116,7 @@ Console에 접속하여 SecretKey를 생성합니다.
 <center>[그림 18] 템플릿 상세내역</center>
 
 ### 템플릿 등록
-![[그림 19] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image19.png)
+![[그림 19] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/img19.png)
 <center>[그림 19] 템플릿 등록</center>
 
 
@@ -131,7 +131,7 @@ Console에 접속하여 SecretKey를 생성합니다.
 * 반려된 템플릿은 <b>삭제</b> 후, 재등록 가능합니다.
 
 ### 템플릿 수정
-![[그림 20] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image20.png)
+![[그림 20] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/img20.png)
 <center>[그림 20] 템플릿 수정</center>
 
 <h4>[참고 사항]</h4>
@@ -167,7 +167,7 @@ Console에 접속하여 SecretKey를 생성합니다.
 
 ## 통계
 ### 통계 조회
-![[그림 25] 통계 조회 ](http://static.toastoven.net/prod_alimtalk/image25.png)
+![[그림 25] 통계 조회 ](http://static.toastoven.net/prod_alimtalk/img25.png)
 <center>[그림 25] 통계 조회</center>
 
 * 발송 요청 기간, 플러스친구, 템플릿 별로 통계를 조회할 수 있습니다.
