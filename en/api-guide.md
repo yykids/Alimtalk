@@ -71,6 +71,11 @@ Content-Type: application/json;charset=UTF-8
 
 * <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
 
+[예시]
+```
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.0/appkeys/{appkey}/messages -d '{"plusFriendId": "{플러스친구 아이디}","templateCode": "{템플릿 코드}","recipientList":[{"recipientNo": "{수신번호}","templateParameter": { "{치환자 필드}": "{치환 데이터}" }}]}'
+```
+
 #### 전문 발송 요청
 
 [URL]
@@ -141,6 +146,11 @@ Content-Type: application/json;charset=UTF-8
 
 * <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
 * <b>본문과 버튼에 치환이 완성된 데이터를 넣어주세요.</b>
+
+[예시]
+```
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.0/appkeys/{appkey}/raw-messages -d '{"plusFriendId": "{플러스친구 아이디}","templateCode": "{템플릿 코드}","recipientList":[{"recipientNo": "{수신번호}", "content": "{내용}", "buttons": [{ "ordering": "{버튼 순서}", "type": "{버튼 타입}", "name": "{버튼 이름}", "linkMo": "{모바일 웹 링크}" }]}]}'
+```
 
 #### 응답
 
@@ -279,6 +289,11 @@ Content-Type: application/json;charset=UTF-8
 |--- schemeAndroid | String |	Android 앱 링크 (AL 타입일 경우 필수 필드) |
 |- totalCount | Integer | 총 개수 |
 
+[예시]
+```
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.0/appkeys/{appkey}/messages?startRequestDate=2018-05-01%2000:00&endRequestDate=2018-05-30%2023:59"
+```
+
 #### 재발송 상태
 |값|	설명|
 |---|---|
@@ -322,6 +337,10 @@ Content-Type: application/json;charset=UTF-8
 |requestId|	String|	O | 요청 아이디 |
 |recipientSeq|	Integer |	O | 수신자 시퀀스 번호 |
 
+[예시]
+```
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.1/appkeys/{appkey}/message/{requestId}/{recipientSeq}"
+```
 
 #### 응답
 ```
@@ -430,6 +449,11 @@ Content-Type: application/json;charset=UTF-8
 | TSC02 | 검수중 |
 | TSC03 | 승인 |
 | TSC04 | 반려 |
+
+[예시]
+```
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.0/appkeys/{appkey}/templates?plusFriendId={플러스친구 아이디}&templateStatus={템플릿 상태 코드}"
+```
 
 #### 응답
 ```
