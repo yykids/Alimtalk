@@ -352,6 +352,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
   },
   "message" : {
       "requestId" :  String,
+      "recipientSeq" : Integer,
       "plusFriendId" :  String,
       "templateCode" :  String,
       "recipientNo" :  String,
