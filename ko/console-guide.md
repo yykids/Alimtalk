@@ -129,6 +129,7 @@ Console에 접속하여 SecretKey를 생성합니다.
 * 템플릿 등록 시, <b>요청 -> 검수 중 -> 승인/반려</b> 상태 순서로 업데이트됩니다.
 * 템플릿 반려 시, <b>문의 등록</b> 및 <b>수정</b> 기능으로 재검수 가능합니다.
 * 반려된 템플릿은 <b>삭제</b> 후, 재등록 가능합니다.
+* 자세한 사항은 [[템플릿 검수 가이드](https://www.bizmsg.kr/collected_statics/assets_landing/doc/alimtalk_template_guide.pdf)] 를 참고하시기 바랍니다.
 
 ### 템플릿 수정
 ![[그림 20] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/img20.png)
