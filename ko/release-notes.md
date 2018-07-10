@@ -1,4 +1,4 @@
-## Notification > Alimtalk > Release Notes
+## Notification > KakaoTalk Bizmessage > 릴리즈 노트
 ### 2018.06.26
 #### 기능 개선
 * [Console] 플러스친구 등록 시, 요청 필드 추가

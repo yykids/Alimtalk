@@ -1,9 +1,9 @@
-## Notification > Alimtalk > Release Notes
+## Notification > KakaoTalk Bizmessage > Release Notes
 ### 2018.06.26
 #### 기능 개선
 * [Console] 플러스친구 등록 시, 요청 필드 추가
     - 카카오 발급절차 강화로 인해 사업자등록번호, 사업자 카테고리를 입력받도록 수정되었습니다.
-
+    
 #### 버그 수정
 * [Console] 통계 차트 버그 개선 버전으로 변경
     - IE 브라우져에서 Export xls 기능 버그 개선 버전으로 변경하였습니다.

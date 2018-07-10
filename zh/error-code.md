@@ -1,4 +1,4 @@
-## Notification > Alimtalk > Error Code
+## Notification > KakaoTalk Bizmessage > Error code
 
 ## API 응답 코드
 | service | isSuccess | resultCode | resultMessage |
