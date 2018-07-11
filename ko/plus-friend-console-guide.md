@@ -1,4 +1,4 @@
-## Notification > KakaoTalk Bizmessage > 친구톡 > 콘솔 사용 가이드
+## Notification > KakaoTalk Bizmessage > 플러스친구 > 콘솔 사용 가이드
 
 ## 상품 이용
 
