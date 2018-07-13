@@ -73,7 +73,7 @@ Content-Type: application/json;charset=UTF-8
 |값|	타입|	필수|	설명|
 |---|---|---|---|
 |plusFriendId|	String|	X | 플러스친구 아이디 |
-|requestDate|	String|	X | 요청 일시 (yyyy-MM-dd HH:mm)|
+|requestDate|	String|	X | 요청 일시 (yyyy-MM-dd HH:mm), 필드를 보내지 않을 경우, 즉시 발송 |
 |recipientList|	List|	O|	수신자 리스트 (최대 1000명) |
 |- recipientNo|	String|	O|	수신번호 |
 |- content|	String|	O|	내용 |
@@ -90,7 +90,6 @@ Content-Type: application/json;charset=UTF-8
 |- isAd | Boolean | X |	광고 여부 (기본값 true) |
 
 * <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
-* <b>요청 일시 필드를 보내지 않을 경우, 요청한 즉시 발송됩니다.</b>
 
 [예시]
 ```
@@ -279,6 +278,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
       "plusFriendId" :  String,
       "recipientNo" :  String,
       "requestDate" :  String,
+      "receiveDate" : String,
       "content" :  String,
       "messageStatus" :  String,
       "resendStatus" :  String,
@@ -286,6 +286,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
       "resultCode" :  String,
       "resultCodeName" : String,
       "imageSeq" : Integer,
+      "imageName" : String,
+      "imageUrl" : String,
       "imageLink" : String,
       "buttons" : [
         {
@@ -313,8 +315,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- requestId | String |	요청 아이디 |
 |- recipientSeq | Integer |	수신자 시퀀스 번호 |
 |- plusFriendId | String |	플러스 친구 아이디 |
-|- requestDate | String |	요청 일시 |
 |- recipientNo | String |	수신 번호 |
+|- requestDate | String |	요청 일시 |
+|- receiveDate | String |	수신 일시 |
 |- content | String |	본문 |
 |- messageStatus | String |	요청 상태 ( COMPLETED : 성공, FAILED : 실패 ) |
 |- resendStatus | String |	재발송 상태 코드 |
@@ -322,6 +325,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- resultCode | String |	수신 결과 코드 |
 |- resultCodeName | String |	수신 결과 코드명 |
 |- imageSeq|	Integer|  이미지 번호 |
+|- imageName|	String|  이미지명 (업로드한 파일명) |
+|- imageUrl|	String|  이미지 URL |
 |- imageLink|	String| 이미지 링크(이미지 번호를 입력할 경우 필수)|
 |- buttons | List |	버튼 리스트 |
 |-- ordering | Integer |	버튼 순서 |
@@ -417,6 +422,16 @@ Content-Type: application/json;charset=UTF-8
 |---|---|---|
 |appkey|	String|	고유의 appkey|
 
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|X-Secret-Key|	String| O | [CONSOLE]에서 생성할 수 있다. [[참고](./console-guide/#x-secret-key)] |
+
 [Query parameter]
 
 |값|	타입|	필수|	설명|
@@ -484,6 +499,16 @@ Content-Type: application/json;charset=UTF-8
 |값|	타입|	설명|
 |---|---|---|
 |appkey|	String|	고유의 appkey|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|X-Secret-Key|	String| O | [CONSOLE]에서 생성할 수 있다. [[참고](./console-guide/#x-secret-key)] |
 
 [Query parameter]
 

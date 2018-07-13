@@ -4,51 +4,51 @@
 
 ### 상품 활성화
 
-Console에 접속하여 Alimtalk을 활성화 합니다.
+Console에 접속하여 KakaoTalk Bizmessage를 활성화 합니다.
 
-![[그림 1] 알림톡 서비스 활성화](http://static.toastoven.net/prod_alimtalk/img03.png)
-<center>[그림 1] 알림톡 서비스 활성화</center>
+![[그림 1] KakaoTalk Bizmessage 서비스 활성화](http://static.toastoven.net/prod_alimtalk/plus_friend_01.png)
+<center>[그림 1] KakaoTalk Bizmessage 서비스 활성화</center>
 
 ### X-Secret-Key 생성
 Console에 접속하여 SecretKey를 생성합니다.
 
-![[그림 2] SecretKey 생성](http://static.toastoven.net/prod_alimtalk/image04.png)
+![[그림 2] SecretKey 생성](http://static.toastoven.net/prod_alimtalk/plus_friend_02.png)
 <center>[그림 2] SecretKey 생성</center>
 
 ### 플러스 친구 등록
 플러스 친구 등록이 완료되면 관리자 핸드폰으로 카카오 토큰 메시지가 전달됩니다.<br>
 관리자로 등록된 핸드폰으로만 카카오톡 토큰 메시지가 전달됩니다.
 
-![[그림 3] 플러스 친구 등록](http://static.toastoven.net/prod_alimtalk/img05.png)
+![[그림 3] 플러스 친구 등록](http://static.toastoven.net/prod_alimtalk/plus_friend_03.png)
 <center>[그림 3] 플러스 친구 등록</center>
 
 <h4>[참고 사항]</h4>
 * 플러스친구 아이디는 플러스친구 개설 시, 등록한 검색용 아이디를 입력해야 합니다.
-* 고객이 받는 알림톡 메세지는 카카오톡에 등록한 플러스 친구 이름으로 노출됩니다.
+* 고객이 받는 카카오톡 비즈메시지는 카카오톡에 등록한 플러스 친구 이름으로 노출됩니다.
 
 ![[그림 4] 카카오톡 토큰](http://static.toastoven.net/prod_alimtalk/img06.png)
 <center>[그림 4] 카카오톡 토큰</center>
 
 ### 토큰 등록
 관리자 핸드폰으로 받은 토큰 메시지를 입력하면 등록이 완료됩니다.
-![[그림 5] 토큰 등록](http://static.toastoven.net/prod_alimtalk/img07.png)
+![[그림 5] 토큰 등록](http://static.toastoven.net/prod_alimtalk/plus_friend_04.png)
 <center>[그림 5] 토큰 등록</center>
 
 ## 발신 프로필 관리
-![[그림 6] 발신 프로필 관리](http://static.toastoven.net/prod_alimtalk/img08.png)
+![[그림 6] 발신 프로필 관리](http://static.toastoven.net/prod_alimtalk/plus_friend_05.png)
 <center>[그림 6] 발신 프로필 관리</center>
 
 ## 발송 실패 설정
 
 ### SMS 정보 입력
-![[그림 7] SMS 정보 입력 ](http://static.toastoven.net/prod_alimtalk/image23.png)
+![[그림 7] SMS 정보 입력 ](http://static.toastoven.net/prod_alimtalk/plus_friend_06.png)
 <center>[그림 7] SMS 정보 입력</center>
 
-![[그림 8] 플러스친구 발송 실패 설정 ](http://static.toastoven.net/prod_alimtalk/image24.png)
+![[그림 8] 플러스친구 발송 실패 설정 ](http://static.toastoven.net/prod_alimtalk/plus_friend_07.png)
 <center>[그림 8] 플러스친구 발송 실패 설정</center>
 
 * 플러스친구 별, 발송 실패 설정을 할 수 있습니다.
-* 발송 실패 설정을 한 플러스친구의 알림톡 메세지만 LMS로 대체 발송됩니다.
+* 발송 실패 설정을 한 플러스친구의 메시지만 LMS 또는 SMS로 대체 발송됩니다.
 * sms appkey 수정 시, 모든 플러스친구의 발송 실패 설정은 초기화 됩니다.
 
 ## 개인정보 수탁사 고지 안내
