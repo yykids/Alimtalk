@@ -266,7 +266,7 @@ Content-Type: application/json;charset=UTF-8
 |- resultMessage|	String| 결과 메시지|
 |- isSuccessful|	Boolean| 성공 여부|
 |messageSearchResultResponse|	Object|	본문 영역|
-|- messages | List |	메세지 리스트 |
+|- messages | List |	메시지 리스트 |
 |-- requestId | String |	요청 아이디 |
 |-- recipientSeq | Integer |	수신자 시퀀스 번호 (v1.1부터 필드 추가) |
 |-- plusFriendId | String |	플러스친구 아이디 |
@@ -384,7 +384,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- resultCode|	Integer|	결과 코드|
 |- resultMessage|	String| 결과 메시지|
 |- isSuccessful|	Boolean| 성공 여부|
-|message|	Object|	메세지|
+|message|	Object|	메시지|
 |- requestId | String |	요청 아이디 |
 |- recipientSeq | Integer |	수신자 시퀀스 번호 |
 |- plusFriendId | String |	플러스친구 아이디 |

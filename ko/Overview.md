@@ -1,6 +1,6 @@
 ## Notification > KakaoTalk Bizmessage > 개요
 
-KakaoTalk Bizmessage는 휴대폰 번호를 기반으로 친구 추가 없이 카카오톡 사용자에게 알림톡, 친구톡 형태의 메시지를 발송할 수 있는 상품입니다.
+KakaoTalk Bizmessage는 휴대폰 번호를 기반으로 친구 추가 없이 카카오톡 사용자에게 알림톡, 친구톡 형태의 메시지를 발송할 수 있는 서비스입니다.
 손쉬운 연동을 위한 RESTful API를 제공합니다.
 
 ## 알림톡 vs 친구톡
