@@ -155,7 +155,7 @@ Content-Type: application/json;charset=UTF-8
 |startRequestDate|	String|	조건 필수 (2번) | 발송 요청 날짜 시작 값(yyyy-MM-dd HH:mm)|
 |endRequestDate|	String| 조건 필수 (2번) |	발송 요청 날짜 끝 값(yyyy-MM-dd HH:mm) |
 |recipientNo|	String|	X |	수신번호 |
-|plusFriendId|	String|	X |	플러스 친구 아이디 |
+|plusFriendId|	String|	X |	플러스친구 아이디 |
 |messageStatus| String |	X | 요청 상태 ( COMPLETED: 성공, FAILED: 실패 )	|
 |resultCode| String |	X | 발송 결과 ( MRC01: 성공 MRC02: 실패 )	|
 |pageNum|	Integer|	X|	페이지 번호(Default : 1)|
@@ -200,7 +200,7 @@ Content-Type: application/json;charset=UTF-8
 |- messages | List |	메세지 리스트 |
 |-- requestId | String |	요청 아이디 |
 |-- recipientSeq | Integer |	수신자 시퀀스 번호 (v1.1부터 필드 추가) |
-|-- plusFriendId | String |	플러스 친구 아이디 |
+|-- plusFriendId | String |	플러스친구 아이디 |
 |-- recipientNo | String |	수신 번호 |
 |-- requestDate | String |	요청 일시 |
 |-- content | String |	본문 |
@@ -314,7 +314,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |message|	Object|	메세지|
 |- requestId | String |	요청 아이디 |
 |- recipientSeq | Integer |	수신자 시퀀스 번호 |
-|- plusFriendId | String |	플러스 친구 아이디 |
+|- plusFriendId | String |	플러스친구 아이디 |
 |- recipientNo | String |	수신 번호 |
 |- requestDate | String |	요청 일시 |
 |- receiveDate | String |	수신 일시 |
