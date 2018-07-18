@@ -12,7 +12,7 @@ Console에 접속하여 KakaoTalk Bizmessage를 활성화 합니다.
 ### X-Secret-Key 생성
 Console에 접속하여 SecretKey를 생성합니다.
 
-![[그림 2] SecretKey 생성](http://static.toastoven.net/prod_alimtalk/plus_friend_02.png)
+![[그림 2] SecretKey 생성](http://static.toastoven.net/prod_alimtalk/plus_friend_08.png)
 <center>[그림 2] SecretKey 생성</center>
 
 ### 플러스친구 등록
