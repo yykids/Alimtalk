@@ -518,7 +518,7 @@ Content-Type: application/json;charset=UTF-8
 
 [예시]
 ```
-curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.1/appkeys/{appkey}/images?imageSeq=1,2,3"
+curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.1/appkeys/{appkey}/images?imageSeq=1,2,3"
 ```
 
 #### 응답
