@@ -4,19 +4,19 @@
 
 ### 서비스 활성화
 
-Console에 접속하여 KakaoTalk Bizmessage를 활성화 합니다.
+콘솔에 접속하여 KakaoTalk Bizmessage를 활성화 합니다.
 
 ![[그림 1] KakaoTalk Bizmessage 서비스 활성화](http://static.toastoven.net/prod_alimtalk/plus_friend_01.png)
 <center>[그림 1] KakaoTalk Bizmessage 서비스 활성화</center>
 
 ### X-Secret-Key 생성
-Console에 접속하여 SecretKey를 생성합니다.
+콘솔에 접속하여 SecretKey를 생성합니다.
 
 ![[그림 2] SecretKey 생성](http://static.toastoven.net/prod_alimtalk/plus_friend_08.png)
 <center>[그림 2] SecretKey 생성</center>
 
 ### 플러스친구 등록
-플러스친구 등록이 완료되면 관리자 핸드폰으로 카카오 토큰 메시지가 전달됩니다.<br>
+플러스친구 등록이 완료되면 관리자 핸드폰으로 카카오톡 토큰 메시지가 전달됩니다.<br>
 관리자로 등록된 핸드폰으로만 카카오톡 토큰 메시지가 전달됩니다.
 
 ![[그림 3] 플러스친구 등록](http://static.toastoven.net/prod_alimtalk/plus_friend_03.png)
