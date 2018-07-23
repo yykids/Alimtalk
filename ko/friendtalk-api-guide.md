@@ -51,7 +51,7 @@ Content-Type: application/json;charset=UTF-8
     "requestDate": String,
     "recipientList": [{
         "recipientNo": String,
-        "content": String
+        "content": String,
         "imageSeq": Integer,
         "imageLink": String,
         "buttons": [
