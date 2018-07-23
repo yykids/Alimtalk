@@ -1,4 +1,4 @@
-## Notification > KakaoTalk Bizmessage > Release Notes
+## Notification > KakaoTalk Bizmessage > 릴리스 노트
 ### 2018.07.24
 * [Console] 서비스명 변경
     - Alimtalk 에서 KakaoTalkBizmessage로 서비스명이 변경되었습니다.
