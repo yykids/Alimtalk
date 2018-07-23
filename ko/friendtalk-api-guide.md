@@ -127,7 +127,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 [URL]
 
 ```
-GET  /friendtalk/v1.0/appkeys/{appkey}/messages
+GET  /friendtalk/v1.1/appkeys/{appkey}/messages
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -213,7 +213,7 @@ Content-Type: application/json;charset=UTF-8
 
 [예시]
 ```
-curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.0/appkeys/{appkey}/messages?startRequestDate=2018-05-01%2000:00&endRequestDate=2018-05-30%2023:59"
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.1/appkeys/{appkey}/messages?startRequestDate=2018-05-01%2000:00&endRequestDate=2018-05-30%2023:59"
 ```
 
 #### 재발송 상태
