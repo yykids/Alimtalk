@@ -261,7 +261,7 @@ Content-Type: application/json;charset=UTF-8
 
 [예시]
 ```
-curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.1/appkeys/{appkey}/message/{requestId}/{recipientSeq}"
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.1/appkeys/{appkey}/messages/{requestId}/{recipientSeq}"
 ```
 
 #### 응답
