@@ -136,7 +136,7 @@ Content-Type: application/json;charset=UTF-8
 |- content|	String|	O|	내용 |
 |- buttons|	List|	X|	버튼 |
 |-- ordering|	Integer|	X |	버튼 순서 (버튼이 있는 경우 필수)|
-|-- type| String |	X |	버튼 타입(WL:웹링크, DS:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
+|-- type| String |	X |	버튼 타입(WL:웹링크, AL:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
 |-- name| String |	X |	버튼 이름 (버튼이 있는 경우 필수)|
 |-- linkMo| String |	X |	모바일 웹 링크 (WL 타입일 경우 필수 필드)|
 |-- linkPc | String |	X |PC 웹 링크  (WL 타입일 경우 선택 필드) |
@@ -281,7 +281,7 @@ Content-Type: application/json;charset=UTF-8
 |-- resultCodeName | String |	수신 결과 코드명 |
 |-- buttons | List |	버튼 리스트 |
 |--- ordering | Integer |	버튼 순서 |
-|--- type | String |	버튼 타입(WL:웹링크, DS:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
+|--- type | String |	버튼 타입(WL:웹링크, AL:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
 |--- name | String |	버튼 이름 |
 |--- linkMo | String |	모바일 웹 링크 (WL 타입일 경우 필수 필드) |
 |--- linkPc | String |	PC 웹 링크  (WL 타입일 경우 선택 필드) |
@@ -399,7 +399,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- resultCodeName | String |	수신 결과 코드명 |
 |- buttons | List |	버튼 리스트 |
 |-- ordering | Integer |	버튼 순서 |
-|-- type | String |	버튼 타입(WL:웹링크, DS:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
+|-- type | String |	버튼 타입(WL:웹링크, AL:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
 |-- name | String |	버튼 이름 |
 |-- linkMo | String |	모바일 웹 링크 (WL 타입일 경우 필수 필드) |
 |-- linkPc | String |	PC 웹 링크  (WL 타입일 경우 선택 필드) |
@@ -516,7 +516,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |-- templateContent | String |	템플릿 본문 |
 |-- buttons | List |	버튼 리스트 |
 |--- ordering | Integer |	버튼 순서(1~5) |
-|--- type | String |	버튼 타입(WL:웹링크, DS:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
+|--- type | String |	버튼 타입(WL:웹링크, AL:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
 |--- name | String |	버튼 이름 |
 |--- linkMo | String |	모바일 웹 링크 (WL 타입일 경우 필수 필드) |
 |--- linkPc | String |	PC 웹 링크  (WL 타입일 경우 선택 필드) |
