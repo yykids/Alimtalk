@@ -1,4 +1,8 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
+### 2018.08.28
+* [Console] 발송 결과 조회 개선
+    - Alimtalk 발송 결과 조회 시, 템플릿 코드를 직접 입력할 수 있도록 개선되었습니다.
+
 ### 2018.07.24
 * [Console] 서비스명 변경
     - Alimtalk 에서 KakaoTalkBizmessage로 서비스명이 변경되었습니다.
