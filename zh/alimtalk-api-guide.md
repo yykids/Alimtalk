@@ -294,7 +294,7 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.0/appkeys/{appkey}/messages?startRequestDate=2018-05-01%2000:00&endRequestDate=2018-05-30%2023:59"
 ```
 
-#### 발송 실패 설정 상태(SMS/LMS 재발송)
+#### SMS/LMS 재발송 상태
 |값|	설명|
 |---|---|
 |RSC01|	재발송 미대상|
