@@ -24,7 +24,7 @@
 [URL]
 
 ```
-POST  /alimtalk/v1.0/appkeys/{appkey}/messages
+POST  /alimtalk/v1.1/appkeys/{appkey}/messages
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -73,7 +73,7 @@ Content-Type: application/json;charset=UTF-8
 
 [예시]
 ```
-curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.0/appkeys/{appkey}/messages -d '{"plusFriendId": "{플러스친구 아이디}","templateCode": "{템플릿 코드}","recipientList":[{"recipientNo": "{수신번호}","templateParameter": { "{치환자 필드}": "{치환 데이터}" }}]}'
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.1/appkeys/{appkey}/messages -d '{"plusFriendId": "{플러스친구 아이디}","templateCode": "{템플릿 코드}","recipientList":[{"recipientNo": "{수신번호}","templateParameter": { "{치환자 필드}": "{치환 데이터}" }}]}'
 ```
 
 #### 전문 발송 요청
@@ -81,7 +81,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 [URL]
 
 ```
-POST  /alimtalk/v1.0/appkeys/{appkey}/raw-messages
+POST  /alimtalk/v1.1/appkeys/{appkey}/raw-messages
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -149,7 +149,7 @@ Content-Type: application/json;charset=UTF-8
 
 [예시]
 ```
-curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.0/appkeys/{appkey}/raw-messages -d '{"plusFriendId": "{플러스친구 아이디}","templateCode": "{템플릿 코드}","recipientList":[{"recipientNo": "{수신번호}", "content": "{내용}", "buttons": [{ "ordering": "{버튼 순서}", "type": "{버튼 타입}", "name": "{버튼 이름}", "linkMo": "{모바일 웹 링크}" }]}]}'
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.1/appkeys/{appkey}/raw-messages -d '{"plusFriendId": "{플러스친구 아이디}","templateCode": "{템플릿 코드}","recipientList":[{"recipientNo": "{수신번호}", "content": "{내용}", "buttons": [{ "ordering": "{버튼 순서}", "type": "{버튼 타입}", "name": "{버튼 이름}", "linkMo": "{모바일 웹 링크}" }]}]}'
 ```
 
 #### 응답
@@ -183,7 +183,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 [URL]
 
 ```
-GET  /alimtalk/v1.0/appkeys/{appkey}/messages
+GET  /alimtalk/v1.1/appkeys/{appkey}/messages
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -268,7 +268,7 @@ Content-Type: application/json;charset=UTF-8
 |messageSearchResultResponse|	Object|	본문 영역|
 |- messages | List |	메시지 리스트 |
 |-- requestId | String |	요청 아이디 |
-|-- recipientSeq | Integer |	수신자 시퀀스 번호 (v1.1부터 필드 추가) |
+|-- recipientSeq | Integer |	수신자 시퀀스 번호 |
 |-- plusFriendId | String |	플러스친구 아이디 |
 |-- templateCode | String |	템플릿 코드 |
 |-- recipientNo | String |	수신 번호 |
@@ -291,7 +291,7 @@ Content-Type: application/json;charset=UTF-8
 
 [예시]
 ```
-curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.0/appkeys/{appkey}/messages?startRequestDate=2018-05-01%2000:00&endRequestDate=2018-05-30%2023:59"
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.1/appkeys/{appkey}/messages?startRequestDate=2018-05-01%2000:00&endRequestDate=2018-05-30%2023:59"
 ```
 
 #### SMS/LMS 재발송 상태
@@ -413,7 +413,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 [URL]
 
 ```
-GET  /alimtalk/v1.0/appkeys/{appkey}/templates
+GET  /alimtalk/v1.1/appkeys/{appkey}/templates
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -453,7 +453,7 @@ Content-Type: application/json;charset=UTF-8
 
 [예시]
 ```
-curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.0/appkeys/{appkey}/templates?plusFriendId={플러스친구 아이디}&templateStatus={템플릿 상태 코드}"
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.1/appkeys/{appkey}/templates?plusFriendId={플러스친구 아이디}&templateStatus={템플릿 상태 코드}"
 ```
 
 #### 응답
