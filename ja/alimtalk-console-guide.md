@@ -1,12 +1,12 @@
 ## Notification > KakaoTalk Bizmessage > Alimtalk > Console Guide
 
 ## 알림톡 발송
-![[그림 1] 알림톡 발송](http://static.toastoven.net/prod_alimtalk/img09.png)
+![[그림 1] 알림톡 발송](http://static.toastoven.net/prod_alimtalk/image09.png)
 <center>[그림 1] 알림톡 발송</center>
 
 ## 알림톡 대량 발송
 ### 대량 발송 요청
-![[그림 2] 알림톡 발송](http://static.toastoven.net/prod_alimtalk/img10.png)
+![[그림 2] 알림톡 발송](http://static.toastoven.net/prod_alimtalk/image10.png)
 <center>[그림 2] 알림톡 대량 발송</center>
 
 <h4>[참고 사항]</h4>
@@ -14,14 +14,11 @@
 * CSV 파일을 엑셀로 열어 저장할 시, 한글이 정상적으로 저장되지 않을 수 있으므로 검수 후 발송으로 치환이 정상적으로 되었는지 확인을 권장합니다.
 * 파일 업로드는 CSV 파일만 가능하며, 크기는 최대 20MB이고, 발송할 수 있는 최대 수신자 수는 10,000명입니다.
 
-![[그림 3] 발송 선택](http://static.toastoven.net/prod_alimtalk/img11.png)
+![[그림 3] 발송 선택](http://static.toastoven.net/prod_alimtalk/image11.png)
 <center>[그림 3] 발송 선택</center>
 
 <h4>[참고 사항]</h4>
 * 검수 후 발송, 즉시 발송 2가지를 선택하여 발송할 수 있습니다.
-
-![[그림 4] CSV 파일 작성](http://static.toastoven.net/prod_alimtalk/img12.png)
-<center>[그림 4] CSV 파일 작성</center>
 
 ### 조회/발송/취소
 ![[그림 5] 대량 발송 조회](http://static.toastoven.net/prod_alimtalk/img13.png)
