@@ -1,12 +1,12 @@
 ## Notification > KakaoTalk Bizmessage > Alimtalk > Console Guide
 
 ## 알림톡 발송
-![[그림 1] 알림톡 발송](http://static.toastoven.net/prod_alimtalk/image09.png)
+![[그림 1] 알림톡 발송](http://static.toastoven.net/prod_alimtalk/alimtalk_01.png)
 <center>[그림 1] 알림톡 발송</center>
 
 ## 알림톡 대량 발송
 ### 대량 발송 요청
-![[그림 2] 알림톡 발송](http://static.toastoven.net/prod_alimtalk/image10.png)
+![[그림 2] 알림톡 발송](http://static.toastoven.net/prod_alimtalk/alimtalk_02.png)
 <center>[그림 2] 알림톡 대량 발송</center>
 
 <h4>[참고 사항]</h4>
@@ -14,21 +14,21 @@
 * CSV 파일을 엑셀로 열어 저장할 시, 한글이 정상적으로 저장되지 않을 수 있으므로 검수 후 발송으로 치환이 정상적으로 되었는지 확인을 권장합니다.
 * 파일 업로드는 CSV 파일만 가능하며, 크기는 최대 20MB이고, 발송할 수 있는 최대 수신자 수는 10,000명입니다.
 
-![[그림 3] 발송 선택](http://static.toastoven.net/prod_alimtalk/image11.png)
+![[그림 3] 발송 선택](http://static.toastoven.net/prod_alimtalk/alimtalk_03.png)
 <center>[그림 3] 발송 선택</center>
 
 <h4>[참고 사항]</h4>
 * 검수 후 발송, 즉시 발송 2가지를 선택하여 발송할 수 있습니다.
 
 ### 조회/발송/취소
-![[그림 5] 대량 발송 조회](http://static.toastoven.net/prod_alimtalk/img13.png)
-<center>[그림 5] 대량 발송 조회</center>
+![[그림 4] 대량 발송 조회](http://static.toastoven.net/prod_alimtalk/alimtalk_04.png)
+<center>[그림 4] 대량 발송 조회</center>
 
 <h4>[참고 사항]</h4>
 * 발송 중 상태에서 취소 버튼을 누를 시, 일부 수신자에게 발송이 진행될 수 있습니다.
 
-![[그림 6] 수신자 내용 확인](http://static.toastoven.net/prod_alimtalk/img14.png)
-<center>[그림 6] 수신자 내용 확인</center>
+![[그림 5] 수신자 내용 확인](http://static.toastoven.net/prod_alimtalk/alimtalk_05.png)
+<center>[그림 5] 수신자 내용 확인</center>
 
 <h4>[참고 사항]</h4>
 * 수신자 별 조회에서 해당 수신자를 선택하여, 발송 내용이 정상적으로 치환되었는지 확인할 수 있습니다.
@@ -45,25 +45,25 @@
 
 
 ## 발송 결과 조회
-![[그림 7] 알림톡 발송 결과 조회](http://static.toastoven.net/prod_alimtalk/image15.png)
-<center>[그림 7] 알림톡 발송 결과 조회</center>
+![[그림 6] 알림톡 발송 결과 조회](http://static.toastoven.net/prod_alimtalk/alimtalk_06.png)
+<center>[그림 6] 알림톡 발송 결과 조회</center>
 
 ### 발송 결과 상세조회
-![[그림 8] 발송결과 상세 조회](http://static.toastoven.net/prod_alimtalk/image16.png)
-<center>[그림 8] 발송 결과 상세 조회</center>
+![[그림 7] 발송결과 상세 조회](http://static.toastoven.net/prod_alimtalk/alimtalk_07.png)
+<center>[그림 7] 발송 결과 상세 조회</center>
 
 ## 템플릿 관리
 ### 템플릿 리스트 조회
-![[그림 9] 템플릿 리스트 조회](http://static.toastoven.net/prod_alimtalk/image17.png)
-<center>[그림 9] 템플릿 리스트 조회</center>
+![[그림 8] 템플릿 리스트 조회](http://static.toastoven.net/prod_alimtalk/alimtalk_08.png)
+<center>[그림 8] 템플릿 리스트 조회</center>
 
 ### 템플릿 상세내역
-![[그림 10] 템플릿 상세내역](http://static.toastoven.net/prod_alimtalk/image18.png)
-<center>[그림 10] 템플릿 상세내역</center>
+![[그림 9] 템플릿 상세내역](http://static.toastoven.net/prod_alimtalk/alimtalk_09.png)
+<center>[그림 9] 템플릿 상세내역</center>
 
 ### 템플릿 등록
-![[그림 11] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/img19.png)
-<center>[그림 11] 템플릿 등록</center>
+![[그림 10] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/alimtalk_10.png)
+<center>[그림 10] 템플릿 등록</center>
 
 
 <h4>[주의 사항]</h4>
@@ -79,22 +79,22 @@
 * 자세한 사항은 [[템플릿 검수 가이드](https://www.bizmsg.kr/collected_statics/assets_landing/doc/alimtalk_template_guide.pdf)] 를 참고하시기 바랍니다.
 
 ### 템플릿 수정
-![[그림 12] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/img20.png)
-<center>[그림 12] 템플릿 수정</center>
+![[그림 11] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/alimtalk_11.png)
+<center>[그림 11] 템플릿 수정</center>
 
 <h4>[참고 사항]</h4>
 * <b><span style="color:red">반려</span></b> 상태의 템플릿만 수정 가능합니다.
 
 ### 템플릿 삭제
-![[그림 13] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image21.png)
-<center>[그림 13] 템플릿 삭제</center>
+![[그림 12] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/alimtalk_12.png)
+<center>[그림 12] 템플릿 삭제</center>
 
 <h4>[참고 사항]</h4>
 * <b><span style="color:red">요청/반려</span></b> 상태의 템플릿만 삭제 가능합니다.
 
 ### 템플릿 문의 등록
-![[그림 14] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/image22.png)
-<center>[그림 14] 템플릿 문의 등록</center>
+![[그림 13] 템플릿 등록](http://static.toastoven.net/prod_alimtalk/alimtalk_13.png)
+<center>[그림 13] 템플릿 문의 등록</center>
 
 <h4>[참고 사항]</h4>
 * <b><span style="color:red">검수 중/반려</span></b> 상태의 템플릿만 문의 등록이 가능합니다.
@@ -103,8 +103,8 @@
 
 ## 통계
 ### 통계 조회
-![[그림 15] 통계 조회 ](http://static.toastoven.net/prod_alimtalk/img25.png)
-<center>[그림 15] 통계 조회</center>
+![[그림 14] 통계 조회 ](http://static.toastoven.net/prod_alimtalk/alimtalk_14.png)
+<center>[그림 14] 통계 조회</center>
 
 * 발송 요청 기간, 플러스친구, 템플릿 별로 통계를 조회할 수 있습니다.
 * 발송요청, 성공, 실패, 대체발송건을 그래프와 표로 확인할 수 있습니다.
