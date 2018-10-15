@@ -50,6 +50,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "plusFriendId": String,
     "templateCode": String,
+    "requestDate": String,
     "recipientList": [{
         "recipientNo": String,
         "templateParameter": {
@@ -61,8 +62,9 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|plusFriendId|	String|	O | 플러스친구 아이디 |
+|plusFriendId|	String|	X | 플러스친구 아이디 |
 |templateCode|	String|	O | 등록한 발송 템플릿 코드 |
+|requestDate| String | X| 요청 일시 (yyyy-MM-dd HH:mm)<br>(입력하지 않을 경우 즉시 발송) |
 |recipientList|	List|	O|	수신자 리스트 (최대 1000명) |
 |- recipientNo|	String|	O|	수신번호 |
 |- templateParameter|	Object|	X|	템플릿 파라미터<br>(템플릿에 치환할 변수 포함 시, 필수) |
@@ -70,10 +72,11 @@ Content-Type: application/json;charset=UTF-8
 |-- value| String |	X |	치환 키에 매핑되는 Value값|
 
 * <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
+* <b>요청 일시는 호출하는 시점부터 90일 후까지 설정 가능합니다.</b>
 
 [예시]
 ```
-curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.1/appkeys/{appkey}/messages -d '{"plusFriendId": "{플러스친구 아이디}","templateCode": "{템플릿 코드}","recipientList":[{"recipientNo": "{수신번호}","templateParameter": { "{치환자 필드}": "{치환 데이터}" }}]}'
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.1/appkeys/{appkey}/messages -d '{"plusFriendId":"{플러스친구 아이디}","templateCode":"{템플릿 코드}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{수신번호}","templateParameter":{"{치환자 필드}":"{치환 데이터}"}}]}'
 ```
 
 #### 전문 발송 요청
@@ -107,6 +110,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "plusFriendId": String,
     "templateCode": String,
+    "requestDate": String,
     "recipientList": [
         {
             "recipientNo": String,
@@ -129,8 +133,9 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|plusFriendId|	String|	O | 플러스친구 아이디 |
+|plusFriendId|	String|	X | 플러스친구 아이디 |
 |templateCode|	String|	O | 등록한 발송 템플릿 코드 |
+|requestDate| String | X| 요청 일시 (yyyy-MM-dd HH:mm)<br>(입력하지 않을 경우 즉시 발송) |
 |recipientList|	List|	O|	수신자 리스트 (최대 1,000명) |
 |- recipientNo|	String|	O|	수신번호 |
 |- content|	String|	O|	내용 |
@@ -146,10 +151,11 @@ Content-Type: application/json;charset=UTF-8
 
 * <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
 * <b>본문과 버튼에 치환이 완성된 데이터를 넣어주세요.</b>
+* <b>요청 일시는 호출하는 시점부터 90일 후까지 설정 가능합니다.</b>
 
 [예시]
 ```
-curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.1/appkeys/{appkey}/raw-messages -d '{"plusFriendId": "{플러스친구 아이디}","templateCode": "{템플릿 코드}","recipientList":[{"recipientNo": "{수신번호}", "content": "{내용}", "buttons": [{ "ordering": "{버튼 순서}", "type": "{버튼 타입}", "name": "{버튼 이름}", "linkMo": "{모바일 웹 링크}" }]}]}'
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.1/appkeys/{appkey}/raw-messages -d '{"plusFriendId":"{플러스친구 아이디}","templateCode":"{템플릿 코드}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{수신번호}","content":"{내용}","buttons":[{"ordering":"{버튼 순서}","type":"{버튼 타입}","name":"{버튼 이름}","linkMo":"{모바일 웹 링크}"}]}]}'
 ```
 
 #### 응답
@@ -175,6 +181,64 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 |- isSuccessful|	Boolean| 성공 여부|
 |message|	Object|	본문 영역|
 |- requestId | String |	요청 아이디 |
+
+
+## 메시지 발송 취소
+
+#### 요청
+
+[URL]
+
+```
+DELETE  /alimtalk/v1.1/appkeys/{appkey}/messages/{requestId}
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+|값|	타입|	설명|
+|---|---|---|
+|appkey|	String|	고유의 appkey|
+|requestId| String| 요청 ID|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+
+[Query parameter]
+
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|recipientSeq|	String|	X | 수신자 시퀀스 번호<br>(입력하지 않으면 요청 ID의 모든 발송 건을 취소) |
+
+#### 응답
+```
+{
+  "header" : {
+      "resultCode" :  Integer,
+      "resultMessage" :  String,
+      "isSuccessful" :  boolean
+  }
+}
+```
+
+|값|	타입|	설명|
+|---|---|---|
+|header|	Object|	헤더 영역|
+|- resultCode|	Integer|	결과 코드|
+|- resultMessage|	String| 결과 메시지|
+|- isSuccessful|	Boolean| 성공 여부|
+
+[예시]
+```
+curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.1/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
+```
 
 ## 발송 리스트 조회
 
@@ -213,7 +277,7 @@ Content-Type: application/json;charset=UTF-8
 |recipientNo|	String|	X |	수신번호 |
 |plusFriendId|	String|	X |	플러스친구 아이디 |
 |templateCode|	String|	X |	템플릿 코드|
-|messageStatus| String |	X | 요청 상태 ( COMPLETED -> 성공, FAILED -> 실패 )	|
+|messageStatus| String |	X | 요청 상태 ( COMPLETED -> 성공, FAILED -> 실패, CANCEL -> 취소 )	|
 |resultCode| String |	X | 발송 결과 ( MRC01 -> 성공 MRC02 -> 실패 )	|
 |pageNum|	Integer|	X|	페이지 번호(Default : 1)|
 |pageSize|	Integer|	X|	조회 건수(Default : 15)|
@@ -276,7 +340,7 @@ Content-Type: application/json;charset=UTF-8
 |-- requestDate | String |	요청 일시 |
 |-- resendStatus | String |	재발송 상태 코드 |
 |-- resendStatusName | String |	재발송 상태 코드명 |
-|-- messageStatus | String |	요청 상태 ( COMPLETED -> 성공, FAILED -> 실패 ) |
+|-- messageStatus | String |	요청 상태 ( COMPLETED -> 성공, FAILED -> 실패, CANCEL -> 취소 ) |
 |-- resultCode | String |	수신 결과 코드 |
 |-- resultCodeName | String |	수신 결과 코드명 |
 |-- buttons | List |	버튼 리스트 |
@@ -394,7 +458,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- requestDate | String |	요청 일시 |
 |- resendStatus | String |	재발송 상태 코드 |
 |- resendStatusName | String |	재발송 상태 코드명 |
-|- messageStatus | String |	요청 상태 ( COMPLETED -> 성공, FAILED -> 실패 ) |
+|- messageStatus | String |	요청 상태 ( COMPLETED -> 성공, FAILED -> 실패, CANCEL -> 취소 ) |
 |- resultCode | String |	수신 결과 코드 |
 |- resultCodeName | String |	수신 결과 코드명 |
 |- buttons | List |	버튼 리스트 |
