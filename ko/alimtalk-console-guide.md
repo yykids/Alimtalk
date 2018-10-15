@@ -1,4 +1,4 @@
-## Notification > KakaoTalk Bizmessage > Alimtalk > Console Guide
+## Notification > KakaoTalk Bizmessage > 알림톡 > 콘솔 사용 가이드
 
 ## 알림톡 발송
 ![[그림 1] 알림톡 발송](http://static.toastoven.net/prod_alimtalk/alimtalk_01.png)
