@@ -17,7 +17,9 @@
 </tbody>
 </table>
 
-## 메시지 발송
+## 메시지
+
+### 메시지 발송
 
 #### 치환 발송 요청
 
@@ -183,7 +185,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 |- requestId | String |	요청 아이디 |
 
 
-## 메시지 발송 취소
+### 메시지 발송 취소
 
 #### 요청
 
@@ -240,7 +242,7 @@ Content-Type: application/json;charset=UTF-8
 curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.1/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
 ```
 
-## 발송 리스트 조회
+### 메시지 리스트 조회
 
 #### 요청
 
@@ -367,7 +369,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |RSC04|	재발송 성공|
 |RSC05|	재발송 실패|
 
-## 발송 단건 조회
+### 메시지 단건 조회
 
 #### 요청
 
@@ -470,7 +472,34 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |-- schemeIos | String |	IOS 앱 링크 (AL 타입일 경우 필수 필드) |
 |-- schemeAndroid | String |	Android 앱 링크 (AL 타입일 경우 필수 필드) |
 
-## 템플릿 리스트 조회
+## 플러스친구
+
+### 플러스친구 카테고리 조회
+
+### 플러스친구 사업자등록증 업로드
+
+### 플러스친구 등록
+
+### 플러스친구 토큰 인증
+
+### 플러스친구 리스트 조회
+
+###
+
+## 템플릿
+
+### 템플릿 등록
+#### 요청
+
+#### 응답
+
+### 템플릿 수정
+
+### 템플릿 삭제
+
+### 템플릿 문의하기
+
+### 템플릿 리스트 조회
 
 #### 요청
 
