@@ -384,7 +384,9 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	설명|
 |---|---|---|
-|appkey|	String|	고유의 appkey|
+|appkey|	String|	고유의 appkey |
+|requestId|	String|	요청 아이디 |
+|recipientSeq|	Integer|	수신자 시퀀스 번호 |
 
 [Header]
 ```
@@ -395,13 +397,6 @@ Content-Type: application/json;charset=UTF-8
 |값|	타입|	필수|	설명|
 |---|---|---|---|
 |X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
-
-[Query parameter]
-
-|값|	타입|	필수|	설명|
-|---|---|---|---|
-|requestId|	String|	O | 요청 아이디 |
-|recipientSeq|	Integer |	O | 수신자 시퀀스 번호 |
 
 [예시]
 ```
@@ -848,7 +843,8 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	설명|
 |---|---|---|
-|appkey|	String|	고유의 appkey|
+|appkey|	String|	고유의 appkey |
+|plusFriendId|	String|	플러스친구 아이디 |
 
 [Header]
 ```
@@ -926,7 +922,9 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	설명|
 |---|---|---|
-|appkey|	String|	고유의 appkey|
+|appkey|	String|	고유의 appkey |
+|plusFriendId|	String|	플러스친구 아이디 |
+|templateCode|	String|	템플릿 코드 |
 
 [Header]
 ```
@@ -1003,6 +1001,8 @@ Content-Type: application/json;charset=UTF-8
 |값|	타입|	설명|
 |---|---|---|
 |appkey|	String|	고유의 appkey|
+|plusFriendId|	String|	플러스친구 아이디 |
+|templateCode|	String|	템플릿 코드 |
 
 [Header]
 ```
@@ -1043,6 +1043,8 @@ Content-Type: application/json;charset=UTF-8
 |값|	타입|	설명|
 |---|---|---|
 |appkey|	String|	고유의 appkey|
+|plusFriendId|	String|	플러스친구 아이디 |
+|templateCode|	String|	템플릿 코드 |
 
 [Header]
 ```
