@@ -17,7 +17,9 @@
 </tbody>
 </table>
 
-## 메시지 발송
+## 메시지
+
+### 메시지 발송
 
 #### 치환 발송 요청
 
@@ -62,11 +64,11 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|plusFriendId|	String|	X | 플러스친구 아이디 |
-|templateCode|	String|	O | 등록한 발송 템플릿 코드 |
+|plusFriendId|	String|	X | 플러스친구 아이디 (최대 30자) |
+|templateCode|	String|	O | 등록한 발송 템플릿 코드 (최대 20자) |
 |requestDate| String | X| 요청 일시 (yyyy-MM-dd HH:mm)<br>(입력하지 않을 경우 즉시 발송) |
 |recipientList|	List|	O|	수신자 리스트 (최대 1000명) |
-|- recipientNo|	String|	O|	수신번호 |
+|- recipientNo|	String|	O|	수신번호 (최대 15자) |
 |- templateParameter|	Object|	X|	템플릿 파라미터<br>(템플릿에 치환할 변수 포함 시, 필수) |
 |-- key|	String|	X |	치환 키(#{key})|
 |-- value| String |	X |	치환 키에 매핑되는 Value값|
@@ -133,20 +135,20 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|plusFriendId|	String|	X | 플러스친구 아이디 |
-|templateCode|	String|	O | 등록한 발송 템플릿 코드 |
+|plusFriendId|	String|	X | 플러스친구 아이디 (최대 30자) |
+|templateCode|	String|	O | 등록한 발송 템플릿 코드 (최대 20자) |
 |requestDate| String | X| 요청 일시 (yyyy-MM-dd HH:mm)<br>(입력하지 않을 경우 즉시 발송) |
 |recipientList|	List|	O|	수신자 리스트 (최대 1,000명) |
-|- recipientNo|	String|	O|	수신번호 |
-|- content|	String|	O|	내용 |
-|- buttons|	List|	X|	버튼 |
+|- recipientNo|	String|	O|	수신번호 (최대 15자) |
+|- content|	String|	O|	내용 (최대 1000자) |
+|- buttons|	List |	X | 버튼 리스트 (최대 5개) |
 |-- ordering|	Integer|	X |	버튼 순서 (버튼이 있는 경우 필수)|
 |-- type| String |	X |	버튼 타입(WL:웹링크, AL:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
-|-- name| String |	X |	버튼 이름 (버튼이 있는 경우 필수)|
-|-- linkMo| String |	X |	모바일 웹 링크 (WL 타입일 경우 필수 필드)|
-|-- linkPc | String |	X |PC 웹 링크  (WL 타입일 경우 선택 필드) |
-|-- schemeIos | String | X |	IOS 앱 링크 (AL 타입일 경우 필수 필드) |
-|-- schemeAndroid | String | X |	Android 앱 링크 (AL 타입일 경우 필수 필드) |
+|-- name| String |	X |	버튼 이름 (버튼이 있는 경우 필수, 최대 14자)|
+|-- linkMo| String |	X |	모바일 웹 링크 (WL 타입일 경우 필수 필드, 최대 200자)|
+|-- linkPc | String |	X |PC 웹 링크  (WL 타입일 경우 선택 필드, 최대 200자) |
+|-- schemeIos | String | X |	IOS 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
+|-- schemeAndroid | String | X |	Android 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
 
 
 * <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
@@ -183,7 +185,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 |- requestId | String |	요청 아이디 |
 
 
-## 메시지 발송 취소
+### 메시지 발송 취소
 
 #### 요청
 
@@ -240,7 +242,7 @@ Content-Type: application/json;charset=UTF-8
 curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.1/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
 ```
 
-## 발송 리스트 조회
+### 메시지 리스트 조회
 
 #### 요청
 
@@ -367,7 +369,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |RSC04|	재발송 성공|
 |RSC05|	재발송 실패|
 
-## 발송 단건 조회
+### 메시지 단건 조회
 
 #### 요청
 
@@ -382,7 +384,9 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	설명|
 |---|---|---|
-|appkey|	String|	고유의 appkey|
+|appkey|	String|	고유의 appkey |
+|requestId|	String|	요청 아이디 |
+|recipientSeq|	Integer|	수신자 시퀀스 번호 |
 
 [Header]
 ```
@@ -393,13 +397,6 @@ Content-Type: application/json;charset=UTF-8
 |값|	타입|	필수|	설명|
 |---|---|---|---|
 |X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
-
-[Query parameter]
-
-|값|	타입|	필수|	설명|
-|---|---|---|---|
-|requestId|	String|	O | 요청 아이디 |
-|recipientSeq|	Integer |	O | 수신자 시퀀스 번호 |
 
 [예시]
 ```
@@ -470,7 +467,625 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |-- schemeIos | String |	IOS 앱 링크 (AL 타입일 경우 필수 필드) |
 |-- schemeAndroid | String |	Android 앱 링크 (AL 타입일 경우 필수 필드) |
 
-## 템플릿 리스트 조회
+## 플러스친구
+
+### 플러스친구 카테고리 조회
+
+#### 요청
+[URL]
+
+```
+GET  /alimtalk/v1.1/appkeys/{appkey}/plus-friends/categories
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+|값|	타입|	설명|
+|---|---|---|
+|appkey|	String|	고유의 appkey|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+
+#### 응답
+```
+{
+  "header" : {
+      "resultCode" :  Integer,
+      "resultMessage" :  String,
+      "isSuccessful" :  boolean
+  },
+  "categories" : [
+  {
+      "parentCode" : String,
+      "depth" : Integer,
+      "code" : String,
+      "name" : String,
+      "subCategories" : [
+        {
+        "parentCode" : String,
+        "depth" : Integer,
+        "code" : String,
+        "name" : String,
+        "subCategories" : [
+          {
+            "parentCode" : String,
+            "depth" : Integer,
+            "code" : String,
+            "name" : String
+          }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+|값|	타입|	설명|
+|---|---|---|
+|header|	Object|	헤더 영역|
+|- resultCode|	Integer|	결과 코드|
+|- resultMessage|	String| 결과 메시지|
+|- isSuccessful|	Boolean| 성공 여부|
+|categories|	Object|	카테고리|
+|- parentCode | String |	부모 코드 |
+|- depth | Integer |	카테고리 깊이 |
+|- code | String |	카테고리 코드 |
+|- name | String |	카테고리 이름 |
+|- subCategories | Object |	서브 카테고리 |
+|-- parentCode | String |	부모 코드 |
+|-- depth | Integer |	카테고리 깊이 |
+|-- code | String |	카테고리 코드 |
+|-- name | String |	카테고리 이름 |
+|-- subCategories | Object |	서브 카테고리 |
+|--- parentCode | String |	부모 코드 |
+|--- depth | Integer |	카테고리 깊이 |
+|--- code | String |	카테고리 코드 |
+|--- name | String |	카테고리 이름 |
+
+### 플러스친구 사업자등록증 업로드
+#### 요청
+[URL]
+
+```
+POST  /alimtalk/v1.1/appkeys/{appkey}/business-licenses
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+|값|	타입|	설명|
+|---|---|---|
+|appkey|	String|	고유의 appkey|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+
+[Request Body]
+
+```
+{
+  "fileName" : String,
+  "fileBody" : "{byte[] -> Base64 인코딩한 값}"
+}
+```
+
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|fileName|	String |	O | 파일 이름 |
+|fileBody|	Byte[] |	O | 파일 byte[]를 Base64로 인코딩한 값.(최대 500KB)<br>또는 byte 배열 값 |
+
+#### 응답
+```
+{
+  "header" : {
+    "resultCode" :  Integer,
+    "resultMessage" :  String,
+    "isSuccessful" :  boolean
+  },
+  "attachFile" : {
+    "fileSeq" : Integer
+  }
+}
+```
+
+|값|	타입|	설명|
+|---|---|---|
+|header|	Object|	헤더 영역|
+|- resultCode|	Integer|	결과 코드|
+|- resultMessage|	String| 결과 메시지|
+|- isSuccessful|	Boolean| 성공 여부|
+|attachFile|	Object|	첨부파일|
+|- fileSeq | Integer |	파일 시퀀스 |
+
+### 플러스친구 등록
+#### 요청
+[URL]
+
+```
+POST  /alimtalk/v1.1/appkeys/{appkey}/plus-friends
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+|값|	타입|	설명|
+|---|---|---|
+|appkey|	String|	고유의 appkey|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+
+[Request Body]
+
+```
+{
+  "plusFriendId" : String,
+  "phoneNo" : String,
+  "licenseNo" : String,
+  "categoryCode" : String,
+  "fileSeq" : Integer
+}
+```
+
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|plusFriendId|	String|	O | 플러스친구 아이디 (최대 30자) |
+|phoneNo|	String |	O | 관리자 핸드폰 번호 (최대 15자) |
+|licenseNo|	String |	O | 사업자등록 번호 (최대 10자) |
+|categoryCode|	String |	O | 카테고리 코드 (최대 11자) |
+|fileSeq|	Integer |	O | 파일 시퀀스 |
+
+#### 응답
+```
+{
+  "header" : {
+    "resultCode" :  Integer,
+    "resultMessage" :  String,
+    "isSuccessful" :  boolean
+  }
+}
+```
+
+|값|	타입|	설명|
+|---|---|---|
+|header|	Object|	헤더 영역|
+|- resultCode|	Integer|	결과 코드|
+|- resultMessage|	String| 결과 메시지|
+|- isSuccessful|	Boolean| 성공 여부|
+
+### 플러스친구 토큰 인증
+#### 요청
+[URL]
+
+```
+POST  /alimtalk/v1.1/appkeys/{appkey}/plus-friends/{plusFriendId}/tokens
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+|값|	타입|	설명|
+|---|---|---|
+|appkey|	String|	고유의 appkey|
+|plusFriendId|	String|	플러스친구 아이디 |
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+
+[Request Body]
+
+```
+{
+  "token" : "Integer"
+}
+```
+
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|token|	Integer |	O | 인증 토큰 (플러스친구 등록 API 호출 후, 카카오톡 앱으로 받은 인증 토큰) |
+
+#### 응답
+```
+{
+  "header" : {
+    "resultCode" :  Integer,
+    "resultMessage" :  String,
+    "isSuccessful" :  boolean
+  }
+}
+```
+
+|값|	타입|	설명|
+|---|---|---|
+|header|	Object|	헤더 영역|
+|- resultCode|	Integer|	결과 코드|
+|- resultMessage|	String| 결과 메시지|
+|- isSuccessful|	Boolean| 성공 여부|
+
+### 플러스친구 리스트 조회
+#### 요청
+
+[URL]
+
+```
+GET  /alimtalk/v1.1/appkeys/{appkey}/plus-friends
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+|값|	타입|	설명|
+|---|---|---|
+|appkey|	String|	고유의 appkey|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+
+[Query parameter] 1번 or 2번 조건 필수
+
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|plusFriendId|	String|	X | 플러스친구 아이디 |
+|status|	String|	X | 플러스친구 상태 코드 <br>(YSC02: 토큰 인증 대기중, YSC03: 정상 등록)|
+|isSearchKakaoStatus|	boolean| X | 카카오 상태 조회 여부(조회 하지 않을 시, kakaoStatus, kakaoStatusName 필드 null값)<br>default값 : true |
+
+#### 응답
+```
+{
+  "header" : {
+      "resultCode" :  Integer,
+      "resultMessage" :  String,
+      "isSuccessful" :  boolean
+  },
+  "plusFriends" : [
+    {
+      "plusFriendId" : String,
+      "plusFriendType" : String,
+      "senderKey" : String,
+      "categoryCode" : String,
+      "alimtalkDailyMaxCount" : Integer,
+      "friendtalkDailyMaxCount" : Integer,
+      "alimtalkSentCount" : Integer,
+      "friendtalkSentCount" : Integer,
+      "status" : String,
+      "statusName" : String,
+      "kakaoStatus" : String,
+      "kakaoStatusName" : String,
+      "kakaoProfileStatus" : String,
+      "kakaoProfileStatusName" : String,
+      "resendYn" : String,
+      "smsSendNo" : Integer,
+      "createDate" : String
+    }
+  ],
+  "totalCount" : Integer
+  }
+}
+```
+
+|값|	타입|	설명|
+|---|---|---|
+|header|	Object|	헤더 영역|
+|- resultCode|	Integer|	결과 코드|
+|- resultMessage|	String| 결과 메시지|
+|- isSuccessful|	Boolean| 성공 여부|
+|plusFriends|	Object|	플러스친구|
+|- plusFriendId | String |	플러스친구 아이디 |
+|- plusFriendType | String | 플러스친구 타입(NORMAL, GROUP)<br>default값: NORMAL |
+|- senderKey | String |	발신키 |
+|- categoryCode | String |	카테고리 코드 |
+|- alimtalkDailyMaxCount | Integer |	알림톡 일별 최대 발송 건수<br>(값이 0일 경우 건수 제한없음) |
+|- friendtalkDailyMaxCount | Integer |	친구톡 일별 최대 발송 건수<br>(값이 0일 경우 건수 제한없음) |
+|- alimtalkSentCount | Integer |	알림톡 일별 발송 건수<br>(값이 0일 경우 건수 제한없음) |
+|- friendtalkSentCount | Integer |	친구톡 일별 발송 건수<br>(값이 0일 경우 건수 제한없음) |
+|- status | String |	TOAST 플러스친구 상태 코드 <br>(YSC02: 등록 대기중, YSC03: 정상 등록) |
+|- statusName | String |	TOAST 플러스친구 상태명 (등록 대기중, 정상 등록) |
+|- kakaoStatus | String |	카카오 플러스친구 상태 코드<br>(A: 정상, S: 차단, D:삭제)<br>status가 YSC02일 경우, kakaoStatus null 값을 가집니다. |
+|- kakaoStatusName | String |	카카오 플러스친구 상태명 (정상, 차단, 삭제)<br>status가 YSC02일 경우, kakaoStatusName null 값을 가집니다. |
+|- kakaoProfileStatus | String |	카카오 플러스친구 프로필 상태 코드<br>(A: 활성화, B:차단, C: 비활성화, D:삭제 E:삭제 처리 중)<br>status가 YSC02일 경우, kakaoProfileStatus null 값을 가집니다.|
+|- kakaoProfileStatusName | String | 카카오 플러스친구 프로필 상태명 (활성화, 비활성화, 차단, 삭제 처리 중, 삭제)<br>status가 YSC02일 경우, kakaoProfileStatusName null 값을 가집니다. |
+|- resendYn | String |	발송 실패 설정(재발송) 여부|
+|- smsSendNo | String |	재발송 시, tc-sms 발신 번호 |
+|- createDate | String |	등록 일자 |
+|totalCount | Integer | 총 개수 |
+
+## 템플릿
+
+### 템플릿 등록
+#### 요청
+[URL]
+
+```
+POST  /alimtalk/v1.1/appkeys/{appkey}/plus-friends/{plusFriendId}/templates
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+|값|	타입|	설명|
+|---|---|---|
+|appkey|	String|	고유의 appkey |
+|plusFriendId|	String|	플러스친구 아이디 |
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+
+[Request Body]
+
+```
+{
+  "templateCode" : String,
+  "templateName" : String,
+  "templateContent" : String,
+  "buttons" : [
+    {
+      "ordering" : Integer,
+      "type" : String,
+      "name" : String,
+      "linkMo" : String,
+      "linkPc" : String,
+      "schemeIos" : String,
+      "schemeAndroid" : String
+    }
+  ]
+}
+```
+
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|templateCode|	String |	O | 템플릿 코드 (최대 20자) |
+|templateName|	String |	O | 템플릿명 (최대 20자) |
+|templateContent|	String |	O | 템플릿 본문 (최대 1000자) |
+|buttons|	List |	X | 버튼 리스트 (최대 5개) |
+|-ordering|	Integer |	X | 버튼 순서(1~5) |
+|-type|	String |	X | 버튼 타입(WL:웹링크, AL:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
+|-name| String |	X |	버튼 이름 (버튼이 있는 경우 필수, 최대 14자)|
+|-linkMo| String |	X |	모바일 웹 링크 (WL 타입일 경우 필수 필드, 최대 200자)|
+|-linkPc | String |	X |PC 웹 링크  (WL 타입일 경우 선택 필드, 최대 200자) |
+|-schemeIos | String | X |	IOS 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
+|-schemeAndroid | String | X |	Android 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
+
+#### 응답
+```
+{
+  "header" : {
+    "resultCode" :  Integer,
+    "resultMessage" :  String,
+    "isSuccessful" :  boolean
+  }
+}
+```
+
+|값|	타입|	설명|
+|---|---|---|
+|header|	Object|	헤더 영역|
+|- resultCode|	Integer|	결과 코드|
+|- resultMessage|	String| 결과 메시지|
+|- isSuccessful|	Boolean| 성공 여부|
+
+### 템플릿 수정
+#### 요청
+[URL]
+
+```
+PUT  /alimtalk/v1.1/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+|값|	타입|	설명|
+|---|---|---|
+|appkey|	String|	고유의 appkey |
+|plusFriendId|	String|	플러스친구 아이디 |
+|templateCode|	String|	템플릿 코드 |
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+
+[Request Body]
+
+```
+{
+  "templateName" : String,
+  "templateContent" : String,
+  "buttons" : [
+    {
+      "ordering" : Integer,
+      "type" : String,
+      "name" : String,
+      "linkMo" : String,
+      "linkPc" : String,
+      "schemeIos" : String,
+      "schemeAndroid" : String
+    }
+  ]
+}
+```
+
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|templateName|	String |	O | 템플릿명 (최대 20자) |
+|templateContent|	String |	O | 템플릿 본문 (최대 1000자) |
+|buttons|	List |	X | 버튼 리스트 (최대 5개) |
+|-ordering|	Integer |	X | 버튼 순서(1~5) |
+|-type|	String |	X | 버튼 타입(WL:웹링크, AL:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
+|-name| String |	X |	버튼 이름 (버튼이 있는 경우 필수, 최대 14자)|
+|-linkMo| String |	X |	모바일 웹 링크 (WL 타입일 경우 필수 필드, 최대 200자)|
+|-linkPc | String |	X |PC 웹 링크  (WL 타입일 경우 선택 필드, 최대 200자) |
+|-schemeIos | String | X |	IOS 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
+|-schemeAndroid | String | X |	Android 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
+
+#### 응답
+```
+{
+  "header" : {
+    "resultCode" :  Integer,
+    "resultMessage" :  String,
+    "isSuccessful" :  boolean
+  }
+}
+```
+
+|값|	타입|	설명|
+|---|---|---|
+|header|	Object|	헤더 영역|
+|- resultCode|	Integer|	결과 코드|
+|- resultMessage|	String| 결과 메시지|
+|- isSuccessful|	Boolean| 성공 여부|
+
+### 템플릿 삭제
+#### 요청
+[URL]
+
+```
+DELETE  /alimtalk/v1.1/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+|값|	타입|	설명|
+|---|---|---|
+|appkey|	String|	고유의 appkey|
+|plusFriendId|	String|	플러스친구 아이디 |
+|templateCode|	String|	템플릿 코드 |
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+#### 응답
+```
+{
+  "header" : {
+    "resultCode" :  Integer,
+    "resultMessage" :  String,
+    "isSuccessful" :  boolean
+  }
+}
+```
+
+|값|	타입|	설명|
+|---|---|---|
+|header|	Object|	헤더 영역|
+|- resultCode|	Integer|	결과 코드|
+|- resultMessage|	String| 결과 메시지|
+|- isSuccessful|	Boolean| 성공 여부|
+
+### 템플릿 문의하기
+#### 요청
+[URL]
+
+```
+PUT  /alimtalk/v1.1/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}/comments
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+|값|	타입|	설명|
+|---|---|---|
+|appkey|	String|	고유의 appkey|
+|plusFriendId|	String|	플러스친구 아이디 |
+|templateCode|	String|	템플릿 코드 |
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+
+[Request Body]
+
+```
+{
+  "comment" : String
+}
+```
+
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|comment|	String |	O | 문의 내용 |
+
+#### 응답
+```
+{
+  "header" : {
+    "resultCode" :  Integer,
+    "resultMessage" :  String,
+    "isSuccessful" :  boolean
+  }
+}
+```
+
+|값|	타입|	설명|
+|---|---|---|
+|header|	Object|	헤더 영역|
+|- resultCode|	Integer|	결과 코드|
+|- resultMessage|	String| 결과 메시지|
+|- isSuccessful|	Boolean| 성공 여부|
+
+### 템플릿 리스트 조회
 
 #### 요청
 

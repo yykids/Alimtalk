@@ -64,11 +64,11 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|plusFriendId|	String|	X | 플러스친구 아이디 |
-|templateCode|	String|	O | 등록한 발송 템플릿 코드 |
+|plusFriendId|	String|	X | 플러스친구 아이디 (최대 30자) |
+|templateCode|	String|	O | 등록한 발송 템플릿 코드 (최대 20자) |
 |requestDate| String | X| 요청 일시 (yyyy-MM-dd HH:mm)<br>(입력하지 않을 경우 즉시 발송) |
 |recipientList|	List|	O|	수신자 리스트 (최대 1000명) |
-|- recipientNo|	String|	O|	수신번호 |
+|- recipientNo|	String|	O|	수신번호 (최대 15자) |
 |- templateParameter|	Object|	X|	템플릿 파라미터<br>(템플릿에 치환할 변수 포함 시, 필수) |
 |-- key|	String|	X |	치환 키(#{key})|
 |-- value| String |	X |	치환 키에 매핑되는 Value값|
@@ -135,20 +135,20 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|plusFriendId|	String|	X | 플러스친구 아이디 |
-|templateCode|	String|	O | 등록한 발송 템플릿 코드 |
+|plusFriendId|	String|	X | 플러스친구 아이디 (최대 30자) |
+|templateCode|	String|	O | 등록한 발송 템플릿 코드 (최대 20자) |
 |requestDate| String | X| 요청 일시 (yyyy-MM-dd HH:mm)<br>(입력하지 않을 경우 즉시 발송) |
 |recipientList|	List|	O|	수신자 리스트 (최대 1,000명) |
-|- recipientNo|	String|	O|	수신번호 |
-|- content|	String|	O|	내용 |
-|- buttons|	List|	X|	버튼 |
+|- recipientNo|	String|	O|	수신번호 (최대 15자) |
+|- content|	String|	O|	내용 (최대 1000자) |
+|- buttons|	List |	X | 버튼 리스트 (최대 5개) |
 |-- ordering|	Integer|	X |	버튼 순서 (버튼이 있는 경우 필수)|
 |-- type| String |	X |	버튼 타입(WL:웹링크, AL:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
-|-- name| String |	X |	버튼 이름 (버튼이 있는 경우 필수)|
-|-- linkMo| String |	X |	모바일 웹 링크 (WL 타입일 경우 필수 필드)|
-|-- linkPc | String |	X |PC 웹 링크  (WL 타입일 경우 선택 필드) |
-|-- schemeIos | String | X |	IOS 앱 링크 (AL 타입일 경우 필수 필드) |
-|-- schemeAndroid | String | X |	Android 앱 링크 (AL 타입일 경우 필수 필드) |
+|-- name| String |	X |	버튼 이름 (버튼이 있는 경우 필수, 최대 14자)|
+|-- linkMo| String |	X |	모바일 웹 링크 (WL 타입일 경우 필수 필드, 최대 200자)|
+|-- linkPc | String |	X |PC 웹 링크  (WL 타입일 경우 선택 필드, 최대 200자) |
+|-- schemeIos | String | X |	IOS 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
+|-- schemeAndroid | String | X |	Android 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
 
 
 * <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
@@ -557,7 +557,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST  /alimtalk/v1.1/appkeys/{appKey}/business-licenses
+POST  /alimtalk/v1.1/appkeys/{appkey}/business-licenses
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -589,7 +589,7 @@ Content-Type: application/json;charset=UTF-8
 |값|	타입|	필수|	설명|
 |---|---|---|---|
 |fileName|	String |	O | 파일 이름 |
-|fileBody|	Byte[] |	O | 파일 byte[]를 Base64로 인코딩한 값.<br>또는 byte 배열 값 |
+|fileBody|	Byte[] |	O | 파일 byte[]를 Base64로 인코딩한 값.(최대 500KB)<br>또는 byte 배열 값 |
 
 #### 응답
 ```
@@ -619,7 +619,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST  /alimtalk/v1.1/appkeys/{appKey}/plus-friends
+POST  /alimtalk/v1.1/appkeys/{appkey}/plus-friends
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -653,10 +653,10 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|plusFriendId|	String |	O | 파일 이름 |
-|phoneNo|	String |	O | 관리자 핸드폰 번호 |
-|licenseNo|	String |	O | 사업자등록 번호 |
-|categoryCode|	String |	O | 카테고리 코드 |
+|plusFriendId|	String|	O | 플러스친구 아이디 (최대 30자) |
+|phoneNo|	String |	O | 관리자 핸드폰 번호 (최대 15자) |
+|licenseNo|	String |	O | 사업자등록 번호 (최대 10자) |
+|categoryCode|	String |	O | 카테고리 코드 (최대 11자) |
 |fileSeq|	Integer |	O | 파일 시퀀스 |
 
 #### 응답
@@ -682,7 +682,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST  /alimtalk/v1.1/appkeys/{appKey}/plus-friends/tokens
+POST  /alimtalk/v1.1/appkeys/{appkey}/plus-friends/{plusFriendId}/tokens
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -691,6 +691,7 @@ Content-Type: application/json;charset=UTF-8
 |값|	타입|	설명|
 |---|---|---|
 |appkey|	String|	고유의 appkey|
+|plusFriendId|	String|	플러스친구 아이디 |
 
 [Header]
 ```
@@ -706,14 +707,12 @@ Content-Type: application/json;charset=UTF-8
 
 ```
 {
-  "plusFriendId" : "String",
   "token" : "Integer"
 }
 ```
 
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|plusFriendId|	String |	O | 파일 이름 |
 |token|	Integer |	O | 인증 토큰 (플러스친구 등록 API 호출 후, 카카오톡 앱으로 받은 인증 토큰) |
 
 #### 응답
@@ -835,7 +834,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST  /alimtalk/v1.1/appkeys/{appKey}/plus-friends/{plusFriendId}/templates
+POST  /alimtalk/v1.1/appkeys/{appkey}/plus-friends/{plusFriendId}/templates
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -879,17 +878,17 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|templateCode|	String |	O | 템플릿 코드 |
-|templateName|	String |	O | 템플릿명 |
-|templateContent|	String |	O | 템플릿 본문 |
-|buttons|	List |	X | 버튼 리스트 |
+|templateCode|	String |	O | 템플릿 코드 (최대 20자) |
+|templateName|	String |	O | 템플릿명 (최대 20자) |
+|templateContent|	String |	O | 템플릿 본문 (최대 1000자) |
+|buttons|	List |	X | 버튼 리스트 (최대 5개) |
 |-ordering|	Integer |	X | 버튼 순서(1~5) |
 |-type|	String |	X | 버튼 타입(WL:웹링크, AL:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
-|-name|	String |	X | 버튼 이름 |
-|-linkMo|	String |	X | 모바일 웹 링크 (WL 타입일 경우 필수 필드) |
-|-linkPc|	String |	X | PC 웹 링크 (WL 타입일 경우 선택 필드) |
-|-schemeIos|	String |	X | IOS 앱 링크 (AL 타입일 경우 필수 필드) |
-|-schemeAndroid|	String |	X | Android 앱 링크 (AL 타입일 경우 필수 필드) |
+|-name| String |	X |	버튼 이름 (버튼이 있는 경우 필수, 최대 14자)|
+|-linkMo| String |	X |	모바일 웹 링크 (WL 타입일 경우 필수 필드, 최대 200자)|
+|-linkPc | String |	X |PC 웹 링크  (WL 타입일 경우 선택 필드, 최대 200자) |
+|-schemeIos | String | X |	IOS 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
+|-schemeAndroid | String | X |	Android 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
 
 #### 응답
 ```
@@ -914,7 +913,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-PUT  /alimtalk/v1.1/appkeys/{appKey}/plus-friends/{plusFriendId}/templates/{templateCode}
+PUT  /alimtalk/v1.1/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -958,16 +957,16 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|templateName|	String |	O | 템플릿명 |
-|templateContent|	String |	O | 템플릿 본문 |
-|buttons|	List |	X | 버튼 리스트 |
+|templateName|	String |	O | 템플릿명 (최대 20자) |
+|templateContent|	String |	O | 템플릿 본문 (최대 1000자) |
+|buttons|	List |	X | 버튼 리스트 (최대 5개) |
 |-ordering|	Integer |	X | 버튼 순서(1~5) |
 |-type|	String |	X | 버튼 타입(WL:웹링크, AL:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
-|-name|	String |	X | 버튼 이름 |
-|-linkMo|	String |	X | 모바일 웹 링크 (WL 타입일 경우 필수 필드) |
-|-linkPc|	String |	X | PC 웹 링크 (WL 타입일 경우 선택 필드) |
-|-schemeIos|	String |	X | IOS 앱 링크 (AL 타입일 경우 필수 필드) |
-|-schemeAndroid|	String |	X | Android 앱 링크 (AL 타입일 경우 필수 필드) |
+|-name| String |	X |	버튼 이름 (버튼이 있는 경우 필수, 최대 14자)|
+|-linkMo| String |	X |	모바일 웹 링크 (WL 타입일 경우 필수 필드, 최대 200자)|
+|-linkPc | String |	X |PC 웹 링크  (WL 타입일 경우 선택 필드, 최대 200자) |
+|-schemeIos | String | X |	IOS 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
+|-schemeAndroid | String | X |	Android 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
 
 #### 응답
 ```
@@ -992,7 +991,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-DELETE  /alimtalk/v1.1/appkeys/{appKey}/plus-friends/{plusFriendId}/templates/{templateCode}
+DELETE  /alimtalk/v1.1/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1034,7 +1033,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-PUT  /alimtalk/v1.1/appkeys/{appKey}/plus-friends/{plusFriendId}/templates/{templateCode}/comments
+PUT  /alimtalk/v1.1/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}/comments
 Content-Type: application/json;charset=UTF-8
 ```
 
