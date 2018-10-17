@@ -19,9 +19,7 @@
 
 ## 메시지
 
-### 메시지 발송
-
-#### 치환 발송 요청
+### 메시지 치환 발송 요청
 
 [URL]
 
@@ -81,7 +79,7 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.1/appkeys/{appkey}/messages -d '{"plusFriendId":"{플러스친구 아이디}","templateCode":"{템플릿 코드}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{수신번호}","templateParameter":{"{치환자 필드}":"{치환 데이터}"}}]}'
 ```
 
-#### 전문 발송 요청
+### 메시지 전문 발송 요청
 
 [URL]
 
