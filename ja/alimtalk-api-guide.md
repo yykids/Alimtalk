@@ -776,7 +776,6 @@ Content-Type: application/json;charset=UTF-8
   "plusFriends" : [
     {
       "plusFriendId" : String,
-      "plusFriendType" : String,
       "senderKey" : String,
       "categoryCode" : String,
       "alimtalkDailyMaxCount" : Integer,
@@ -807,7 +806,6 @@ Content-Type: application/json;charset=UTF-8
 |- isSuccessful|	Boolean| 성공 여부|
 |plusFriends|	Object|	플러스친구|
 |- plusFriendId | String |	플러스친구 아이디 |
-|- plusFriendType | String | 플러스친구 타입(NORMAL, GROUP)<br>default값: NORMAL |
 |- senderKey | String |	발신키 |
 |- categoryCode | String |	카테고리 코드 |
 |- alimtalkDailyMaxCount | Integer |	알림톡 일별 최대 발송 건수<br>(값이 0일 경우 건수 제한없음) |
@@ -1146,6 +1144,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
       "templates": [
           {
               "plusFriendId": String,
+              "plusFriendType": String,
               "templateCode": String,
               "templateName": String,
               "templateContent": String,
@@ -1188,6 +1187,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |templateListResponse|	Object|	본문 영역|
 |- templates | List |	템플릿 리스트 |
 |-- plusFriendId | String |	플러스친구 아이디 |
+|-- plusFriendType | String | 플러스친구 타입(NORMAL, GROUP) |
 |-- templateCode | String |	템플릿 코드 |
 |-- templateName | String |	템플릿명 |
 |-- templateContent | String |	템플릿 본문 |
