@@ -763,7 +763,7 @@ Content-Type: application/json;charset=UTF-8
 |---|---|---|---|
 |plusFriendId|	String|	X | 플러스친구 아이디 |
 |status|	String|	X | 플러스친구 상태 코드 <br>(YSC02: 토큰 인증 대기중, YSC03: 정상 등록)|
-|isSearchKakaoStatus|	boolean| X | 카카오 상태 조회 여부(조회 하지 않을 시, kakaoStatus, kakaoStatusName 필드 null값)<br>default값 : true |
+|isSearchKakaoStatus|	boolean| X | 카카오 상태 조회 여부(false일 경우, 카카오 상태 관련 필드 (kakaoStatus, kakaoProfileStatus 등) null값)<br>default값 : true |
 
 #### 응답
 ```
