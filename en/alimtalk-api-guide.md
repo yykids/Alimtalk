@@ -55,7 +55,10 @@ Content-Type: application/json;charset=UTF-8
         "recipientNo": String,
         "templateParameter": {
             String: String
-        }
+        },
+        "isResend" : boolean,
+        "resendType" : String,
+        "resendContent" : String
     }]
 }
 ```
@@ -70,6 +73,9 @@ Content-Type: application/json;charset=UTF-8
 |- templateParameter|	Object|	X|	템플릿 파라미터<br>(템플릿에 치환할 변수 포함 시, 필수) |
 |-- key|	String|	X |	치환 키(#{key})|
 |-- value| String |	X |	치환 키에 매핑되는 Value값|
+|- isResend|	boolean|	X|	발송 실패 시, 문자 대체발송 여부<br>Console에서 발송 실패 설정 시, default로 재발송 됩니다. |
+|- resendType|	String|	X|	대체 발송 타입 (SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
+|- resendContent|	String|	X|	대체 발송 내용<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
 
 * <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
 * <b>요청 일시는 호출하는 시점부터 90일 후까지 설정 가능합니다.</b>
@@ -125,7 +131,10 @@ Content-Type: application/json;charset=UTF-8
                     "schemeIos": String,
                     "schemeAndroid": String
                 }
-            ]
+            ],
+            "isResend" : boolean,
+            "resendType" : String,
+            "resendContent" : String
         }
     ]
 }
@@ -147,6 +156,9 @@ Content-Type: application/json;charset=UTF-8
 |-- linkPc | String |	X |PC 웹 링크  (WL 타입일 경우 선택 필드, 최대 200자) |
 |-- schemeIos | String | X |	IOS 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
 |-- schemeAndroid | String | X |	Android 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
+|- isResend|	boolean|	X|	발송 실패 시, 문자 대체발송 여부<br>Console에서 발송 실패 설정 시, default로 재발송 됩니다. |
+|- resendType|	String|	X|	대체 발송 타입 (SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
+|- resendContent|	String|	X|	대체 발송 내용<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
 
 
 * <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
