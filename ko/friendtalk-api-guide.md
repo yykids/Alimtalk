@@ -1,4 +1,4 @@
-## Notification > KakaoTalk Bizmessage > Friendtalk > API v1.1 Guide
+## Notification > KakaoTalk Bizmessage > 친구톡 > API v1.1 가이드
 
 ## 친구톡
 
