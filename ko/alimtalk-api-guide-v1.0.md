@@ -61,7 +61,7 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|plusFriendId|	String|	O | 플러스친구 아이디 |
+|plusFriendId|	String|	X | 플러스친구 아이디 |
 |templateCode|	String|	O | 등록한 발송 템플릿 코드 |
 |recipientList|	List|	O|	수신자 리스트 (최대 1000명) |
 |- recipientNo|	String|	O|	수신번호 |
@@ -129,7 +129,7 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|plusFriendId|	String|	O | 플러스친구 아이디 |
+|plusFriendId|	String|	X | 플러스친구 아이디 |
 |templateCode|	String|	O | 등록한 발송 템플릿 코드 |
 |recipientList|	List|	O|	수신자 리스트 (최대 1,000명) |
 |- recipientNo|	String|	O|	수신번호 |
