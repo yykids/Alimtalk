@@ -666,7 +666,7 @@ Content-Type: application/json;charset=UTF-8
 |plusFriendId|	String|	O | 플러스친구 아이디 (최대 30자) |
 |phoneNo|	String |	O | 관리자 핸드폰 번호 (최대 15자) |
 |licenseNo|	String |	O | 사업자등록 번호 (최대 10자) |
-|categoryCode|	String |	O | 카테고리 코드 (최대 11자) |
+|categoryCode|	String |	O | 카테고리 코드(11자)<br>카테고리 조회 API의 응답 참고<br>ex) 00100010001 건강(001) - 병원(0001) - 종합병원(0001) |
 |fileSeq|	Integer |	O | 파일 시퀀스 |
 
 #### 응답
