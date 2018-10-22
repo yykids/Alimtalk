@@ -788,6 +788,7 @@ Content-Type: application/json;charset=UTF-8
   "plusFriends" : [
     {
       "plusFriendId" : String,
+      "plusFriendType" : String,
       "senderKey" : String,
       "categoryCode" : String,
       "alimtalkDailyMaxCount" : Integer,
@@ -818,6 +819,7 @@ Content-Type: application/json;charset=UTF-8
 |- isSuccessful|	Boolean| 성공 여부|
 |plusFriends|	Object|	플러스친구|
 |- plusFriendId | String |	플러스친구 아이디 |
+|- plusFriendType | String | 플러스친구 타입(NORMAL, GROUP) |
 |- senderKey | String |	발신키 |
 |- categoryCode | String |	카테고리 코드 |
 |- alimtalkDailyMaxCount | Integer |	알림톡 일별 최대 발송 건수<br>(값이 0일 경우 건수 제한없음) |
