@@ -58,6 +58,7 @@ Content-Type: application/json;charset=UTF-8
         },
         "isResend" : boolean,
         "resendType" : String,
+        "resendTitle" : String,
         "resendContent" : String
     }]
 }
@@ -75,6 +76,7 @@ Content-Type: application/json;charset=UTF-8
 |-- value| String |	X |	치환 키에 매핑되는 Value값|
 |- isResend|	boolean|	X|	발송 실패 시, 문자 대체발송 여부<br>Console에서 발송 실패 설정 시, default로 재발송 됩니다. |
 |- resendType|	String|	X|	대체 발송 타입 (SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
+|- resendTitle|	String|	X|	LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 아이디로 재발송됩니다.) |
 |- resendContent|	String|	X|	대체 발송 내용<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
 
 * <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
@@ -134,6 +136,7 @@ Content-Type: application/json;charset=UTF-8
             ],
             "isResend" : boolean,
             "resendType" : String,
+            "resendTitle" : String,
             "resendContent" : String
         }
     ]
@@ -158,6 +161,7 @@ Content-Type: application/json;charset=UTF-8
 |-- schemeAndroid | String | X |	Android 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
 |- isResend|	boolean|	X|	발송 실패 시, 문자 대체발송 여부<br>Console에서 발송 실패 설정 시, default로 재발송 됩니다. |
 |- resendType|	String|	X|	대체 발송 타입 (SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
+|- resendTitle|	String|	X|	LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 아이디로 재발송됩니다.) |
 |- resendContent|	String|	X|	대체 발송 내용<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
 
 
