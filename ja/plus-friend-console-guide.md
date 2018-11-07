@@ -36,7 +36,7 @@
 
 ## 플러스친구 관리
 <b><span style="color:red">플러스친구 등록 시, 초기 일별 최대 발송량은 1,000건으로 제한됩니다.</span></b>
-일별 최대 발송량 수정은 support@toast.com 으로 별도 요청이 필요합니다.
+일별 최대 발송량 변경은 별도 요청이 필요합니다. (support@toast.com)
 ![[그림 6] 플러스친구 관리](http://static.toastoven.net/prod_alimtalk/plus_friend_05_1.png)
 <center>[그림 6] 플러스친구 관리</center>
 
