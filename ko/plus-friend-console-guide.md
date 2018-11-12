@@ -1,4 +1,4 @@
-## Notification > KakaoTalk Bizmessage > 플러스친구 > 콘솔 사용 가이드
+## Notification > KakaoTalk Bizmessage > PlusFriend > Console Guide
 
 ## 서비스 이용
 
@@ -16,7 +16,7 @@
 <center>[그림 2] SecretKey 생성</center>
 
 ### 플러스친구 등록
-플러스친구 등록이 완료되면 관리자 핸드폰으로 카카오톡 토큰 메시지가 전달됩니다.<br>
+플러스친구 등록이 완료되면 관리자 핸드폰으로 카카오톡 토큰 메시지가 전달됩니다.
 관리자로 등록된 핸드폰으로만 카카오톡 토큰 메시지가 전달됩니다.
 
 ![[그림 3] 플러스친구 등록](http://static.toastoven.net/prod_alimtalk/plus_friend_03.png)
@@ -34,9 +34,11 @@
 ![[그림 5] 토큰 등록](http://static.toastoven.net/prod_alimtalk/plus_friend_04.png)
 <center>[그림 5] 토큰 등록</center>
 
-## 발신 프로필 관리
-![[그림 6] 발신 프로필 관리](http://static.toastoven.net/prod_alimtalk/plus_friend_05.png)
-<center>[그림 6] 발신 프로필 관리</center>
+## 플러스친구 관리
+<b><span style="color:red">플러스친구 등록 시, 초기 일별 최대 발송량은 1,000건으로 제한됩니다.</span></b>
+일별 최대 발송량 변경은 별도 요청이 필요합니다. (support@toast.com)
+![[그림 6] 플러스친구 관리](http://static.toastoven.net/prod_alimtalk/plus_friend_05_1.png)
+<center>[그림 6] 플러스친구 관리</center>
 
 ## 발송 실패 설정
 
