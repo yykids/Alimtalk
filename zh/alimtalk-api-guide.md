@@ -316,6 +316,7 @@ Content-Type: application/json;charset=UTF-8
       "recipientNo" :  String,
       "content" :  String,
       "requestDate" :  String,
+      "receiveDate" : String,
       "resendStatus" :  String,
       "resendStatusName" :  String,
       "messageStatus" :  String,
@@ -354,6 +355,7 @@ Content-Type: application/json;charset=UTF-8
 |-- recipientNo | String |	수신 번호 |
 |-- content | String |	본문 |
 |-- requestDate | String |	요청 일시 |
+|-- receiveDate | String |	수신 일시 |
 |-- resendStatus | String |	재발송 상태 코드 |
 |-- resendStatusName | String |	재발송 상태 코드명 |
 |-- messageStatus | String |	요청 상태 ( COMPLETED -> 성공, FAILED -> 실패, CANCEL -> 취소 ) |
@@ -433,6 +435,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
       "recipientNo" :  String,
       "content" :  String,
       "requestDate" :  String,
+      "receiveDate" : String,
       "resendStatus" :  String,
       "resendStatusName" :  String,
       "messageStatus" :  String,
@@ -467,6 +470,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- recipientNo | String |	수신 번호 |
 |- content | String |	본문 |
 |- requestDate | String |	요청 일시 |
+|- receiveDate | String |	수신 일시 |
 |- resendStatus | String |	재발송 상태 코드 |
 |- resendStatusName | String |	재발송 상태 코드명 |
 |- messageStatus | String |	요청 상태 ( COMPLETED -> 성공, FAILED -> 실패, CANCEL -> 취소 ) |
