@@ -17,6 +17,10 @@
 </tbody>
 </table>
 
+## v1.2 API 소개
+* 발송/조회 API에 senderGroupingKey, recipientGroupingKey 필드가 추가되었습니다.
+* 발송 API 응답에 요청 성공/실패 필드가 추가되었습니다.
+
 ## 메시지
 
 ### 메시지 치환 발송 요청
@@ -485,7 +489,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
           "schemeIos": String,
           "schemeAndroid": String
         }
-      ]
+      ],
+      "senderGroupingKey": String,
+      "recipientGroupingKey": String
   }
 }
 ```
@@ -518,6 +524,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |-- linkPc | String |	PC 웹 링크  (WL 타입일 경우 선택 필드) |
 |-- schemeIos | String |	IOS 앱 링크 (AL 타입일 경우 필수 필드) |
 |-- schemeAndroid | String |	Android 앱 링크 (AL 타입일 경우 필수 필드) |
+|- senderGroupingKey | String | 발신 그룹핑 키 |
+|- recipientGroupingKey | String |	수신자 그룹핑 키 |
 
 ### 메시지 결과 업데이트 조회
 
