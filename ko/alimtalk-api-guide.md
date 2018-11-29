@@ -319,6 +319,8 @@ Content-Type: application/json;charset=UTF-8
 |recipientNo|	String|	X |	수신번호 |
 |plusFriendId|	String|	X |	플러스친구 아이디 |
 |templateCode|	String|	X |	템플릿 코드|
+|senderGroupingKey| String | X| 발신 그룹핑 키 |
+|recipientGroupingKey|	String|	X|	수신자 그룹핑 키 |
 |messageStatus| String |	X | 요청 상태 ( COMPLETED -> 성공, FAILED -> 실패, CANCEL -> 취소 )	|
 |resultCode| String |	X | 발송 결과 ( MRC01 -> 성공 MRC02 -> 실패 )	|
 |pageNum|	Integer|	X|	페이지 번호(Default : 1)|
