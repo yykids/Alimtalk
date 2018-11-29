@@ -423,7 +423,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 [URL]
 
 ```
-GET  /alimtalk/v1.2/appkeys/{appkey}/message/{requestId}/{recipientSeq}
+GET  /alimtalk/v1.2/appkeys/{appkey}/messages/{requestId}/{recipientSeq}
 Content-Type: application/json;charset=UTF-8
 ```
 
