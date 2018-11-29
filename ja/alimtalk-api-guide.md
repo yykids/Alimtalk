@@ -326,6 +326,8 @@ Content-Type: application/json;charset=UTF-8
 |pageNum|	Integer|	X|	페이지 번호(Default : 1)|
 |pageSize|	Integer|	X|	조회 건수(Default : 15)|
 
+* 90일 이전 데이터는 조회되지 않습니다.
+
 #### 응답
 ```
 {
@@ -516,6 +518,124 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |-- linkPc | String |	PC 웹 링크  (WL 타입일 경우 선택 필드) |
 |-- schemeIos | String |	IOS 앱 링크 (AL 타입일 경우 필수 필드) |
 |-- schemeAndroid | String |	Android 앱 링크 (AL 타입일 경우 필수 필드) |
+
+### 메시지 결과 업데이트 조회
+
+#### 요청
+
+[URL]
+
+```
+GET  /alimtalk/v1.2/appkeys/{appkey}/message-results
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+|값|	타입|	설명|
+|---|---|---|
+|appkey|	String|	고유의 appkey|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+
+[Query parameter] 1번 or 2번 조건 필수
+
+|값|	타입|	필수|	설명|
+|---|---|---|---|
+|startUpdateDate|	String|	필수 | 결과 업데이트 조회 시작 시간 (yyyy-MM-dd HH:mm)|
+|endUpdateDate|	String| 필수 |	결과 업데이트 조회 종료 시간 (yyyy-MM-dd HH:mm) |
+|pageNum|	Integer|	X|	페이지 번호(Default : 1)|
+|pageSize|	Integer|	X|	조회 건수(Default : 15)|
+
+#### 응답
+```
+{
+  "header" : {
+      "resultCode" :  Integer,
+      "resultMessage" :  String,
+      "isSuccessful" :  boolean
+  },
+  "messageSearchResultResponse" : {
+    "messages" : [
+    {
+      "requestId" :  String,
+      "recipientSeq" : Integer,
+      "plusFriendId" :  String,
+      "templateCode" :  String,
+      "recipientNo" :  String,
+      "content" :  String,
+      "requestDate" :  String,
+      "receiveDate" : String,
+      "resendStatus" :  String,
+      "resendStatusName" :  String,
+      "messageStatus" :  String,
+      "resultCode" :  String,
+      "resultCodeName" : String,
+      "buttons" : [
+        {
+          "ordering" :  Integer,
+          "type" :  String,
+          "name" :  String,
+          "linkMo" :  String,
+          "linkPc": String,
+          "schemeIos": String,
+          "schemeAndroid": String
+        }
+      ],
+      "senderGroupingKey": String,
+      "recipientGroupingKey": String
+    }
+    ],
+    "totalCount" :  Integer
+  }
+}
+```
+
+|값|	타입|	설명|
+|---|---|---|
+|header|	Object|	헤더 영역|
+|- resultCode|	Integer|	결과 코드|
+|- resultMessage|	String| 결과 메시지|
+|- isSuccessful|	Boolean| 성공 여부|
+|messageSearchResultResponse|	Object|	본문 영역|
+|- messages | List |	메시지 리스트 |
+|-- requestId | String |	요청 아이디 |
+|-- recipientSeq | Integer |	수신자 시퀀스 번호 |
+|-- plusFriendId | String |	플러스친구 아이디 |
+|-- templateCode | String |	템플릿 코드 |
+|-- recipientNo | String |	수신 번호 |
+|-- content | String |	본문 |
+|-- requestDate | String |	요청 일시 |
+|-- receiveDate | String |	수신 일시 |
+|-- resendStatus | String |	재발송 상태 코드 |
+|-- resendStatusName | String |	재발송 상태 코드명 |
+|-- messageStatus | String |	요청 상태 ( COMPLETED -> 성공, FAILED -> 실패, CANCEL -> 취소 ) |
+|-- resultCode | String |	수신 결과 코드 |
+|-- resultCodeName | String |	수신 결과 코드명 |
+|-- buttons | List |	버튼 리스트 |
+|--- ordering | Integer |	버튼 순서 |
+|--- type | String |	버튼 타입(WL:웹링크, AL:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
+|--- name | String |	버튼 이름 |
+|--- linkMo | String |	모바일 웹 링크 (WL 타입일 경우 필수 필드) |
+|--- linkPc | String |	PC 웹 링크  (WL 타입일 경우 선택 필드) |
+|--- schemeIos | String |	IOS 앱 링크 (AL 타입일 경우 필수 필드) |
+|--- schemeAndroid | String |	Android 앱 링크 (AL 타입일 경우 필수 필드) |
+|-- senderGroupingKey | String | 발신 그룹핑 키 |
+|-- recipientGroupingKey | String |	수신자 그룹핑 키 |
+|- totalCount | Integer | 총 개수 |
+
+[예시]
+```
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.2/appkeys/{appkey}/message-results?startUpdateDate=2018-05-01%2000:00&endUpdateDate=2018-05-30%2023:59"
+```
 
 ## 플러스친구
 
