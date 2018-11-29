@@ -59,7 +59,8 @@ Content-Type: application/json;charset=UTF-8
         "isResend" : boolean,
         "resendType" : String,
         "resendTitle" : String,
-        "resendContent" : String
+        "resendContent" : String,
+        "resendSendNo" : String
     }]
 }
 ```
@@ -78,6 +79,7 @@ Content-Type: application/json;charset=UTF-8
 |- resendType|	String|	X|	대체 발송 타입 (SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
 |- resendTitle|	String|	X|	LMS 대체 발송 제목 (최대 20자)<br>(값이 없을 경우, 플러스친구 아이디로 재발송됩니다.) |
 |- resendContent|	String|	X|	대체 발송 내용 (최대 1000자)<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
+|- resendSendNo | String| X| 대체 발송 발신번호 (최대 13자)<br><span style="color:red">(SMS 상품에 등록된 발신번호가 아닐 경우, 대체발송이 실패할 수 있습니다.)</span> |
 
 * <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
 * <b>요청 일시는 호출하는 시점부터 90일 후까지 설정 가능합니다.</b>
@@ -137,7 +139,8 @@ Content-Type: application/json;charset=UTF-8
             "isResend" : boolean,
             "resendType" : String,
             "resendTitle" : String,
-            "resendContent" : String
+            "resendContent" : String,
+            "resendSendNo" : String
         }
     ]
 }
@@ -163,6 +166,7 @@ Content-Type: application/json;charset=UTF-8
 |- resendType|	String|	X|	대체 발송 타입 (SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
 |- resendTitle|	String|	X|	LMS 대체 발송 제목 (최대 20자)<br>(값이 없을 경우, 플러스친구 아이디로 재발송됩니다.) |
 |- resendContent|	String|	X|	대체 발송 내용 (최대 1000자)<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
+|- resendSendNo | String| X| 대체 발송 발신번호 (최대 13자)<br><span style="color:red">(SMS 상품에 등록된 발신번호가 아닐 경우, 대체발송이 실패할 수 있습니다.)</span> |
 
 
 * <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>

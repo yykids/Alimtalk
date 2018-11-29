@@ -85,7 +85,6 @@ Content-Type: application/json;charset=UTF-8
 |- resendSendNo | String| X| 대체 발송 발신번호 (최대 13자)<br><span style="color:red">(SMS 상품에 등록된 발신번호가 아닐 경우, 대체발송이 실패할 수 있습니다.)</span> |
 |- recipientGroupingKey|	String|	X|	수신자 그룹핑 키 (최대 100자) |
 
-* <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
 * <b>요청 일시는 호출하는 시점부터 90일 후까지 설정 가능합니다.</b>
 
 [예시]
