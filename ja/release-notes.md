@@ -1,6 +1,6 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
 ### 2018.12.04
-* [API] v1.2 API 추가
+* [API] 알림톡 v1.2 API 추가
     - 발송 시, 발신/수신자 그룹핑키 필드가 추가되었습니다.
     - 발송 응답 필드에 각 수신자 별 <b>요청 성공/실패</b> 필드가 추가되었습니다.
 * [API] 발송 결과 업데이트 조회 API 추가
