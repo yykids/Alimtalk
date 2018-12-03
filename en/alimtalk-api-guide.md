@@ -96,6 +96,47 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.2/appkeys/{appkey}/messages -d '{"plusFriendId":"{플러스친구 아이디}","templateCode":"{템플릿 코드}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{수신번호}","templateParameter":{"{치환자 필드}":"{치환 데이터}"}}]}'
 ```
 
+#### 응답
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  },
+  "message": {
+    "requestId": String,
+    "senderGroupingKey": String,
+    "sendResults": [
+      {
+        "recipientSeq": Integer,
+        "recipientNo": String,
+        "resultCode": Integer,
+        "resultMessage": String,
+        "recipientGroupingKey": String
+      }
+    ]
+  }
+}
+```
+
+|값|	타입|	설명|
+|---|---|---|
+|header|	Object|	헤더 영역|
+|- resultCode|	Integer|	결과 코드|
+|- resultMessage|	String| 결과 메시지|
+|- isSuccessful|	Boolean| 성공 여부|
+|message|	Object|	본문 영역|
+|- requestId | String |	요청 아이디 |
+|- senderGroupingKey | String |	발신 그룹핑 키 |
+|- sendResults | Object | 발송 요청 결과 |
+|-- recipientSeq | Integer | 수신자 시퀀스 번호 |
+|-- recipientNo | String | 수신 번호 |
+|-- resultCode | Integer | 발송 요청 결과 코드 |
+|-- resultMessage | String | 발송 요청 결과 메시지 |
+|-- recipientGroupingKey | String | 수신자 그룹핑 키 |
+
 ### 메시지 전문 발송 요청
 
 [URL]
