@@ -12,7 +12,7 @@
 ### X-Secret-Key 생성
 콘솔에 접속하여 SecretKey를 생성합니다.
 
-![[그림 2] SecretKey 생성](http://static.toastoven.net/prod_alimtalk/plus_friend_08.png)
+![[그림 2] SecretKey 생성](http://static.toastoven.net/prod_alimtalk/plus_friend_02_1.png)
 <center>[그림 2] SecretKey 생성</center>
 
 ### 플러스친구 등록
@@ -37,16 +37,16 @@
 ## 플러스친구 관리
 <b><span style="color:red">플러스친구 등록 시, 초기 일별 최대 발송량은 1,000건으로 제한됩니다.</span></b>
 일별 최대 발송량 변경은 별도 요청이 필요합니다. (support@toast.com)
-![[그림 6] 플러스친구 관리](http://static.toastoven.net/prod_alimtalk/plus_friend_05_1.png)
+![[그림 6] 플러스친구 관리](http://static.toastoven.net/prod_alimtalk/plus_friend_06_1.png)
 <center>[그림 6] 플러스친구 관리</center>
 
 ## 발송 실패 설정
 
 ### SMS 정보 입력
-![[그림 7] SMS 정보 입력 ](http://static.toastoven.net/prod_alimtalk/plus_friend_06.png)
+![[그림 7] SMS 정보 입력 ](http://static.toastoven.net/prod_alimtalk/plus_friend_07_1.png)
 <center>[그림 7] SMS 정보 입력</center>
 
-![[그림 8] 플러스친구 발송 실패 설정 ](http://static.toastoven.net/prod_alimtalk/plus_friend_07.png)
+![[그림 8] 플러스친구 발송 실패 설정 ](http://static.toastoven.net/prod_alimtalk/plus_friend_08_1.png)
 <center>[그림 8] 플러스친구 발송 실패 설정</center>
 
 * 플러스친구 별, 발송 실패 설정을 할 수 있습니다.
