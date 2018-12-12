@@ -26,12 +26,12 @@
 * 플러스친구 아이디는 플러스친구 개설 시, 등록한 검색용 아이디를 입력해야 합니다.
 * 고객이 받는 카카오톡 비즈메시지는 카카오톡에 등록한 플러스친구 이름으로 노출됩니다.
 
-![[그림 4] 카카오톡 토큰](http://static.toastoven.net/prod_alimtalk/img06.png)
+![[그림 4] 카카오톡 토큰](http://static.toastoven.net/prod_alimtalk/plus_friend_04_1.png)
 <center>[그림 4] 카카오톡 토큰</center>
 
 ### 토큰 등록
 관리자 핸드폰으로 받은 토큰 메시지를 입력하면 등록이 완료됩니다.
-![[그림 5] 토큰 등록](http://static.toastoven.net/prod_alimtalk/plus_friend_04.png)
+![[그림 5] 토큰 등록](http://static.toastoven.net/prod_alimtalk/plus_friend_05.png)
 <center>[그림 5] 토큰 등록</center>
 
 ## 플러스친구 관리
