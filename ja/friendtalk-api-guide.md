@@ -76,7 +76,7 @@ Content-Type: application/json;charset=UTF-8
 |requestDate|	String|	X | 요청 일시 (yyyy-MM-dd HH:mm), 필드를 보내지 않을 경우, 즉시 발송 |
 |recipientList|	List|	O|	수신자 리스트 (최대 1000명) |
 |- recipientNo|	String|	O|	수신번호 |
-|- content|	String|	O|	내용 |
+|- content|	String|	O| 내용 (최대 1000자)<br>이미지 포함 시, 최대 400자 |
 |- imageSeq|	Integer|	X|	이미지 번호 |
 |- imageLink|	String|	X|	이미지 링크(이미지 번호를 입력할 경우 필수)|
 |- buttons|	List|	X|	버튼 |
@@ -90,6 +90,7 @@ Content-Type: application/json;charset=UTF-8
 |- isAd | Boolean | X |	광고 여부 (기본값 true) |
 
 * <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
+* <b>야간발송 제한(20:00 ~ 익일 08:00)</b>
 
 [예시]
 ```
