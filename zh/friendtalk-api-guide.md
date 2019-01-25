@@ -74,7 +74,7 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|plusFriendId|	String|	X | 플러스친구 아이디 |
+|plusFriendId|	String|	O | 플러스친구 아이디 (최대 30자) |
 |requestDate|	String|	X | 요청 일시 (yyyy-MM-dd HH:mm), 필드를 보내지 않을 경우, 즉시 발송 |
 |senderGroupingKey| String | X| 발신 그룹핑 키 (최대 100자) |
 |recipientList|	List|	O|	수신자 리스트 (최대 1000명) |
