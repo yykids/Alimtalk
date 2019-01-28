@@ -596,12 +596,12 @@ Content-Type: application/json;charset=UTF-8
 |---|---|---|---|
 |X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
 
-[Query parameter] 1번 or 2번 조건 필수
+[Query parameter]
 
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|startUpdateDate|	String|	필수 | 결과 업데이트 조회 시작 시간 (yyyy-MM-dd HH:mm)|
-|endUpdateDate|	String| 필수 |	결과 업데이트 조회 종료 시간 (yyyy-MM-dd HH:mm) |
+|startUpdateDate|	String|	O | 결과 업데이트 조회 시작 시간 (yyyy-MM-dd HH:mm)|
+|endUpdateDate|	String| O |	결과 업데이트 조회 종료 시간 (yyyy-MM-dd HH:mm) |
 |pageNum|	Integer|	X|	페이지 번호(Default : 1)|
 |pageSize|	Integer|	X|	조회 건수(Default : 15)|
 
