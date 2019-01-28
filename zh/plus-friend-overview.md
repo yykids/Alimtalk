@@ -5,11 +5,11 @@
 
 <b>* 2017년 5월 24일 옐로아이디에서 플러스친구로 변경되었습니다.</b>
 
-![[그림 1] 플러스친구 개설하기](http://static.toastoven.net/prod_alimtalk/img01.png)
+![[그림 1] 플러스친구 개설하기](http://static.toastoven.net/prod_alimtalk/plus_friend_overview_01.png)
 <center>[그림 1] 플러스친구 개설하기</center>
 
 <b>인증을 위해 등록 이후 홈 공개로 설정 변경이 필요합니다.</b>
-![[그림 2] 홈 공개 변경](http://static.toastoven.net/prod_alimtalk/img02.png)
+![[그림 2] 홈 공개 변경](http://static.toastoven.net/prod_alimtalk/plus_friend_overview_02.png)
 <center>[그림 2] 홈 공개 변경</center>
 
 ### 플러스친구 상태

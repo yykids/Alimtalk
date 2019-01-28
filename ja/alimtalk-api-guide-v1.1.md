@@ -1140,7 +1140,7 @@ Content-Type: application/json;charset=UTF-8
 |---|---|---|---|
 |plusFriendId|	String|	X |	플러스친구 아이디 |
 |templateCode|	String|	X |	템플릿 코드|
-|templateName|	String|	X |	템플릿 이름|
+|templateName|	String|	X |	템플릿명|
 |templateStatus| String |	X | 템플릿 상태 코드|
 |pageNum|	Integer|	X|	페이지 번호(Default : 1)|
 |pageSize|	Integer|	X|	조회 건수(Default : 15)|
