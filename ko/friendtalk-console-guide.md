@@ -19,6 +19,7 @@
 
 ### 대량 발송 요청
 하단 탭에서 대량 발송을 선택합니다.
+
 ![[그림 4] 친구톡 대량 발송](http://static.toastoven.net/prod_alimtalk/friendtalk_mass_04.png)
 
 * 내용에 템플릿 치환자 ex) #{이름} 을 입력 후, 템플릿 다운로드 버튼을 클릭 시 템플릿 치환자가 포함된 CSV 파일을 다운로드할 수 있습니다.
