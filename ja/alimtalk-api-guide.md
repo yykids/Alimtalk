@@ -1035,6 +1035,8 @@ Content-Type: application/json;charset=UTF-8
 |---|---|---|---|
 |recipientSeq|	String|	X | 수신자 시퀀스 번호<br>(입력하지 않으면 요청 ID의 모든 발송 건을 취소) |
 
+* 일반/인증 메시지 모두 동일한 API로 취소할 수 있습니다.
+
 #### 응답
 ```
 {
@@ -1091,6 +1093,7 @@ Content-Type: application/json;charset=UTF-8
 |---|---|---|---|
 |startUpdateDate|	String|	O | 결과 업데이트 조회 시작 시간 (yyyy-MM-dd HH:mm)|
 |endUpdateDate|	String| O |	결과 업데이트 조회 종료 시간 (yyyy-MM-dd HH:mm) |
+|alimtalkMessageType|	String| X |	알림톡 메시지 타입 (NORMAL, AUTH) |
 |pageNum|	Integer|	X|	페이지 번호(Default : 1)|
 |pageSize|	Integer|	X|	조회 건수(Default : 15)|
 
