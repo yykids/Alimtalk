@@ -1,4 +1,10 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
+### 2019.03.26
+* [Console] 알림톡 미리보기 UI 추가
+    - 알림톡 수신 화면 미리보기 UI가 추가 되었습니다.
+* [API] 인증용 알림톡 발송을 위한 Auth API 추가
+    - 인증용 알림톡 발송을 위해 Auth용 API가 추가되어, 발송 pool이 분리되었습니다.
+
 ### 2019.02.26
 * [Console] 알림톡 대량 발송 시, 발송 실패 버그 수정
     - 일부 유효하지 않은 수신번호로 인해, 발송 실패되는 버그를 수정하였습니다.
