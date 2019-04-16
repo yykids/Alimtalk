@@ -108,7 +108,7 @@ Content-Type: application/json;charset=UTF-8
 |- isAd | Boolean | X |	광고 여부 (기본값 true) |
 |- recipientGroupingKey|	String|	X|	수신자 그룹핑 키 (최대 100자) |
 
-* <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
+* <b>요청 일시는 호출하는 시점부터 90일 후까지 설정 가능합니다.</b>
 * <b>야간발송 제한(20:00 ~ 익일 08:00)</b>
 * <b>sms 상품을 통해 대체 발송되므로, sms 상품의 발송 API 명세에 따라 필드를 입력해야합니다. (sms 상품에 등록된 발신번호, 080수신거부번호, 각종 필드 길이제한 등)</b>
 * <b>지정한 대체발송 타입의 byte 제한을 초과하는 대체 발송 제목, 내용은 잘려서 대체발송 될 수 있습니다. ([[SMS 주의사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
