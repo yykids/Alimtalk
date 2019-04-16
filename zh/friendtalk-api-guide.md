@@ -67,12 +67,12 @@ Content-Type: application/json;charset=UTF-8
                 }
         ],
         "resendParameter": {
-          "isResend" : boolean,
-          "resendType" : String,
-          "resendTitle" : String,
-          "resendContent" : String,
-          "resendSendNo" : String,
-          "resendUnsubscribeNo": String
+            "isResend" : boolean,
+            "resendType" : String,
+            "resendTitle" : String,
+            "resendContent" : String,
+            "resendSendNo" : String,
+            "resendUnsubscribeNo": String
         },
         "isAd": Boolean,
         "recipientGroupingKey": String

@@ -574,68 +574,6 @@ Content-Type: application/json;charset=UTF-8
 |--- code | String |	카테고리 코드 |
 |--- name | String |	카테고리 이름 |
 
-### 플러스친구 사업자등록증 업로드
-#### 요청
-[URL]
-
-```
-POST  /alimtalk/v1.1/appkeys/{appkey}/business-licenses
-Content-Type: application/json;charset=UTF-8
-```
-
-[Path parameter]
-
-|값|	타입|	설명|
-|---|---|---|
-|appkey|	String|	고유의 appkey|
-
-[Header]
-```
-{
-  "X-Secret-Key": String
-}
-```
-|값|	타입|	필수|	설명|
-|---|---|---|---|
-|X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
-
-[Request Body]
-
-```
-{
-  "fileName" : String,
-  "fileBody" : "{byte[] -> Base64 인코딩한 값}"
-}
-```
-
-|값|	타입|	필수|	설명|
-|---|---|---|---|
-|fileName|	String |	O | 파일 이름 |
-|fileBody|	Byte[] |	O | 파일 byte[]를 Base64로 인코딩한 값.(최대 500KB)<br>또는 byte 배열 값 |
-
-#### 응답
-```
-{
-  "header" : {
-    "resultCode" :  Integer,
-    "resultMessage" :  String,
-    "isSuccessful" :  boolean
-  },
-  "attachFile" : {
-    "fileSeq" : Integer
-  }
-}
-```
-
-|값|	타입|	설명|
-|---|---|---|
-|header|	Object|	헤더 영역|
-|- resultCode|	Integer|	결과 코드|
-|- resultMessage|	String| 결과 메시지|
-|- isSuccessful|	Boolean| 성공 여부|
-|attachFile|	Object|	첨부파일|
-|- fileSeq | Integer |	파일 시퀀스 |
-
 ### 플러스친구 등록
 #### 요청
 [URL]
@@ -667,9 +605,7 @@ Content-Type: application/json;charset=UTF-8
 {
   "plusFriendId" : String,
   "phoneNo" : String,
-  "licenseNo" : String,
-  "categoryCode" : String,
-  "fileSeq" : Integer
+  "categoryCode" : String
 }
 ```
 
@@ -677,9 +613,7 @@ Content-Type: application/json;charset=UTF-8
 |---|---|---|---|
 |plusFriendId|	String|	O | 플러스친구 아이디 (최대 30자) |
 |phoneNo|	String |	O | 관리자 핸드폰 번호 (최대 15자) |
-|licenseNo|	String |	O | 사업자등록 번호 (최대 10자) |
 |categoryCode|	String |	O | 카테고리 코드(11자)<br>카테고리 조회 API의 응답 참고<br>ex) 00100010001 건강(001) - 병원(0001) - 종합병원(0001) |
-|fileSeq|	Integer |	O | 파일 시퀀스 |
 
 #### 응답
 ```
@@ -1140,7 +1074,7 @@ Content-Type: application/json;charset=UTF-8
 |---|---|---|---|
 |plusFriendId|	String|	X |	플러스친구 아이디 |
 |templateCode|	String|	X |	템플릿 코드|
-|templateName|	String|	X |	템플릿명|
+|templateName|	String|	X |	템플릿 이름|
 |templateStatus| String |	X | 템플릿 상태 코드|
 |pageNum|	Integer|	X|	페이지 번호(Default : 1)|
 |pageSize|	Integer|	X|	조회 건수(Default : 15)|
