@@ -82,14 +82,17 @@ Content-Type: application/json;charset=UTF-8
 |- templateParameter|	Object|	X|	템플릿 파라미터<br>(템플릿에 치환할 변수 포함 시, 필수) |
 |-- key|	String|	X |	치환 키(#{key})|
 |-- value| String |	X |	치환 키에 매핑되는 Value값|
-|- isResend|	boolean|	X|	발송 실패 시, 문자 대체발송 여부<br>Console에서 발송 실패 설정 시, default로 재발송 됩니다. |
+|- isResend|	boolean|	X|	발송 실패 시, 문자 대체발송 여부<br>Console에서 대체 발송 설정 시, default로 재발송 됩니다. |
 |- resendType|	String|	X|	대체 발송 타입 (SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
-|- resendTitle|	String|	X|	LMS 대체 발송 제목 (최대 20자)<br>(값이 없을 경우, 플러스친구 아이디로 재발송됩니다.) |
-|- resendContent|	String|	X|	대체 발송 내용 (최대 1000자)<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
-|- resendSendNo | String| X| 대체 발송 발신번호 (최대 13자)<br><span style="color:red">(SMS 상품에 등록된 발신번호가 아닐 경우, 대체발송이 실패할 수 있습니다.)</span> |
+|- resendTitle|	String|	X|	LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 아이디로 재발송됩니다.) |
+|- resendContent|	String|	X|	대체 발송 내용<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
+|- resendSendNo | String| X| 대체 발송 발신번호<br><span style="color:red">(SMS 상품에 등록된 발신번호가 아닐 경우, 대체발송이 실패할 수 있습니다.)</span> |
 |- recipientGroupingKey|	String|	X|	수신자 그룹핑 키 (최대 100자) |
 
 * <b>요청 일시는 호출하는 시점부터 90일 후까지 설정 가능합니다.</b>
+* <b>sms 상품을 통해 대체 발송되므로, sms 상품의 발송 API 명세에 따라 필드를 입력해야합니다. (sms 상품에 등록된 발신번호, 각종 필드 길이제한 등)</b>
+* <b>지정한 대체발송 타입의 byte 제한을 초과하는 대체 발송 제목, 내용은 잘려서 대체발송 될 수 있습니다. ([[SMS 주의사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
+* <b>KakaoTalk Bizmessage 상품은 국제 발송을 지원하지 않습니다.</b>
 
 [예시]
 ```
@@ -213,11 +216,11 @@ Content-Type: application/json;charset=UTF-8
 |-- linkPc | String |	X |PC 웹 링크  (WL 타입일 경우 선택 필드, 최대 200자) |
 |-- schemeIos | String | X |	IOS 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
 |-- schemeAndroid | String | X |	Android 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
-|- isResend|	boolean|	X|	발송 실패 시, 문자 대체발송 여부<br>Console에서 발송 실패 설정 시, default로 재발송 됩니다. |
+|- isResend|	boolean|	X|	발송 실패 시, 문자 대체발송 여부<br>Console에서 대체 발송 설정 시, default로 재발송 됩니다. |
 |- resendType|	String|	X|	대체 발송 타입 (SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
-|- resendTitle|	String|	X|	LMS 대체 발송 제목 (최대 20자)<br>(값이 없을 경우, 플러스친구 아이디로 재발송됩니다.) |
-|- resendContent|	String|	X|	대체 발송 내용 (최대 1000자)<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
-|- resendSendNo | String| X| 대체 발송 발신번호 (최대 13자)<br><span style="color:red">(SMS 상품에 등록된 발신번호가 아닐 경우, 대체발송이 실패할 수 있습니다.)</span> |
+|- resendTitle|	String|	X|	LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 아이디로 재발송됩니다.) |
+|- resendContent|	String|	X|	대체 발송 내용<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
+|- resendSendNo | String| X| 대체 발송 발신번호<br><span style="color:red">(SMS 상품에 등록된 발신번호가 아닐 경우, 대체발송이 실패할 수 있습니다.)</span> |
 |- recipientGroupingKey|	String|	X|	수신자 그룹핑 키 (최대 100자) |
 
 * <b>본문과 버튼에 치환이 완성된 데이터를 넣어주세요.</b>
@@ -571,7 +574,7 @@ Content-Type: application/json;charset=UTF-8
 |- templateParameter|	Object|	X|	템플릿 파라미터<br>(템플릿에 치환할 변수 포함 시, 필수) |
 |-- key|	String|	X |	치환 키(#{key})|
 |-- value| String |	X |	치환 키에 매핑되는 Value값|
-|- isResend|	boolean|	X|	발송 실패 시, 문자 대체발송 여부<br>Console에서 발송 실패 설정 시, default로 재발송 됩니다. |
+|- isResend|	boolean|	X|	발송 실패 시, 문자 대체발송 여부<br>Console에서 대체 발송 설정 시, default로 재발송 됩니다. |
 |- resendType|	String|	X|	대체 발송 타입 (SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
 |- resendTitle|	String|	X|	LMS 대체 발송 제목 (최대 20자)<br>(값이 없을 경우, 플러스친구 아이디로 재발송됩니다.) |
 |- resendContent|	String|	X|	대체 발송 내용 (최대 1000자)<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
@@ -702,7 +705,7 @@ Content-Type: application/json;charset=UTF-8
 |-- linkPc | String |	X |PC 웹 링크  (WL 타입일 경우 선택 필드, 최대 200자) |
 |-- schemeIos | String | X |	IOS 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
 |-- schemeAndroid | String | X |	Android 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
-|- isResend|	boolean|	X|	발송 실패 시, 문자 대체발송 여부<br>Console에서 발송 실패 설정 시, default로 재발송 됩니다. |
+|- isResend|	boolean|	X|	발송 실패 시, 문자 대체발송 여부<br>Console에서 대체 발송 설정 시, default로 재발송 됩니다. |
 |- resendType|	String|	X|	대체 발송 타입 (SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
 |- resendTitle|	String|	X|	LMS 대체 발송 제목 (최대 20자)<br>(값이 없을 경우, 플러스친구 아이디로 재발송됩니다.) |
 |- resendContent|	String|	X|	대체 발송 내용 (최대 1000자)<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
@@ -1264,68 +1267,6 @@ Content-Type: application/json;charset=UTF-8
 |--- code | String |	카테고리 코드 |
 |--- name | String |	카테고리 이름 |
 
-### 플러스친구 사업자등록증 업로드
-#### 요청
-[URL]
-
-```
-POST  /alimtalk/v1.2/appkeys/{appkey}/business-licenses
-Content-Type: application/json;charset=UTF-8
-```
-
-[Path parameter]
-
-|값|	타입|	설명|
-|---|---|---|
-|appkey|	String|	고유의 appkey|
-
-[Header]
-```
-{
-  "X-Secret-Key": String
-}
-```
-|값|	타입|	필수|	설명|
-|---|---|---|---|
-|X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
-
-[Request Body]
-
-```
-{
-  "fileName" : String,
-  "fileBody" : "{byte[] -> Base64 인코딩한 값}"
-}
-```
-
-|값|	타입|	필수|	설명|
-|---|---|---|---|
-|fileName|	String |	O | 파일 이름 |
-|fileBody|	Byte[] |	O | 파일 byte[]를 Base64로 인코딩한 값.(최대 500KB)<br>또는 byte 배열 값 |
-
-#### 응답
-```
-{
-  "header" : {
-    "resultCode" :  Integer,
-    "resultMessage" :  String,
-    "isSuccessful" :  boolean
-  },
-  "attachFile" : {
-    "fileSeq" : Integer
-  }
-}
-```
-
-|값|	타입|	설명|
-|---|---|---|
-|header|	Object|	헤더 영역|
-|- resultCode|	Integer|	결과 코드|
-|- resultMessage|	String| 결과 메시지|
-|- isSuccessful|	Boolean| 성공 여부|
-|attachFile|	Object|	첨부파일|
-|- fileSeq | Integer |	파일 시퀀스 |
-
 ### 플러스친구 등록
 #### 요청
 [URL]
@@ -1357,9 +1298,7 @@ Content-Type: application/json;charset=UTF-8
 {
   "plusFriendId" : String,
   "phoneNo" : String,
-  "licenseNo" : String,
-  "categoryCode" : String,
-  "fileSeq" : Integer
+  "categoryCode" : String
 }
 ```
 
@@ -1367,9 +1306,7 @@ Content-Type: application/json;charset=UTF-8
 |---|---|---|---|
 |plusFriendId|	String|	O | 플러스친구 아이디 (최대 30자) |
 |phoneNo|	String |	O | 관리자 핸드폰 번호 (최대 15자) |
-|licenseNo|	String |	O | 사업자등록 번호 (최대 10자) |
 |categoryCode|	String |	O | 카테고리 코드(11자)<br>카테고리 조회 API의 응답 참고<br>ex) 00100010001 건강(001) - 병원(0001) - 종합병원(0001) |
-|fileSeq|	Integer |	O | 파일 시퀀스 |
 
 #### 응답
 ```
@@ -1534,7 +1471,7 @@ Content-Type: application/json;charset=UTF-8
 |- kakaoStatusName | String |	카카오 플러스친구 상태명 (정상, 차단, 삭제)<br>status가 YSC02일 경우, kakaoStatusName null 값을 가집니다. |
 |- kakaoProfileStatus | String |	카카오 플러스친구 프로필 상태 코드<br>(A: 활성화, B:차단, C: 비활성화, D:삭제 E:삭제 처리 중)<br>status가 YSC02일 경우, kakaoProfileStatus null 값을 가집니다.|
 |- kakaoProfileStatusName | String | 카카오 플러스친구 프로필 상태명 (활성화, 비활성화, 차단, 삭제 처리 중, 삭제)<br>status가 YSC02일 경우, kakaoProfileStatusName null 값을 가집니다. |
-|- resendYn | String |	발송 실패 설정(재발송) 여부|
+|- resendYn | String | 대체 발송 설정(재발송) 여부|
 |- smsSendNo | String |	재발송 시, tc-sms 발신 번호 |
 |- createDate | String |	등록 일자 |
 |totalCount | Integer | 총 개수 |
