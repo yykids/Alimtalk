@@ -91,6 +91,9 @@ Content-Type: application/json;charset=UTF-8
 
 * <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
 * <b>야간발송 제한(20:00 ~ 익일 08:00)</b>
+* <b>지정한 대체발송 타입의 byte 제한을 초과하는 대체 발송 제목, 내용은 잘려서 대체발송 될 수 있습니다. ([[SMS 주의사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
+* <b>친구톡 광고 메시지는 광고 sms API로 대체 발송되므로, 반드시 080수신 거부 번호를 등록해야 정상 대체발송 됩니다.</b>
+* <b>KakaoTalk Bizmessage 상품은 국제 발송을 지원하지 않습니다.</b>
 
 [예시]
 ```
