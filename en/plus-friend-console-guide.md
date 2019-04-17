@@ -1,5 +1,10 @@
 ## Notification > KakaoTalk Bizmessage > PlusFriend > Console Guide
 
+## 플러스친구 등록/인증
+* 카카오톡 비즈메시지를 발송하려면 플러스친구를 먼저 등록하셔야 합니다.
+* 플러스친구는 카카오톡 홈페이지 ( https://center-pf.kakao.com ) 에서 무료로 만들 수 있습니다.
+* 비지니스 인증을 받은 플러스친구만 TOAST KakaoTalk Bizmessage 상품에 추가할 수 있습니다. ([[플러스친구 비지니스 인증](https://static.toastoven.net/prod_alimtalk/plusfriend_business_certify_guide_20190311.pdf)] 참고)
+
 ## 플러스친구 추가
 
 플러스친구 등록이 완료되면 관리자 핸드폰으로 카카오톡 토큰 메시지가 전달됩니다.
