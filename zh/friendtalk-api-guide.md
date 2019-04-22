@@ -1,4 +1,4 @@
-## Notification > KakaoTalk Bizmessage > Friendtalk > API v1.2 Guide
+## Notification > KakaoTalk Bizmessage > Friendtalk > API v1.3 Guide
 
 ## 친구톡
 
@@ -23,7 +23,7 @@
 [URL]
 
 ```
-POST  /friendtalk/v1.2/appkeys/{appkey}/messages
+POST  /friendtalk/v1.3/appkeys/{appkey}/messages
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -66,6 +66,14 @@ Content-Type: application/json;charset=UTF-8
                     "schemeAndroid": String
                 }
         ],
+        "resendParameter": {
+            "isResend" : boolean,
+            "resendType" : String,
+            "resendTitle" : String,
+            "resendContent" : String,
+            "resendSendNo" : String,
+            "resendUnsubscribeNo": String
+        },
         "isAd": Boolean,
         "recipientGroupingKey": String
     }]
@@ -90,15 +98,27 @@ Content-Type: application/json;charset=UTF-8
 |-- linkPc | String |	X |PC 웹 링크  (WL 타입일 경우 선택 필드) |
 |-- schemeIos | String | X |	IOS 앱 링크 (AL 타입일 경우 필수 필드) |
 |-- schemeAndroid | String | X |	Android 앱 링크 (AL 타입일 경우 필수 필드) |
+|- resendParameter|	Object|	X| 대체 발송 정보 |
+|-- isResend|	boolean|	X|	발송 실패 시, 문자 대체발송 여부<br>Console에서 대체 발송 설정 시, default로 재발송 됩니다. |
+|-- resendType|	String|	X|	대체 발송 타입 (SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
+|-- resendTitle|	String|	X|	LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 아이디로 재발송됩니다.) |
+|-- resendContent|	String|	X|	대체 발송 내용<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
+|-- resendSendNo | String| X| 대체 발송 발신번호<br><span style="color:red">(SMS 상품에 등록된 발신번호가 아닐 경우, 대체발송이 실패할 수 있습니다.)</span> |
+|-- resendUnsubscribeNo | String| X| 대체 발송 080 수신거부번호<br><span style="color:red">(SMS 상품에 등록된 080수신거부번호가 아닐 경우, 대체발송이 실패할 수 있습니다.)</span> |
 |- isAd | Boolean | X |	광고 여부 (기본값 true) |
 |- recipientGroupingKey|	String|	X|	수신자 그룹핑 키 (최대 100자) |
 
-* <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
+* <b>요청 일시는 호출하는 시점부터 90일 후까지 설정 가능합니다.</b>
 * <b>야간발송 제한(20:00 ~ 익일 08:00)</b>
+* <b>sms 상품을 통해 대체 발송되므로, sms 상품의 발송 API 명세에 따라 필드를 입력해야합니다. (sms 상품에 등록된 발신번호, 080수신거부번호, 각종 필드 길이제한 등)</b>
+* <b>지정한 대체발송 타입의 byte 제한을 초과하는 대체 발송 제목, 내용은 잘려서 대체발송 될 수 있습니다. ([[SMS 주의사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
+* <b>친구톡 광고 메시지는 광고 sms API로 대체 발송되므로, 반드시 080수신 거부 번호를 등록해야 정상 대체발송 됩니다.</b>
+* <b>친구톡 광고 메시지의 resendContent 필드를 입력할 경우, sms 광고 API의 <span style="color:red">광고 문구</span>를 필수로 입력해야 정상 대체발송 됩니다. `(광고)내용[무료 수신거부]080XXXXXXX`</b>
+* <b>친구톡 광고 메시지의 resendContent 필드가 없을 경우, 등록된 080수신거부번호로 <span style="color:red">광고 문구</span>를 자동 생성해서 대체발송 됩니다.</b>
 
 [예시]
 ```
-curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/friendtalk/v1.2/appkeys/{appkey}/messages -d '{"plusFriendId":"@플러스친구","requestDate":"yyyy-MM-dd HH:mm","recipientList":[{"recipientNo":"010-0000-0000","imageSeq":1,"imageLink":"https://toast.com","content":"내용","buttons":[{"ordering":1,"type":"WL","name":"버튼1","linkMo":"https://toast.com","linkPc":"https://toast.com"}]}]}'
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/friendtalk/v1.3/appkeys/{appkey}/messages -d '{"plusFriendId":"@플러스친구","requestDate":"yyyy-MM-dd HH:mm","recipientList":[{"recipientNo":"010-0000-0000","imageSeq":1,"imageLink":"https://toast.com","content":"내용","buttons":[{"ordering":1,"type":"WL","name":"버튼1","linkMo":"https://toast.com","linkPc":"https://toast.com"}]}]}'
 ```
 
 #### 응답
@@ -149,7 +169,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 [URL]
 
 ```
-GET  /friendtalk/v1.2/appkeys/{appkey}/messages
+GET  /friendtalk/v1.3/appkeys/{appkey}/messages
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -241,7 +261,7 @@ Content-Type: application/json;charset=UTF-8
 
 [예시]
 ```
-curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.2/appkeys/{appkey}/messages?startRequestDate=2018-05-01%2000:00&endRequestDate=2018-05-30%2023:59"
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.3/appkeys/{appkey}/messages?startRequestDate=2018-05-01%2000:00&endRequestDate=2018-05-30%2023:59"
 ```
 
 #### 재발송 상태
@@ -260,7 +280,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 [URL]
 
 ```
-GET  /friendtalk/v1.2/appkeys/{appkey}/messages/{requestId}/{recipientSeq}
+GET  /friendtalk/v1.3/appkeys/{appkey}/messages/{requestId}/{recipientSeq}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -289,7 +309,7 @@ Content-Type: application/json;charset=UTF-8
 
 [예시]
 ```
-curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.2/appkeys/{appkey}/messages/{requestId}/{recipientSeq}"
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.3/appkeys/{appkey}/messages/{requestId}/{recipientSeq}"
 ```
 
 #### 응답
@@ -377,7 +397,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 [URL]
 
 ```
-GET  /friendtalk/v1.2/appkeys/{appkey}/message-results
+GET  /friendtalk/v1.3/appkeys/{appkey}/message-results
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -464,7 +484,7 @@ Content-Type: application/json;charset=UTF-8
 
 [예시]
 ```
-curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.2/appkeys/{appkey}/message-results?startUpdateDate=2018-05-01%20:00&endUpdateDate=2018-05-30%20:59"
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.3/appkeys/{appkey}/message-results?startUpdateDate=2018-05-01%20:00&endUpdateDate=2018-05-30%20:59"
 ```
 
 ## 이미지 관리
@@ -475,7 +495,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 [URL]
 
 ```
-POST  /friendtalk/v1.2/appkeys/{appkey}/images
+POST  /friendtalk/v1.3/appkeys/{appkey}/images
 Content-Type: multipart/form-data
 ```
 
@@ -503,7 +523,7 @@ Content-Type: multipart/form-data
 
 [예시]
 ```
-curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.2/appkeys/{appkey}/images" -F "image=@friend-ricecake02.jpeg"
+curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.3/appkeys/{appkey}/images" -F "image=@friend-ricecake02.jpeg"
 ```
 
 #### 응답
@@ -541,7 +561,7 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 [URL]
 
 ```
-GET  /friendtalk/v1.2/appkeys/{appkey}/images
+GET  /friendtalk/v1.3/appkeys/{appkey}/images
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -570,7 +590,7 @@ Content-Type: application/json;charset=UTF-8
 
 [예시]
 ```
-curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.2/appkeys/{appkey}/images?pageNum=1&pageSize=15"
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.3/appkeys/{appkey}/images?pageNum=1&pageSize=15"
 ```
 
 #### 응답
@@ -619,7 +639,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 [URL]
 
 ```
-DELETE  /friendtalk/v1.2/appkeys/{appkey}/images
+DELETE  /friendtalk/v1.3/appkeys/{appkey}/images
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -647,7 +667,7 @@ Content-Type: application/json;charset=UTF-8
 
 [예시]
 ```
-curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.2/appkeys/{appkey}/images?imageSeq=1,2,3"
+curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.3/appkeys/{appkey}/images?imageSeq=1,2,3"
 ```
 
 #### 응답

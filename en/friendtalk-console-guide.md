@@ -51,6 +51,19 @@
 * 파일 형식 : jpg, png
 * 파일 크기 : 최대 500 KB
 
+## 대체 발송 관리
+
+* 알림톡/친구톡 각 메시지 타입에 따라 플러스친구의 대체 발송 설정을 할 수 있습니다.
+* 대체 발송 설정을 한 플러스친구의 메시지만 LMS 또는 SMS로 대체 발송됩니다.
+* SMS appkey 수정 시, 모든 플러스친구의 대체 발송 설정은 초기화 됩니다.
+* sms 상품을 통해 대체 발송되므로, sms 상품의 발송 API 명세에 따라 필드를 입력해야합니다. (sms 상품에 등록된 발신번호, 각종 필드 길이제한 등)
+* 지정한 대체발송 타입의 byte 제한을 초과하는 대체 발송 제목, 내용은 잘려서 대체발송 될 수 있습니다. ([[SMS 주의사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)
+* 친구톡 광고 메시지는 광고 sms API로 대체 발송되므로, 반드시 080수신 거부 번호를 등록해야 정상 대체발송 됩니다.
+* 친구톡 광고 메시지의 resendContent 필드를 입력할 경우, sms 광고 API의 <span style="color:red">광고 문구</span>를 필수로 입력해야 정상 대체발송 됩니다. `(광고)내용[무료 수신거부]080XXXXXXX`
+* 친구톡 광고 메시지의 resendContent 필드가 없을 경우, 등록된 080수신거부번호로 <span style="color:red">광고 문구</span>를 자동 생성해서 대체발송 됩니다.
+
+![plusfriend_03_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_03-1_201904.png)
+
 ## 통계
 
 ![friendtalk_04_201812.png](https://static.toastoven.net/prod_alimtalk/friendtalk_04_201812.png)
