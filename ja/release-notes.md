@@ -1,5 +1,5 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
-### 2019.04.29
+### 2019.04.30
 * [Console] 플러스친구 등록 시, 비지니스 인증 방식 롤백
     - 플러스친구의 비지니스 인증이 장시간 소요되어, 플러스친구 등록 방식을 이전 방식으로 변경하였습니다.
 
