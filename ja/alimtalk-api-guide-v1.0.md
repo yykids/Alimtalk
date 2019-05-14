@@ -1,13 +1,13 @@
-## Notification > KakaoTalk Bizmessage > Alimtalk > API v1.0 Guide
+## Notification > KakaoTalk Bizmessage > お知らせトーク > API v1.0 Guide
 
-## 알림톡
+## お知らせトーク
 
-#### [API 도메인]
+#### [APIドメイン]
 
 <table>
 <thead>
 <tr>
-<th>도메인</th>
+<th>ドメイン</th>
 </tr>
 </thead>
 <tbody>
@@ -17,9 +17,9 @@
 </tbody>
 </table>
 
-## 메시지 발송
+## メッセージの送信
 
-#### 치환 발송 요청
+#### 置換送信リクエスト
 
 [URL]
 
@@ -30,9 +30,9 @@ Content-Type: application/json;charset=UTF-8
 
 [Path parameter]
 
-|값|	타입|	설명|
-|---|---|---|
-|appkey|	String|	고유의 appkey|
+| 値 | タイプ | 説明 |
+| ------ | ------ | ------ |
+| appkey | String | 固有のアプリケーションキー |
 
 [Header]
 ```
@@ -40,9 +40,9 @@ Content-Type: application/json;charset=UTF-8
   "X-Secret-Key": String
 }
 ```
-|값|	타입|	필수|	설명|
-|---|---|---|---|
-|X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+| 値       | タイプ | 必須 | 説明                                  |
+| ------------ | ------ | ---- | ---------------------------------------- |
+| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./plus-friend-console-guide/#x-secret-key)] |
 
 [Request body]
 
@@ -59,24 +59,24 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-|값|	타입|	필수|	설명|
-|---|---|---|---|
-|plusFriendId|	String|	X | 플러스친구 아이디 |
-|templateCode|	String|	O | 등록한 발송 템플릿 코드 |
-|recipientList|	List|	O|	수신자 리스트 (최대 1000명) |
-|- recipientNo|	String|	O|	수신번호 |
-|- templateParameter|	Object|	X|	템플릿 파라미터<br>(템플릿에 치환할 변수 포함 시, 필수) |
-|-- key|	String|	X |	치환 키(#{key})|
-|-- value| String |	X |	치환 키에 매핑되는 Value값|
+| 値              | タイプ | 必須 | 説明                            |
+| ------------------- | ------ | ---- | ---------------------------------- |
+| plusFriendId        | String | X    | プラスフレンドID                           |
+| templateCode        | String | O    | 登録した送信テンプレートコード                 |
+| recipientList       | List   | O    | 受信者リスト(最大1000人)                   |
+| - recipientNo       | String | O    | 受信番号                         |
+| - templateParameter | Object | X    | テンプレートパラメータ<br>(テンプレートに置換する変数が含まれる時は必須) |
+| -- key              | String | X    | 置換キー(#{key})                       |
+| -- value            | String | X    | 置換キーにマッピングされるValue値             |
 
-* <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
+* <b>プラスフレンドIDフィールドを送信しない場合、最初に登録したプラスフレンドに送信されます。</b>
 
-[예시]
+[例]
 ```
-curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.0/appkeys/{appkey}/messages -d '{"plusFriendId": "{플러스친구 아이디}","templateCode": "{템플릿 코드}","recipientList":[{"recipientNo": "{수신번호}","templateParameter": { "{치환자 필드}": "{치환 데이터}" }}]}'
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.0/appkeys/{appkey}/messages -d '{"plusFriendId": "{プラスフレンドID}","templateCode": "{テンプレートコード}","recipientList":[{"recipientNo": "{受信番号}","templateParameter": { "{日本語識別子フィールド}": "{置換データ}" }}]}'
 ```
 
-#### 전문 발송 요청
+#### 全文送信リクエスト
 
 [URL]
 
@@ -87,9 +87,9 @@ Content-Type: application/json;charset=UTF-8
 
 [Path parameter]
 
-|값|	타입|	설명|
-|---|---|---|
-|appkey|	String|	고유의 appkey|
+| 値 | タイプ | 説明 |
+| ------ | ------ | ------ |
+| appkey | String | 固有のアプリケーションキー |
 
 [Header]
 ```
@@ -97,11 +97,11 @@ Content-Type: application/json;charset=UTF-8
   "X-Secret-Key": String
 }
 ```
-|값|	타입|	필수|	설명|
-|---|---|---|---|
-|X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+| 値       | タイプ | 必須 | 説明                                  |
+| ------------ | ------ | ---- | ---------------------------------------- |
+| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./plus-friend-console-guide/#x-secret-key)] |
 
-[Request Body]
+[Request body]
 
 ```
 {
@@ -127,32 +127,32 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-|값|	타입|	필수|	설명|
-|---|---|---|---|
-|plusFriendId|	String|	X | 플러스친구 아이디 |
-|templateCode|	String|	O | 등록한 발송 템플릿 코드 |
-|recipientList|	List|	O|	수신자 리스트 (최대 1,000명) |
-|- recipientNo|	String|	O|	수신번호 |
-|- content|	String|	O|	내용 |
-|- buttons|	List|	X|	버튼 |
-|-- ordering|	Integer|	X |	버튼 순서 (버튼이 있는 경우 필수)|
-|-- type| String |	X |	버튼 타입(WL:웹링크, AL:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
-|-- name| String |	X |	버튼 이름 (버튼이 있는 경우 필수)|
-|-- linkMo| String |	X |	모바일 웹 링크 (WL 타입일 경우 필수 필드)|
-|-- linkPc | String |	X |PC 웹 링크  (WL 타입일 경우 선택 필드) |
-|-- schemeIos | String | X |	IOS 앱 링크 (AL 타입일 경우 필수 필드) |
-|-- schemeAndroid | String | X |	Android 앱 링크 (AL 타입일 경우 필수 필드) |
+| 値           | タイプ | 必須 | 説明                                  |
+| ---------------- | ------- | ---- | ---------------------------------------- |
+| plusFriendId     | String  | X    | プラスフレンドID                                 |
+| templateCode     | String  | O    | 登録した送信テンプレートコード                       |
+| recipientList    | List    | O    | 受信者リスト(最大1,000人)                        |
+| - recipientNo    | String  | O    | 受信番号                               |
+| - content        | String  | O    | 内容                                  |
+| - buttons        | List    | X    | ボタン                                  |
+| -- ordering      | Integer | X    | ボタン順序(ボタンがある場合は必須)                      |
+| -- type          | String  | X    | ボタンタイプ(WL：Webリンク、AL：アプリリンク、DS：配送照会、BK：Botキーワード、MD：メッセージ伝達) |
+| -- name          | String  | X    | ボタン名(ボタンがある場合は必須)                      |
+| -- linkMo        | String  | X    | モバイルWebリンク(WLタイプの場合、必須フィールド)                |
+| -- linkPc        | String  | X    | PC Webリンク(WLタイプの場合、任意フィールド)                 |
+| -- schemeIos     | String  | X    | iOSアプリリンク(ALタイプの場合、必須フィールド)                |
+| -- schemeAndroid | String  | X    | Androidアプリリンク(ALタイプの場合、必須フィールド)            |
 
 
-* <b>플러스친구 아이디 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
-* <b>본문과 버튼에 치환이 완성된 데이터를 넣어주세요.</b>
+* <b>プラスフレンドIDフィールドを送信しない場合、最初に登録したプラスフレンドに送信されます。</b>
+* <b>本文とボタンに置換が完了したデータを入れてください。</b>
 
-[예시]
+[例]
 ```
-curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.0/appkeys/{appkey}/raw-messages -d '{"plusFriendId": "{플러스친구 아이디}","templateCode": "{템플릿 코드}","recipientList":[{"recipientNo": "{수신번호}", "content": "{내용}", "buttons": [{ "ordering": "{버튼 순서}", "type": "{버튼 타입}", "name": "{버튼 이름}", "linkMo": "{모바일 웹 링크}" }]}]}'
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.0/appkeys/{appkey}/raw-messages -d '{"plusFriendId": "{プラスフレンドID}","templateCode": "{テンプレートコード}","recipientList":[{"recipientNo": "{受信番号}", "content": "{内容}", "buttons": [{ "ordering": "{ボタン順序}", "type": "{ボタンタイプ}", "name": "{ボタン名}", "linkMo": "{モバイルWebリンク}" }]}]}'
 ```
 
-#### 응답
+#### レスポンス
 
 ```
 {
@@ -167,18 +167,18 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 }
 ```
 
-|값|	타입|	설명|
-|---|---|---|
-|header|	Object|	헤더 영역|
-|- resultCode|	Integer|	결과 코드|
-|- resultMessage|	String| 결과 메시지|
-|- isSuccessful|	Boolean| 성공 여부|
-|message|	Object|	본문 영역|
-|- requestId | String |	요청 아이디 |
+| 値          | タイプ | 説明 |
+| --------------- | ------- | ------ |
+| header          | Object  | ヘッダ領域 |
+| - resultCode    | Integer | 結果コード |
+| - resultMessage | String  | 結果メッセージ |
+| - isSuccessful  | Boolean | 成否 |
+| message         | Object  | 本文領域 |
+| - requestId     | String  | リクエストID  |
 
-## 발송 리스트 조회
+## 送信リスト照会
 
-#### 요청
+#### リクエスト
 
 [URL]
 
@@ -189,9 +189,9 @@ Content-Type: application/json;charset=UTF-8
 
 [Path parameter]
 
-|값|	타입|	설명|
-|---|---|---|
-|appkey|	String|	고유의 appkey|
+| 値 | タイプ | 説明 |
+| ------ | ------ | ------ |
+| appkey | String | 固有のアプリケーションキー |
 
 [Header]
 ```
@@ -199,26 +199,26 @@ Content-Type: application/json;charset=UTF-8
   "X-Secret-Key": String
 }
 ```
-|값|	타입|	필수|	설명|
-|---|---|---|---|
-|X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+| 値       | タイプ | 必須 | 説明                                  |
+| ------------ | ------ | ---- | ---------------------------------------- |
+| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./plus-friend-console-guide/#x-secret-key)] |
 
-[Query parameter] 1번 or 2번 조건 필수
+[Query parameter] 1番or 2番の条件は必須
 
-|값|	타입|	필수|	설명|
-|---|---|---|---|
-|requestId|	String|	조건 필수 (1번) | 요청 아이디 |
-|startRequestDate|	String|	조건 필수 (2번) | 발송 요청 날짜 시작 값(yyyy-MM-dd HH:mm)|
-|endRequestDate|	String| 조건 필수 (2번) |	발송 요청 날짜 끝 값(yyyy-MM-dd HH:mm) |
-|recipientNo|	String|	X |	수신번호 |
-|plusFriendId|	String|	X |	플러스친구 아이디 |
-|templateCode|	String|	X |	템플릿 코드|
-|messageStatus| String |	X | 요청 상태 ( COMPLETED -> 성공, FAILED -> 실패 )	|
-|resultCode| String |	X | 발송 결과 ( MRC01 -> 성공 MRC02 -> 실패 )	|
-|pageNum|	Integer|	X|	페이지 번호(Default : 1)|
-|pageSize|	Integer|	X|	조회 건수(Default : 15)|
+| 値           | タイプ | 必須   | 説明                               |
+| ---------------- | ------- | --------- | ------------------------------------- |
+| requestId        | String  | 条件必須(1番) | リクエストID                                 |
+| startRequestDate | String  | 条件必須(2番) | 送信リクエスト日の開始値(yyyy-MM-dd HH:mm)       |
+| endRequestDate   | String  | 条件必須(2番) | 送信リクエスト日の終了値(yyyy-MM-dd HH:mm)        |
+| recipientNo      | String  | X         | 受信番号                            |
+| plusFriendId     | String  | X         | プラスフレンドID                              |
+| templateCode     | String  | X         | テンプレートコード                           |
+| messageStatus    | String  | X         | リクエストステータス(COMPLETED -> 成功、FAILED -> 失敗) |
+| resultCode       | String  | X         | 送信結果(MRC01 -> 成功MRC02 -> 失敗)       |
+| pageNum          | Integer | X         | ページ番号(基本：1)                         |
+| pageSize         | Integer | X         | 照会件数(基本：15)                         |
 
-#### 응답
+#### レスポンス
 ```
 {
   "header" : {
@@ -259,53 +259,53 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-|값|	타입|	설명|
-|---|---|---|
-|header|	Object|	헤더 영역|
-|- resultCode|	Integer|	결과 코드|
-|- resultMessage|	String| 결과 메시지|
-|- isSuccessful|	Boolean| 성공 여부|
-|messageSearchResultResponse|	Object|	본문 영역|
-|- messages | List |	메시지 리스트 |
-|-- requestId | String |	요청 아이디 |
-|-- plusFriendId | String |	플러스친구 아이디 |
-|-- templateCode | String |	템플릿 코드 |
-|-- recipientNo | String |	수신 번호 |
-|-- content | String |	본문 |
-|-- requestDate | String |	요청 일시 |
-|-- receiveDate | String |	수신 일시 |
-|-- resendStatus | String |	재발송 상태 코드 |
-|-- resendStatusName | String |	재발송 상태 코드명 |
-|-- messageStatus | String |	요청 상태 ( COMPLETED -> 성공, FAILED -> 실패 ) |
-|-- resultCode | String |	수신 결과 코드 |
-|-- resultCodeName | String |	수신 결과 코드명 |
-|-- buttons | List |	버튼 리스트 |
-|--- ordering | Integer |	버튼 순서 |
-|--- type | String |	버튼 타입(WL:웹링크, AL:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
-|--- name | String |	버튼 이름 |
-|--- linkMo | String |	모바일 웹 링크 (WL 타입일 경우 필수 필드) |
-|--- linkPc | String |	PC 웹 링크  (WL 타입일 경우 선택 필드) |
-|--- schemeIos | String |	IOS 앱 링크 (AL 타입일 경우 필수 필드) |
-|--- schemeAndroid | String |	Android 앱 링크 (AL 타입일 경우 필수 필드) |
-|- totalCount | Integer | 총 개수 |
+| 値                      | タイプ | 説明                                  |
+| --------------------------- | ------- | ---------------------------------------- |
+| header                      | Object  | ヘッダ領域                               |
+| - resultCode                | Integer | 結果コード                               |
+| - resultMessage             | String  | 結果メッセージ                              |
+| - isSuccessful              | Boolean | 成否                                |
+| messageSearchResultResponse | Object  | 本文領域                               |
+| - messages                  | List    | メッセージリスト                             |
+| -- requestId                | String  | リクエストID                                    |
+| -- plusFriendId             | String  | プラスフレンドID                                 |
+| -- templateCode             | String  | テンプレートコード                              |
+| -- recipientNo              | String  | 受信番号                               |
+| -- content                  | String  | 本文                                  |
+| -- requestDate              | String  | リクエスト日時                               |
+| -- receiveDate              | String  | 受信日時                               |
+| -- resendStatus             | String  | 再送信ステータスコード                           |
+| -- resendStatusName         | String  | 再送信ステータスコード名                           |
+| -- messageStatus            | String  | リクエストステータス(COMPLETED -> 成功、FAILED -> 失敗)   |
+| -- resultCode               | String  | 受信結果コード                            |
+| -- resultCodeName           | String  | 受信結果コード名                            |
+| -- buttons                  | List    | ボタンリスト                               |
+| --- ordering                | Integer | ボタン順序                               |
+| --- type                    | String  | ボタンタイプ(WL：Webリンク、AL：アプリリンク、DS：配送照会、BK：Botキーワード、MD：メッセージ伝達) |
+| --- name                    | String  | ボタン名                               |
+| --- linkMo                  | String  | モバイルWebリンク(WLタイプの場合、必須フィールド)                |
+| --- linkPc                  | String  | PC Webリンク(WLタイプの場合、任意フィールド)                 |
+| --- schemeIos               | String  | iOSアプリリンク(ALタイプの場合、必須フィールド)                |
+| --- schemeAndroid           | String  | Androidアプリリンク(ALタイプの場合、必須フィールド)            |
+| - totalCount                | Integer | 総個数                                 |
 
-[예시]
+[例]
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.0/appkeys/{appkey}/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
-#### SMS/LMS 재발송 상태
-|값|	설명|
-|---|---|
-|RSC01|	재발송 미대상|
-|RSC02|	재발송 대상 (발송 결과 실패 시, 재발송이 진행됩니다.)|
-|RSC03|	재발송 중|
-|RSC04|	재발송 성공|
-|RSC05|	재발송 실패|
+#### SMS/LMS再送信ステータス
+| 値 | 説明                         |
+| ----- | ------------------------------- |
+| RSC01 | 再送信の対象ではない                    |
+| RSC02 | 再送信の対象(送信結果が失敗の時、再送信が行われます。) |
+| RSC03 | 再送信中                       |
+| RSC04 | 再送信成功                     |
+| RSC05 | 再送信失敗                     |
 
-## 템플릿 리스트 조회
+## テンプレートリストの照会
 
-#### 요청
+#### リクエスト
 
 [URL]
 
@@ -316,9 +316,9 @@ Content-Type: application/json;charset=UTF-8
 
 [Path parameter]
 
-|값|	타입|	설명|
-|---|---|---|
-|appkey|	String|	고유의 appkey|
+| 値 | タイプ | 説明 |
+| ------ | ------ | ------ |
+| appkey | String | 固有のアプリケーションキー |
 
 [Header]
 ```
@@ -326,34 +326,34 @@ Content-Type: application/json;charset=UTF-8
   "X-Secret-Key": String
 }
 ```
-|값|	타입|	필수|	설명|
-|---|---|---|---|
-|X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+| 値       | タイプ | 必須 | 説明                                  |
+| ------------ | ------ | ---- | ---------------------------------------- |
+| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./plus-friend-console-guide/#x-secret-key)] |
 
 [Query parameter]
 
-|값|	타입|	필수|	설명|
-|---|---|---|---|
-|plusFriendId|	String|	X |	플러스친구 아이디 |
-|templateCode|	String|	X |	템플릿 코드|
-|templateName|	String|	X |	템플릿 이름|
-|templateStatus| String |	X | 템플릿 상태 코드|
-|pageNum|	Integer|	X|	페이지 번호(Default : 1)|
-|pageSize|	Integer|	X|	조회 건수(Default : 15)|
+| 値         | タイプ | 必須 | 説明       |
+| -------------- | ------- | ---- | ------------- |
+| plusFriendId   | String  | X    | プラスフレンドID      |
+| templateCode   | String  | X    | テンプレートコード   |
+| templateName   | String  | X    | テンプレート名   |
+| templateStatus | String  | X    | テンプレートステータスコード |
+| pageNum        | Integer | X    | ページ番号(基本：1) |
+| pageSize       | Integer | X    | 照会件数(基本：15) |
 
-|템플릿 상태 코드| 설명|
-|---|---|
-| TSC01 | 요청 |
-| TSC02 | 검수중 |
-| TSC03 | 승인 |
-| TSC04 | 반려 |
+| テンプレートステータスコード | 説明 |
+| --------- | ---- |
+| TSC01     | リクエスト |
+| TSC02     | 検収中 |
+| TSC03     | 承認 |
+| TSC04     | 差し戻し |
 
-[예시]
+[例]
 ```
-curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.0/appkeys/{appkey}/templates?plusFriendId={플러스친구 아이디}&templateStatus={템플릿 상태 코드}"
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.0/appkeys/{appkey}/templates?plusFriendId={プラスフレンドID}&templateStatus={テンプレートステータスコード}"
 ```
 
-#### 응답
+#### レスポンス
 ```
 
 {
@@ -399,33 +399,33 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 }
 ```
 
-|값|	타입|	설명|
-|---|---|---|
-|header|	Object|	헤더 영역|
-|- resultCode|	Integer|	결과 코드|
-|- resultMessage|	String| 결과 메시지|
-|- isSuccessful|	Boolean| 성공 여부|
-|templateListResponse|	Object|	본문 영역|
-|- templates | List |	템플릿 리스트 |
-|-- plusFriendId | String |	플러스친구 아이디 |
-|-- templateCode | String |	템플릿 코드 |
-|-- templateName | String |	템플릿명 |
-|-- templateContent | String |	템플릿 본문 |
-|-- buttons | List |	버튼 리스트 |
-|--- ordering | Integer |	버튼 순서(1~5) |
-|--- type | String |	버튼 타입(WL:웹링크, AL:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
-|--- name | String |	버튼 이름 |
-|--- linkMo | String |	모바일 웹 링크 (WL 타입일 경우 필수 필드) |
-|--- linkPc | String |	PC 웹 링크  (WL 타입일 경우 선택 필드) |
-|--- schemeIos | String |	IOS 앱 링크 (AL 타입일 경우 필수 필드) |
-|--- schemeAndroid | String |	Android 앱 링크 (AL 타입일 경우 필수 필드) |
-|-- comments | List | 검수 결과 |
-|--- id | Integer | 문의 아이디 |
-|--- content |  String | 문의 내용 |
-|---userName | String | 작성자 |
-|---createAt | String | 등록 날짜 |
-|---status | String | 댓글 상태(INQ: 문의, APR: 승인, REJ: 반려, REP: 답변) |
-|-- status| String | 템플릿 상태 |
-|-- statusName | String | 템플릿 상태명 |
-|-- createDate | String | 생성일자 |
-|- totalCount | Integer | 총 개수 |
+| 値               | タイプ | 説明                                  |
+| -------------------- | ------- | ---------------------------------------- |
+| header               | Object  | ヘッダ領域                               |
+| - resultCode         | Integer | 結果コード                               |
+| - resultMessage      | String  | 結果メッセージ                              |
+| - isSuccessful       | Boolean | 成否                                |
+| templateListResponse | Object  | 本文領域                               |
+| - templates          | List    | テンプレートリスト                             |
+| -- plusFriendId      | String  | プラスフレンドID                                 |
+| -- templateCode      | String  | テンプレートコード                              |
+| -- templateName      | String  | テンプレート名                                |
+| -- templateContent   | String  | テンプレート本文                              |
+| -- buttons           | List    | ボタンリスト                               |
+| --- ordering         | Integer | ボタン順序(1～5)                               |
+| --- type             | String  | ボタンタイプ(WL：Webリンク、AL：アプリリンク、DS：配送照会、BK：Botキーワード、MD：メッセージ伝達) |
+| --- name             | String  | ボタン名                               |
+| --- linkMo           | String  | モバイルWebリンク(WLタイプの場合、必須フィールド)                |
+| --- linkPc           | String  | PC Webリンク(WLタイプの場合、任意フィールド)                 |
+| --- schemeIos        | String  | iOSアプリリンク(ALタイプの場合、必須フィールド)                |
+| --- schemeAndroid    | String  | Androidアプリリンク(ALタイプの場合、必須フィールド)            |
+| -- comments          | List    | 検収結果                               |
+| --- id               | Integer | お問い合わせID                                   |
+| --- content          | String  | お問い合わせ内容                               |
+| ---userName          | String  | 作成者                                  |
+| ---createAt          | String  | 登録日                               |
+| ---status            | String  | 応答状態(INQ：お問い合わせ、APR：承認、REJ：差し戻し、REP：返信) |
+| -- status            | String  | テンプレートのステータス                              |
+| -- statusName        | String  | テンプレートのステータス名                              |
+| -- createDate        | String  | 作成日時                               |
+| - totalCount         | Integer | 総個数                                 |

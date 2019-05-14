@@ -1,38 +1,42 @@
-## Notification > KakaoTalk Bizmessage > PlusFriend > Console Guide
+## Notification > KakaoTalk Bizmessage > プラスフレンド > コンソールガイド
 
-## 플러스친구 등록/인증
-* 카카오톡 비즈메시지를 발송하려면 플러스친구를 먼저 등록하셔야 합니다.
-* 플러스친구는 카카오톡 홈페이지 ( https://center-pf.kakao.com ) 에서 무료로 만들 수 있습니다.
-<!-- * 비지니스 인증을 받은 플러스친구만 TOAST KakaoTalk Bizmessage 상품에 추가할 수 있습니다. ([[플러스친구 비지니스 인증](https://static.toastoven.net/prod_alimtalk/plusfriend_business_certify_guide_20190311.pdf)] 참고) -->
+## プラスフレンドの追加
 
-## 플러스친구 추가
+プラスフレンドを追加するには、コンソールで**Notification > KakaoTalk Bizmessage > プラスフレンドの管理**を選択します。
 
-플러스친구 등록이 완료되면 관리자 핸드폰으로 카카오톡 토큰 메시지가 전달됩니다.
-관리자로 등록된 핸드폰으로만 카카오톡 토큰 메시지가 전달됩니다.
+プラスフレンドの登録が完了したら、管理者の携帯電話にカカオトークトークンメッセージが送信されます。
+管理者として登録された携帯電話にのみ、カカオトークトークンメッセージが送信されます。
 
-<!-- ![plusfriend_01_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_01_201904.png) -->
-![plusfriend_01_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_02_201812.png)
+![plusfriend_01_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_01_201812.png)
 
-* 플러스친구 아이디는 플러스친구 개설 시, 등록한 검색용 아이디를 입력해야 합니다.
-* 고객이 받는 카카오톡 비즈메시지는 카카오톡에 등록한 플러스친구 이름으로 노출됩니다.
+* プラスフレンドIDには、プラスフレンドを開設した時に登録した検索用IDを入力する必要があります。
+* 顧客が受け取るカカオトークBizメッセージは、カカオトークに登録したプラスフレンド名で表示されます。
 
-## 토큰 등록
+## トークンの登録
 
-관리자 핸드폰으로 받은 토큰 메시지를 입력하면 등록이 완료됩니다.
+管理者の携帯電話で受け取ったトークンメッセージを入力すると、登録が完了します。
 
-<!-- ![plusfriend_02_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_02_201904.png) -->
-![plusfriend_01_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_02_201812.png)
+![plusfriend_02_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_02_201812.png)
 
-<b><span style="color:red">플러스친구 등록 시, 초기 일별 최대 발송량은 1,000건으로 제한됩니다.</span></b>
-일별 최대 발송량 변경은 별도 요청이 필요합니다. (support@toast.com)
+<b><span style="color:red">プラスフレンドの登録時、一日最大送信量は初期設定で1,000件に制限されます。</span></b>
+一日の最大送信量を変更するには、サポートセンター(support@toast.com)へ別途リクエストする必要があります。
 
-## 개인정보 수탁사 고지 안내
-'고객'이 TOAST > Notification > KakaoTalk Bizmessage 서비스 이용 시, '고객' - '당사' 간 개인정보 처리에 관한 업무 위수탁 관계가 발생하는 바 정보통신망법 및 개인정보보호법에 따라 위탁자인 '고객'은 개인정보처리방침을 통해 '당사'에 개인정보를 위탁한 현황(수탁자 및 업무의내용)을 공개하여야 합니다.
+## 送信失敗設定
 
-이에, '당사'에서는 '고객'이 TOAST 의 KakaoTalk Bizmessage 서비스를 이용함에 있어 관련 법령을 준수하고, 위탁현황 미공개로 인하여 과태료 등의 불이익을 받지 않도록 아래와 같이 가이드 할 수 있습니다.
+プラスフレンドごとに'送信失敗設定'ができます。
 
-(예시)<br>
-[개인정보 수탁사 고지 안내]<br>
-KakaoTalk Bizmessage 서비스 이용 시 고객사에서 운영하시는'개인정보처리방침' > 위탁 현황에 다음의 내용을 표기해주세요.<br>
-수탁사 : 엔에이치엔<br>
-업무의 내용 : 카카오톡 비즈메시지 발송 대행<br>
+* 送信失敗設定を行ったプラスフレンドのメッセージのみ、LMSまたはSMSで代替送信されます。
+* SMSアプリケーションキー修正時、すべてのプラスフレンドの送信失敗設定は初期化されます。
+
+![plusfriend_03_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_03_201812.png)
+
+## 個人情報受託会社の告知案内
+顧客'がTOAST > Notification > KakaoTalk Bizmessageサービスを利用する時、'顧客'と'当社'の間で個人情報処理に関する業務の委託/受託関係が発生しますので、韓国情報通信網法および個人情報保護法に従って、委託者である'顧客'は個人情報処理方針を通して'当社'に個人情報を委託した状況(受託者および業務の内容)を公開する必要があります。
+
+よって'当社'では'顧客'がTOASTのKakaoTalk Bizmessageサービスを利用するにおいて関連法令を遵守し、委託状況の未公開により過料などの不利益を被らないように下記のように案内できます。
+
+(例)<br>
+[個人情報受託会社の告知案内]<br>
+KakaoTalk Bizmessageサービスの利用時、顧客の会社で定める'個人情報処理方針 >委託状況'に次の内容を表記してください。<br>
+受託会社：NHN<br>
+業務の内容：カカオトークBizメッセージ送信代行<br>
