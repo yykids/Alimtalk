@@ -1505,14 +1505,14 @@ Content-Type: application/json;charset=UTF-8
          "createDate": String,
          "alimtalk": {  
                 "isResend": Boolean,
-                "resendSendNo": String
+                "resendSendNo": String,
                 "dailyMaxCount" : Integer,
                 "sentCount" : Integer
           },
          "friendtalk": {  
                 "isResend": Boolean,
                 "resendSendNo": String,
-                "resendUnsubscribeNo": String
+                "resendUnsubscribeNo": String,
                 "dailyMaxCount" : Integer,
                 "sentCount" : Integer
          }
@@ -1612,14 +1612,14 @@ Content-Type: application/json;charset=UTF-8
          "createDate": String,
          "alimtalk": {  
                 "isResend": Boolean,
-                "resendSendNo": String
+                "resendSendNo": String,
                 "dailyMaxCount" : Integer,
                 "sentCount" : Integer
           },
          "friendtalk": {  
                 "isResend": Boolean,
                 "resendSendNo": String,
-                "resendUnsubscribeNo": String
+                "resendUnsubscribeNo": String,
                 "dailyMaxCount" : Integer,
                 "sentCount" : Integer
          }
