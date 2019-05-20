@@ -689,8 +689,8 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 |- resultMessage|	String| 결과 메시지|
 |- isSuccessful|	Boolean| 성공 여부|
 
-### 대체 발송 관리
-#### SMS AppKey 등록
+## 대체 발송 관리
+### SMS AppKey 등록
 
 [URL]
 
@@ -745,7 +745,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 }
 ```
 
-#### 대체 발송 설정 등록
+### 대체 발송 설정 등록
 
 [URL]
 
