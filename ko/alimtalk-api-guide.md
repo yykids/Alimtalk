@@ -2047,8 +2047,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |-- createDate | String | 생성일자 |
 |- totalCount | Integer | 총 개수 |
 
-### 대체 발송 관리
-#### SMS AppKey 등록
+## 대체 발송 관리
+### SMS AppKey 등록
 
 [URL]
 
@@ -2103,7 +2103,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 }
 ```
 
-#### 대체 발송 설정 등록
+### 대체 발송 설정 등록
 
 [URL]
 
