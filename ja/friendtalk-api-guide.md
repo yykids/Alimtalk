@@ -683,3 +683,121 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 | - resultCode    | Integer | 結果コード |
 | - resultMessage | String  | 結果メッセージ |
 | - isSuccessful  | Boolean | 成否 |
+
+
+## 代替送信管理
+### SMS AppKey 登録
+
+[URL]
+
+```
+POST  /friendtalk/v1.3/appkeys/{appkey}/failback/appkey
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 値     | タイプ | 説明 |
+| ------------ | ------ | -------- |
+| appkey       | String | 固有のアプリケーションキー |
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| 値     | タイプ | 必須 | 説明                                |
+| ------------ | ------ | ---- | ---------------------------------------- |
+| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./plus-friend-console-guide/#x-secret-key)] |
+
+
+[Request body]
+
+```
+{
+    "resendAppKey": String
+}
+```
+
+| 値     | タイプ | 必須 | 説明                                |
+|---|---|---|---|
+|resendAppKey|	String|	O | 代替発送に設定するSMS AppKey |
+
+[例]
+```
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/friendtalk/v1.3/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
+```
+
+#### レスポンス
+```
+
+{
+  "header" : {
+      "resultCode" :  Integer,
+      "resultMessage" :  String,
+      "isSuccessful" :  boolean
+  }
+}
+```
+
+### 代替送信設定登録
+
+[URL]
+
+```
+POST  /friendtalk/v1.3/appkeys/{appkey}/failback
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 値     | タイプ | 説明 |
+| ------------ | ------ | -------- |
+| appkey       | String | 固有のアプリケーションキー |
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 値     | タイプ | 必須 | 説明                                |
+| ------------ | ------ | ---- | ---------------------------------------- |
+| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./plus-friend-console-guide/#x-secret-key)] |
+
+
+[Request body]
+
+```
+{  
+   "plusFriendId": String,
+   "isResend": Boolean,
+   "resendSendNo": String,
+   "resendUnsubscribeNo": String
+}
+```
+
+| 値                | タイプ | 必須 | 説明                                 |
+| ---------------------- | ------- | ---- | ---------------------------------------- |
+| plusFriendId           | String  | O    | プラスフレンドID(最大30文字)                         |
+| isResend             | boolean | O    | 送信失敗時、代替送信するかどうか<br>コンソールで送信失敗設定をした時、デフォルト設定は再送信になっています。 |
+| resendSendNo         | String  | O    | 代替送信発信番号(最大13桁)<br><span style="color:red">(SMSサービスに登録された発信番号ではない場合、代替送信が失敗することがあります。)</span> |
+
+[例]
+```
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/friendtalk/v1.3/appkeys/{appkey}/failback/appkey -d '{"plusFriendId": "@플러스친구","isResend": true,"resendSendNo": "01012341234", "resendUnsubscribeNo": "0801234567" }
+```
+
+#### レスポンス
+```
+
+{
+  "header" : {
+      "resultCode" :  Integer,
+      "resultMessage" :  String,
+      "isSuccessful" :  boolean
+  }
+}
+```
