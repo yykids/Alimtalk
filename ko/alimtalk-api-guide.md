@@ -90,8 +90,8 @@ Content-Type: application/json;charset=UTF-8
 |- recipientGroupingKey|	String|	X|	수신자 그룹핑 키 (최대 100자) |
 
 * <b>요청 일시는 호출하는 시점부터 90일 후까지 설정 가능합니다.</b>
-* <b>sms 상품을 통해 대체 발송되므로, sms 상품의 발송 API 명세에 따라 필드를 입력해야합니다. (sms 상품에 등록된 발신번호, 각종 필드 길이제한 등)</b>
-* <b>지정한 대체발송 타입의 byte 제한을 초과하는 대체 발송 제목, 내용은 잘려서 대체발송 될 수 있습니다. ([[SMS 주의사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
+* <b>SMS 서비스에서 대체 발송되므로, SMS 서비스의 발송 API 명세에 따라 필드를 입력해야 합니다.(SMS 서비스에 등록된 발신 번호, 각종 필드 길이 제한 등)</b>
+* <b>지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송될 수 있습니다.([[SMS 주의사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
 
 [예시]
 ```
@@ -581,6 +581,8 @@ Content-Type: application/json;charset=UTF-8
 |- recipientGroupingKey|	String|	X|	수신자 그룹핑 키 (최대 100자) |
 
 * <b>요청 일시는 호출하는 시점부터 90일 후까지 설정 가능합니다.</b>
+* <b>SMS 서비스에서 대체 발송되므로, SMS 서비스의 발송 API 명세에 따라 필드를 입력해야 합니다.(SMS 서비스에 등록된 발신 번호, 각종 필드 길이 제한 등)</b>
+* <b>지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송될 수 있습니다.([[SMS 주의사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
 
 [예시]
 ```
@@ -1010,7 +1012,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 [URL]
 
 ```
-DELETE  /alimtalk/v1.3/appkeys/{appkey}/messages/{requestId}
+DELETE  /alimtalk/v1.2/appkeys/{appkey}/messages/{requestId}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1018,7 +1020,7 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	설명|
 |---|---|---|
-|appkey|	String|	고유의 appkey|
+|appkey|	String|	고유의 앱키|
 |requestId| String| 요청 ID|
 
 [Header]
@@ -1059,7 +1061,7 @@ Content-Type: application/json;charset=UTF-8
 
 [예시]
 ```
-curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.3/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
+curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.2/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
 ```
 
 ### 메시지 결과 업데이트 조회
@@ -1069,7 +1071,7 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 [URL]
 
 ```
-GET  /alimtalk/v1.3/appkeys/{appkey}/message-results
+GET  /alimtalk/v1.2/appkeys/{appkey}/message-results
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1077,7 +1079,7 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	설명|
 |---|---|---|
-|appkey|	String|	고유의 appkey|
+|appkey|	String|	고유의 앱키|
 
 [Header]
 ```
@@ -1093,11 +1095,11 @@ Content-Type: application/json;charset=UTF-8
 
 |값|	타입|	필수|	설명|
 |---|---|---|---|
-|startUpdateDate|	String|	O | 결과 업데이트 조회 시작 시간 (yyyy-MM-dd HH:mm)|
-|endUpdateDate|	String| O |	결과 업데이트 조회 종료 시간 (yyyy-MM-dd HH:mm) |
-|alimtalkMessageType|	String| X |	알림톡 메시지 타입 (NORMAL, AUTH) |
-|pageNum|	Integer|	X|	페이지 번호(Default : 1)|
-|pageSize|	Integer|	X|	조회 건수(Default : 15)|
+|startUpdateDate|	String|	O | 결과 업데이트 조회 시작 시간(yyyy-MM-dd HH:mm)|
+|endUpdateDate|	String| O |	결과 업데이트 조회 종료 시간(yyyy-MM-dd HH:mm) |
+|alimtalkMessageType|	String| X |	알림톡 메시지 타입(NORMAL, AUTH) |
+|pageNum|	Integer|	X|	페이지 번호(기본: 1)|
+|pageSize|	Integer|	X|	조회 건수(기본: 15)|
 
 #### 응답
 ```
@@ -1151,9 +1153,9 @@ Content-Type: application/json;charset=UTF-8
 |- isSuccessful|	Boolean| 성공 여부|
 |messageSearchResultResponse|	Object|	본문 영역|
 |- messages | List |	메시지 리스트 |
-|-- requestId | String |	요청 아이디 |
+|-- requestId | String |	요청 ID |
 |-- recipientSeq | Integer |	수신자 시퀀스 번호 |
-|-- plusFriendId | String |	플러스친구 아이디 |
+|-- plusFriendId | String |	플러스친구 ID |
 |-- templateCode | String |	템플릿 코드 |
 |-- recipientNo | String |	수신 번호 |
 |-- content | String |	본문 |
@@ -1161,25 +1163,26 @@ Content-Type: application/json;charset=UTF-8
 |-- receiveDate | String |	수신 일시 |
 |-- resendStatus | String |	재발송 상태 코드 |
 |-- resendStatusName | String |	재발송 상태 코드명 |
-|-- messageStatus | String |	요청 상태 ( COMPLETED -> 성공, FAILED -> 실패, CANCEL -> 취소 ) |
+|-- messageStatus | String |	요청 상태(COMPLETED -> 성공, FAILED -> 실패, CANCEL -> 취소 ) |
 |-- resultCode | String |	수신 결과 코드 |
 |-- resultCodeName | String |	수신 결과 코드명 |
 |-- buttons | List |	버튼 리스트 |
 |--- ordering | Integer |	버튼 순서 |
-|--- type | String |	버튼 타입(WL:웹링크, AL:앱링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
+|--- type | String |	버튼 타입(WL:웹 링크, AL:앱 링크, DS:배송 조회, BK:봇 키워드, MD:메시지 전달) |
 |--- name | String |	버튼 이름 |
-|--- linkMo | String |	모바일 웹 링크 (WL 타입일 경우 필수 필드) |
-|--- linkPc | String |	PC 웹 링크  (WL 타입일 경우 선택 필드) |
-|--- schemeIos | String |	IOS 앱 링크 (AL 타입일 경우 필수 필드) |
-|--- schemeAndroid | String |	Android 앱 링크 (AL 타입일 경우 필수 필드) |
+|--- linkMo | String |	모바일 웹 링크(WL 타입일 경우 필수 필드) |
+|--- linkPc | String |	PC 웹 링크(WL 타입일 경우 선택 필드) |
+|--- schemeIos | String | iOS 앱 링크(AL 타입일 경우 필수 필드) |
+|--- schemeAndroid | String |	Android 앱 링크(AL 타입일 경우 필수 필드) |
 |-- senderGroupingKey | String | 발신 그룹핑 키 |
 |-- recipientGroupingKey | String |	수신자 그룹핑 키 |
 |- totalCount | Integer | 총 개수 |
 
 [예시]
 ```
-curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.3/appkeys/{appkey}/message-results?startUpdateDate=2018-05-01%20:00&endUpdateDate=2018-05-30%20:59"
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.2/appkeys/{appkey}/message-results?startUpdateDate=2018-05-01%20:00&endUpdateDate=2018-05-30%20:59"
 ```
+
 
 ## 플러스친구
 
