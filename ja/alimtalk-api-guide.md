@@ -90,6 +90,8 @@ Content-Type: application/json;charset=UTF-8
 | - recipientGroupingKey | String  | X    | 受信者グルーピングキー(最大100文字)                       |
 
 * <b>リクエスト日時は呼び出す時点から90日後まで設定可能です。</b>
+* <b>SMSサービスで代替送信されるため、SMSサービスの送信APIの仕様に応じてフィールドを入力する必要があります。(SMSサービスに登録された発信番号、各種フィールドの長さ制限など)</b>
+* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)</b>
 
 [例]
 ```
@@ -579,6 +581,8 @@ Content-Type: application/json;charset=UTF-8
 | - recipientGroupingKey | String  | X    | 受信者グルーピングキー(最大100文字)                       |
 
 * <b>リクエスト日時は呼び出す時点から90日後まで設定可能です。</b>
+* <b>SMSサービスで代替送信されるため、SMSサービスの送信APIの仕様に応じてフィールドを入力する必要があります。(SMSサービスに登録された発信番号、各種フィールドの長さ制限など)</b>
+* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)</b>
 
 [例]
 ```
