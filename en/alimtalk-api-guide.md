@@ -1493,8 +1493,7 @@ Content-Type: application/json;charset=UTF-8
       "resultMessage" :  String,
       "isSuccessful" :  boolean
    },
-   "plusFriend":[  
-      {  
+   "plusFriend":{  
          "plusFriendId" : String,
          "plusFriendType" : String,
          "senderKey" : String,
@@ -1518,10 +1517,9 @@ Content-Type: application/json;charset=UTF-8
                 "resendUnsubscribeNo": String,
                 "dailyMaxCount" : Integer,
                 "sentCount" : Integer
-         }
-      }
-   ],
-   "totalCount": Integer
+         },
+         "createDate": String
+    }
 }
 ```
 
@@ -1554,7 +1552,6 @@ Content-Type: application/json;charset=UTF-8
 |-- dailyMaxCount | Integer |	친구톡 일별 최대 발송 건수<br>(값이 0일 경우 건수 제한없음) |
 |-- sentCount | Integer |	친구톡 일별 발송 건수<br>(값이 0일 경우 건수 제한없음) |
 |- createDate | String |	등록 일자 |
-|totalCount | Integer | 총 개수 |
 
 ### 플러스친구 리스트 조회
 #### 요청

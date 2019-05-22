@@ -1493,8 +1493,7 @@ Content-Type: application/json;charset=UTF-8
       "resultMessage" :  String,
       "isSuccessful" :  boolean
    },
-   "plusFriend":[  
-      {  
+   "plusFriend":{  
          "plusFriendId" : String,
          "plusFriendType" : String,
          "senderKey" : String,
@@ -1505,7 +1504,6 @@ Content-Type: application/json;charset=UTF-8
          "kakaoStatusName" : String,
          "kakaoProfileStatus" : String,
          "kakaoProfileStatusName" : String,
-         "createDate": String,
          "alimtalk": {  
                 "isResend": Boolean,
                 "resendSendNo": String,
@@ -1518,10 +1516,9 @@ Content-Type: application/json;charset=UTF-8
                 "resendUnsubscribeNo": String,
                 "dailyMaxCount" : Integer,
                 "sentCount" : Integer
-         }
-      }
-   ],
-   "totalCount": Integer
+         },
+         "createDate": String
+    }
 }
 ```
 
@@ -1554,7 +1551,6 @@ Content-Type: application/json;charset=UTF-8
 |-- dailyMaxCount | Integer | カカともへのメッセージの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
 |-- sentCount | Integer | カカともへのメッセージの一日送信件数<br>(値が0の場合、件数制限なし)       |
 | - createDate              | String  | 登録日時                             |
-| totalCount                | Integer | 総個数                                |
 
 ### プラスフレンドリストの照会
 #### リクエスト
