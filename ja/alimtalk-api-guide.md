@@ -1478,12 +1478,6 @@ Content-Type: application/json;charset=UTF-8
 | ------------ | ------ | ---- | ---------------------------------------- |
 | X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./plus-friend-console-guide/#x-secret-key)] |
 
-[Query parameter] 1番or 2番の条件は必須
-
-| 値            | タイプ | 必須 | 説明                                |
-| ------------------- | ------- | ---- | ---------------------------------------- |
-| status              | String  | X    | プラスフレンドステータスコード <br>(YSC02：トークン認証待機中、YSC03：正常登録) |
-| isSearchKakaoStatus | boolean | X    | カカオステータスを照会するかどうか(falseの場合、カカオステータス関連フィールド(kakaoStatus、kakaoProfileStatusなど) null値)<br>default値：true |
 
 #### レスポンス
 ```

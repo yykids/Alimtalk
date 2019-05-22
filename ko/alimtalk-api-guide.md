@@ -1478,13 +1478,6 @@ Content-Type: application/json;charset=UTF-8
 |---|---|---|---|
 |X-Secret-Key|	String| O | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
 
-[Query parameter] 1번 or 2번 조건 필수
-
-|값|	타입|	필수|	설명|
-|---|---|---|---|
-|status|	String|	X | 플러스친구 상태 코드 <br>(YSC02: 토큰 인증 대기중, YSC03: 정상 등록)|
-|isSearchKakaoStatus|	boolean| X | 카카오 상태 조회 여부(false일 경우, 카카오 상태 관련 필드 (kakaoStatus, kakaoProfileStatus 등) null값)<br>default값 : true |
-
 #### 응답
 ```
 {  
