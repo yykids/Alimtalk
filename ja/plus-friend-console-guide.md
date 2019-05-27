@@ -1,25 +1,30 @@
 ## Notification > KakaoTalk Bizmessage > プラスフレンド > コンソールガイド
 
+## プラスフレンド登録/認証
+* カカオトークBizメッセージを送信するには、プラスフレンドを先に登録する必要があります。
+* プラスフレンドは、カカオトークWebサイト( https://center-pf.kakao.com )で、無料で作成できます。
+<!-- * ビジネス認証済のプラスフレンドのみTOAST KakaoTalk Bizmessageサービスに追加できます。([[プラスフレンドビジネス認証](https://static.toastoven.net/prod_alimtalk/plusfriend_business_certify_guide_20190311.pdf)]参考) -->
+
 ## プラスフレンドの追加
 
-プラスフレンドを追加するには、コンソールで**Notification > KakaoTalk Bizmessage > プラスフレンドの管理**を選択します。
+プラスフレンドの登録が完了すると、管理者の携帯電話にカカオトークトークンメッセージが送信されます。
+管理者に登録された携帯電話にのみカカオトークトークンメッセージが送信されます。
 
-プラスフレンドの登録が完了したら、管理者の携帯電話にカカオトークトークンメッセージが送信されます。
-管理者として登録された携帯電話にのみ、カカオトークトークンメッセージが送信されます。
+<!-- ![plusfriend_01_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_01_201904.png) -->
+![plusfriend_01_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_02_201812.png)
 
-![plusfriend_01_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_01_201812.png)
-
-* プラスフレンドIDには、プラスフレンドを開設した時に登録した検索用IDを入力する必要があります。
-* 顧客が受け取るカカオトークBizメッセージは、カカオトークに登録したプラスフレンド名で表示されます。
+* プラスフレンドIDは、プラスフレンドを開設する時、登録した検索用IDを入力する必要があります。
+* 顧客が受け取ったカカオトークBizメッセージは、カカオトークに登録したプラスフレンドの名前で表示されます。
 
 ## トークンの登録
 
-管理者の携帯電話で受け取ったトークンメッセージを入力すると、登録が完了します。
+管理者の携帯電話で受け取ったトークンメッセージを入力すると登録が完了します。
 
-![plusfriend_02_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_02_201812.png)
+<!-- ![plusfriend_02_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_02_201904.png) -->
+![plusfriend_01_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_02_201812.png)
 
-<b><span style="color:red">プラスフレンドの登録時、一日最大送信量は初期設定で1,000件に制限されます。</span></b>
-一日の最大送信量を変更するには、サポートセンター(support@toast.com)へ別途リクエストする必要があります。
+<b><span style="color:red">プラスフレンド登録時、初期の一日最大送信量は1,000件に制限されます。</span></b>
+一日最大送信量を変更するには、サポート(support@toast.com)にリクエストする必要があります。
 
 ## 送信失敗設定
 
@@ -33,7 +38,7 @@
 ## 個人情報受託会社の告知案内
 顧客'がTOAST > Notification > KakaoTalk Bizmessageサービスを利用する時、'顧客'と'当社'の間で個人情報処理に関する業務の委託/受託関係が発生しますので、韓国情報通信網法および個人情報保護法に従って、委託者である'顧客'は個人情報処理方針を通して'当社'に個人情報を委託した状況(受託者および業務の内容)を公開する必要があります。
 
-よって'当社'では'顧客'がTOASTのKakaoTalk Bizmessageサービスを利用するにおいて関連法令を遵守し、委託状況の未公開により過料などの不利益を被らないように下記のように案内できます。
+よって'当社'では'顧客'がTOASTのKakaoTalk Bizmessageサービスを利用するにおいて関連法令を遵守し、委託状況の未公開により過料などの不利益を被らないよう、下記のように案内できます。
 
 (例)<br>
 [個人情報受託会社の告知案内]<br>
