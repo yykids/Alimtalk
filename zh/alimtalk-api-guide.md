@@ -61,11 +61,13 @@ Content-Type: application/json;charset=UTF-8
         "templateParameter": {
             String: String
         },
-        "isResend" : boolean,
-        "resendType" : String,
-        "resendTitle" : String,
-        "resendContent" : String,
-        "resendSendNo" : String,
+        "resendParameter": {
+          "isResend" : boolean,
+          "resendType" : String,
+          "resendTitle" : String,
+          "resendContent" : String,
+          "resendSendNo" : String
+        },
         "recipientGroupingKey": String
     }]
 }
@@ -82,11 +84,12 @@ Content-Type: application/json;charset=UTF-8
 |- templateParameter|	Object|	X|	템플릿 파라미터<br>(템플릿에 치환할 변수 포함 시, 필수) |
 |-- key|	String|	X |	치환 키(#{key})|
 |-- value| String |	X |	치환 키에 매핑되는 Value값|
-|- isResend|	boolean|	X|	발송 실패 시, 문자 대체발송 여부<br>Console에서 대체 발송 설정 시, default로 재발송 됩니다. |
-|- resendType|	String|	X|	대체 발송 타입 (SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
-|- resendTitle|	String|	X|	LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 아이디로 재발송됩니다.) |
-|- resendContent|	String|	X|	대체 발송 내용<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
-|- resendSendNo | String| X| 대체 발송 발신번호<br><span style="color:red">(SMS 상품에 등록된 발신번호가 아닐 경우, 대체발송이 실패할 수 있습니다.)</span> |
+|- resendParameter|	Object|	X| 대체 발송 정보 |
+|-- isResend|	boolean|	X|	발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본으로 재발송됩니다. |
+|-- resendType|	String|	X|	대체 발송 타입(SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
+|-- resendTitle|	String|	X|	LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 ID로 재발송됩니다.) |
+|-- resendContent|	String|	X|	대체 발송 내용<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
+|-- resendSendNo | String| X| 대체 발송 발신 번호<br><span style="color:red">(SMS 서비스에 등록된 발신 번호가 아닐 경우, 대체 발송에 실패할 수 있습니다.)</span> |
 |- recipientGroupingKey|	String|	X|	수신자 그룹핑 키 (최대 100자) |
 
 * <b>요청 일시는 호출하는 시점부터 90일 후까지 설정 가능합니다.</b>
@@ -187,11 +190,13 @@ Content-Type: application/json;charset=UTF-8
                     "schemeAndroid": String
                 }
             ],
-            "isResend" : boolean,
-            "resendType" : String,
-            "resendTitle" : String,
-            "resendContent" : String,
-            "resendSendNo" : String,
+            "resendParameter": {
+              "isResend" : boolean,
+              "resendType" : String,
+              "resendTitle" : String,
+              "resendContent" : String,
+              "resendSendNo" : String
+            },
             "recipientGroupingKey": String
         }
     ]
@@ -215,11 +220,12 @@ Content-Type: application/json;charset=UTF-8
 |-- linkPc | String |	X |PC 웹 링크  (WL 타입일 경우 선택 필드, 최대 200자) |
 |-- schemeIos | String | X |	IOS 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
 |-- schemeAndroid | String | X |	Android 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
-|- isResend|	boolean|	X|	발송 실패 시, 문자 대체발송 여부<br>Console에서 대체 발송 설정 시, default로 재발송 됩니다. |
-|- resendType|	String|	X|	대체 발송 타입 (SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
-|- resendTitle|	String|	X|	LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 아이디로 재발송됩니다.) |
-|- resendContent|	String|	X|	대체 발송 내용<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
-|- resendSendNo | String| X| 대체 발송 발신번호<br><span style="color:red">(SMS 상품에 등록된 발신번호가 아닐 경우, 대체발송이 실패할 수 있습니다.)</span> |
+|- resendParameter|	Object|	X| 대체 발송 정보 |
+|-- isResend|	boolean|	X|	발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본으로 재발송됩니다. |
+|-- resendType|	String|	X|	대체 발송 타입(SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
+|-- resendTitle|	String|	X|	LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 ID로 재발송됩니다.) |
+|-- resendContent|	String|	X|	대체 발송 내용<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
+|-- resendSendNo | String| X| 대체 발송 발신 번호<br><span style="color:red">(SMS 서비스에 등록된 발신 번호가 아닐 경우, 대체 발송에 실패할 수 있습니다.)</span> |
 |- recipientGroupingKey|	String|	X|	수신자 그룹핑 키 (최대 100자) |
 
 * <b>본문과 버튼에 치환이 완성된 데이터를 넣어주세요.</b>
@@ -552,11 +558,13 @@ Content-Type: application/json;charset=UTF-8
         "templateParameter": {
             String: String
         },
-        "isResend" : boolean,
-        "resendType" : String,
-        "resendTitle" : String,
-        "resendContent" : String,
-        "resendSendNo" : String,
+        "resendParameter": {
+          "isResend" : boolean,
+          "resendType" : String,
+          "resendTitle" : String,
+          "resendContent" : String,
+          "resendSendNo" : String
+        },
         "recipientGroupingKey": String
     }]
 }
@@ -573,11 +581,12 @@ Content-Type: application/json;charset=UTF-8
 |- templateParameter|	Object|	X|	템플릿 파라미터<br>(템플릿에 치환할 변수 포함 시, 필수) |
 |-- key|	String|	X |	치환 키(#{key})|
 |-- value| String |	X |	치환 키에 매핑되는 Value값|
-|- isResend|	boolean|	X|	발송 실패 시, 문자 대체발송 여부<br>Console에서 대체 발송 설정 시, default로 재발송 됩니다. |
-|- resendType|	String|	X|	대체 발송 타입 (SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
-|- resendTitle|	String|	X|	LMS 대체 발송 제목 (최대 20자)<br>(값이 없을 경우, 플러스친구 아이디로 재발송됩니다.) |
-|- resendContent|	String|	X|	대체 발송 내용 (최대 1000자)<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
-|- resendSendNo | String| X| 대체 발송 발신번호 (최대 13자)<br><span style="color:red">(SMS 상품에 등록된 발신번호가 아닐 경우, 대체발송이 실패할 수 있습니다.)</span> |
+|- resendParameter|	Object|	X| 대체 발송 정보 |
+|-- isResend|	boolean|	X|	발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본으로 재발송됩니다. |
+|-- resendType|	String|	X|	대체 발송 타입(SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
+|-- resendTitle|	String|	X|	LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 ID로 재발송됩니다.) |
+|-- resendContent|	String|	X|	대체 발송 내용<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
+|-- resendSendNo | String| X| 대체 발송 발신 번호<br><span style="color:red">(SMS 서비스에 등록된 발신 번호가 아닐 경우, 대체 발송에 실패할 수 있습니다.)</span> |
 |- recipientGroupingKey|	String|	X|	수신자 그룹핑 키 (최대 100자) |
 
 * <b>요청 일시는 호출하는 시점부터 90일 후까지 설정 가능합니다.</b>
@@ -678,11 +687,13 @@ Content-Type: application/json;charset=UTF-8
                     "schemeAndroid": String
                 }
             ],
-            "isResend" : boolean,
-            "resendType" : String,
-            "resendTitle" : String,
-            "resendContent" : String,
-            "resendSendNo" : String,
+            "resendParameter": {
+              "isResend" : boolean,
+              "resendType" : String,
+              "resendTitle" : String,
+              "resendContent" : String,
+              "resendSendNo" : String
+            },
             "recipientGroupingKey": String
         }
     ]
@@ -706,11 +717,12 @@ Content-Type: application/json;charset=UTF-8
 |-- linkPc | String |	X |PC 웹 링크  (WL 타입일 경우 선택 필드, 최대 200자) |
 |-- schemeIos | String | X |	IOS 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
 |-- schemeAndroid | String | X |	Android 앱 링크 (AL 타입일 경우 필수 필드, 최대 200자) |
-|- isResend|	boolean|	X|	발송 실패 시, 문자 대체발송 여부<br>Console에서 대체 발송 설정 시, default로 재발송 됩니다. |
-|- resendType|	String|	X|	대체 발송 타입 (SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
-|- resendTitle|	String|	X|	LMS 대체 발송 제목 (최대 20자)<br>(값이 없을 경우, 플러스친구 아이디로 재발송됩니다.) |
-|- resendContent|	String|	X|	대체 발송 내용 (최대 1000자)<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
-|- resendSendNo | String| X| 대체 발송 발신번호 (최대 13자)<br><span style="color:red">(SMS 상품에 등록된 발신번호가 아닐 경우, 대체발송이 실패할 수 있습니다.)</span> |
+|- resendParameter|	Object|	X| 대체 발송 정보 |
+|-- isResend|	boolean|	X|	발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본으로 재발송됩니다. |
+|-- resendType|	String|	X|	대체 발송 타입(SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다. |
+|-- resendTitle|	String|	X|	LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 ID로 재발송됩니다.) |
+|-- resendContent|	String|	X|	대체 발송 내용<br>(값이 없을 경우, 템플릿 내용으로 재발송됩니다.) |
+|-- resendSendNo | String| X| 대체 발송 발신 번호<br><span style="color:red">(SMS 서비스에 등록된 발신 번호가 아닐 경우, 대체 발송에 실패할 수 있습니다.)</span> |
 |- recipientGroupingKey|	String|	X|	수신자 그룹핑 키 (최대 100자) |
 
 * <b>본문과 버튼에 치환이 완성된 데이터를 넣어주세요.</b>
