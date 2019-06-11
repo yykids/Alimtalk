@@ -1,4 +1,23 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
+### 2019. 06. 25.
+* [Console] Allowed alternative delivery, and added split delivery, for mass delivery of Friendtalk messages
+    - Fields related to alternative delivery can be specified, such as content of alternative delivery/sender number/alternative delivery.
+    - Features have been added to send in splits by specifying split times/interval.
+* [API] Added API to cancel scheduled delivery of Friendtalk   
+    - Scheduled Friendtalk message can be cancelled, if it is yet to be delivered.
+* [API] Added API to cancel scheduled delivery of Alimtalk for authentication
+    - Scheduled Alimtalk message for authentication can be cancelled, if it is yet to be delivered
+* [Console] Improved mass delivery of Alimtalk/Friendtalk  
+    - With [Proceed after Inspect], notification mail is sent, unless Send is clicked.  
+      + Email receiving targets: All project members
+      + Mail delivery condition: Click [Proceed after Inspect], and send two times in total, including one time after a day, and another in 6 days
+    - For mass scheduled delivery, Proceed after Inspect is not available.
+* [Console] Improved Search of Plus Friends
+    - To search for a Plus Friend, search by conditions has been added.
+* [Console] Fixed bugs in messages  
+    - Fixed errors in messages for the status of Plus Friend, and deleting templates.
+
+
 ### 2019.05.28
 * [API] For delivery, country code can be included to recipient numbers.  
     - The recipientNo field can now include country code for delivery.
