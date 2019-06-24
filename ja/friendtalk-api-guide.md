@@ -385,6 +385,66 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - senderGroupingKey    | String  | 発信グルーピングキー                               |
 | - recipientGroupingKey | String  | 受信者グルーピングキー                              |
 
+## メッセージ
+### メッセージ送信取消
+
+#### リクエスト
+
+[URL]
+
+```
+DELETE  /friendtalk/v1.3/appkeys/{appkey}/messages/{requestId}
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 値  | タイプ | 説明 |
+| --------- | ------ | ------ |
+| appkey    | String | 固有のアプリケーションキー |
+| requestId | String | リクエストID  |
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| 値     | タイプ | 必須 | 説明                                |
+| ------------ | ------ | ---- | ---------------------------------------- |
+| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./plus-friend-console-guide/#x-secret-key)] |
+
+[Query parameter]
+
+| 値     | タイプ | 必須 | 説明                                |
+| ------------ | ------ | ---- | ---------------------------------------- |
+| recipientSeq | String | X    | 受信者シーケンス番号<br>(入力しない場合、リクエストIDのすべての送信件をキャンセル) |
+
+* 一般/認証メッセージは同じAPIでキャンセルできます。
+
+#### レスポンス
+```
+{
+  "header" : {
+      "resultCode" :  Integer,
+      "resultMessage" :  String,
+      "isSuccessful" :  boolean
+  }
+}
+```
+
+| 値        | タイプ | 説明 |
+| --------------- | ------- | ------ |
+| header          | Object  | ヘッダ領域 |
+| - resultCode    | Integer | 結果コード |
+| - resultMessage | String  | 結果メッセージ |
+| - isSuccessful  | Boolean | 成否 |
+
+[例]
+```
+curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.3/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
+```
+
 ### メッセージ結果アップデート照会
 
 #### リクエスト
