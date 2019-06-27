@@ -1,15 +1,35 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
+### 2019. 06. 25.
+* [Console] Allowed alternative delivery, and added split delivery, for mass delivery of Friendtalk messages
+    - Fields related to alternative delivery can be specified, such as content of alternative delivery/sender number/alternative delivery.
+    - Features have been added to send in splits by specifying split times/interval.
+* [API] Added API to cancel scheduled delivery of Friendtalk   
+    - Scheduled Friendtalk message can be cancelled, if it is yet to be delivered.
+* [API] Added API to cancel scheduled delivery of Alimtalk for authentication
+    - Scheduled Alimtalk message for authentication can be cancelled, if it is yet to be delivered
+* [Console] Improved mass delivery of Alimtalk/Friendtalk  
+    - With [Proceed after Inspect], notification mail is sent, unless Send is clicked.  
+      + Email receiving targets: All project members
+      + Mail delivery condition: Click [Proceed after Inspect], and send two times in total, including one time after a day, and another in 6 days
+    - For mass scheduled delivery, Proceed after Inspect is not available.
+* [Console] Improved Search of Plus Friends
+    - To search for a Plus Friend, search by conditions has been added.
+* [Console] Fixed bugs in messages  
+    - Fixed errors in messages for the status of Plus Friend, and deleting templates.
+
+
 ### 2019.05.28
-* [API] 발송 시, 국가코드가 포함된 수신번호 발송 기능
-    - 발송 시, recipientNo 필드에 국가코드를 입력할 수 있도록 개선되었습니다.
-    - 카카오 어플에서 해외 휴대폰 번호로 인증한 사용자에게 발송 가능합니다.
-* [API] 알림톡 발송 v1.3 추가
-    - 알림톡 발송 API의 대체 발송 관련 필드 형상이 친구톡 발송 API와 동일하게 개선되었습니다.
-* [API] 대체발송 설정 API 추가
-    - 플러스친구 대체발송 설정 API가 추가되었습니다.
-* [API] 플러스친구 조회 API 개선
-    - 플러스친구 조회 API에 pagination 기능이 추가되었습니다.
-    - 플러스친구 조회 API에 알림톡/친구톡 대체발송 응답 필드가 추가되었습니다. (v1.3)
+* [API] For delivery, country code can be included to recipient numbers.  
+    - The recipientNo field can now include country code for delivery.
+    - Available to send to users authenticated for overseas mobile phone on the Kakaotalk appliation.
+* [API] Added v1.3 for Alimtalk Delivery
+    - The field configuration related for alternative delivery for Alimtalk Delivery API has been updated to the same level of Friendtalk Delivery API.  
+* [API] Added Set Alternative Delivery API
+    - Set Alternative Delivery API for PlusFriend has been added.
+* [API] Updated Query PlusFriend API
+    - Pagination has been added to Query PlusFriend API.
+    - Response field of Alimtalk/Friendtalk alternative delivery has been added to Query PlusFriend API.  (v1.3)
+
 
 ### 2019.04.30
 * [Console] 플러스친구 등록 시, 비지니스 인증 방식 롤백

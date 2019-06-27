@@ -3,15 +3,14 @@
 ## プラスフレンド登録/認証
 * カカオトークBizメッセージを送信するには、プラスフレンドを先に登録する必要があります。
 * プラスフレンドは、カカオトークWebサイト( https://center-pf.kakao.com )で、無料で作成できます。
-<!-- * ビジネス認証済のプラスフレンドのみTOAST KakaoTalk Bizmessageサービスに追加できます。([[プラスフレンドビジネス認証](https://static.toastoven.net/prod_alimtalk/plusfriend_business_certify_guide_20190311.pdf)]参考) -->
+* ビジネス認証済のプラスフレンドのみTOAST KakaoTalk Bizmessageサービスに追加できます。([[プラスフレンドビジネス認証](https://static.toastoven.net/prod_alimtalk/plusfriend_business_certify_guide_20190311.pdf)]参考)
 
 ## プラスフレンドの追加
 
 プラスフレンドの登録が完了すると、管理者の携帯電話にカカオトークトークンメッセージが送信されます。
 管理者に登録された携帯電話にのみカカオトークトークンメッセージが送信されます。
 
-<!-- ![plusfriend_01_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_01_201904.png) -->
-![plusfriend_01_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_02_201812.png)
+![plusfriend_01_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_01_201904.png)
 
 * プラスフレンドIDは、プラスフレンドを開設する時、登録した検索用IDを入力する必要があります。
 * 顧客が受け取ったカカオトークBizメッセージは、カカオトークに登録したプラスフレンドの名前で表示されます。
@@ -20,8 +19,7 @@
 
 管理者の携帯電話で受け取ったトークンメッセージを入力すると登録が完了します。
 
-<!-- ![plusfriend_02_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_02_201904.png) -->
-![plusfriend_01_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_02_201812.png)
+![plusfriend_02_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_02_201904.png)
 
 <b><span style="color:red">プラスフレンド登録時、初期の一日最大送信量は1,000件に制限されます。</span></b>
 一日最大送信量を変更するには、サポート(support@toast.com)にリクエストする必要があります。
