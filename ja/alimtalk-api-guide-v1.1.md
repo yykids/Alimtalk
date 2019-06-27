@@ -667,9 +667,7 @@ Content-Type: application/json;charset=UTF-8
 {
   "plusFriendId" : String,
   "phoneNo" : String,
-  "licenseNo" : String,
-  "categoryCode" : String,
-  "fileSeq" : Integer
+  "categoryCode" : String
 }
 ```
 
@@ -677,9 +675,7 @@ Content-Type: application/json;charset=UTF-8
 | ------------ | ------- | ---- | ---------------------------------------- |
 | plusFriendId | String  | O    | プラスフレンドID(最大30文字)                         |
 | phoneNo      | String  | O    | 管理者の携帯電話番号(最大15桁)                       |
-| licenseNo    | String  | O    | 事業者登録番号(最大10桁)                         |
 | categoryCode | String  | O    | カテゴリーコード(11桁)<br>カテゴリー照会APIのレスポンス参考<br>ex) 00100010001健康(001) - 病院(0001) - 総合病院(0001) |
-| fileSeq      | Integer | O    | ファイルシーケンス                             |
 
 #### レスポンス
 ```
