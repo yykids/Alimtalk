@@ -1,5 +1,5 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
-### 2019. 06. 25.
+### 2019. 06. 27.
 * [Console] Allowed alternative delivery, and added split delivery, for mass delivery of Friendtalk messages
     - Fields related to alternative delivery can be specified, such as content of alternative delivery/sender number/alternative delivery.
     - Features have been added to send in splits by specifying split times/interval.
@@ -16,6 +16,8 @@
     - To search for a Plus Friend, search by conditions has been added.
 * [Console] Fixed bugs in messages  
     - Fixed errors in messages for the status of Plus Friend, and deleting templates.
+* [Console] For registring PlusFriend, <b>must be certified for business</b>
+    - For registring PlusFriend, <b>must be certified for business</b> [[Related announcements](https://center-pf.kakao.com/notices/311)]
 
 
 ### 2019.05.28
