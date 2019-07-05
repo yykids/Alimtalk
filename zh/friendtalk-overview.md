@@ -1,16 +1,15 @@
-## Notification > KakaoTalk Bizmessage > 친구톡 > 개요
+## Notification > KakaoTalk Bizmessage > Friendtalk > Overview
 
-친구톡은 휴대폰 번호를 기반으로 플러스친구를 맺은 카카오톡 이용자를 대상으로 광고성 메시지를 발송할 수 있는 서비스입니다.
-손쉬운 연동을 위한 RESTful API를 제공합니다.
+Friendtalk enables to send advertisement messages to KakaoTalk users who become Plus Friend based on mobile phone numbers.  
+RESTful API is provided for easy integration.
 
-## 특징
-* SMS보다 저렴한 비용으로 1,000자까지 장문의 메시지를 보낼 수 있습니다.
-* 친구를 맺은 이용자를 대상으로 광고성 메시지도 발송할 수 있습니다.
-* 템플릿을 등록하지 않고, 자유롭게 텍스트로 발송할 수 있습니다.
-* 텍스트뿐 아니라 이미지를 첨부하여 발송할 수 있습니다.
-* 야간 발송(20:00~다음 날 08:00)이 제한됩니다. 
+## Benefits
+* Send long messages up to 1,000 characters at more affordable prices than SMS.
+* Send ad messages to users who become friends.
+* Requires no template registration but feel free to send texts .
+* Send text as well as image attachment.
+* Restricted during night time (20:00 - 08:00 on the following day).
 
-## 주요 기능
-* 메시지 발송, 조회, 이미지 관리 RESTful API를 제공합니다.
-* 콘솔에서는 메시지 발송, 조회, 이미지 관리 그리고 발송한 메시지의 통계 내역을 조회할 수 있습니다.
-
+## Main Features
+* RESTful APIs are provided to Send/Query Messages or Manage Images.
+* Console allows sending/querying messages, managing images, and queries statistics of sent messages.    

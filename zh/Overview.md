@@ -1,13 +1,12 @@
-## Notification > KakaoTalk Bizmessage > 개요
+## Notification > KakaoTalk Bizmessage > Overview
 
-KakaoTalk Bizmessage는 휴대폰 번호를 기반으로 친구 추가 없이 카카오톡 사용자에게 알림톡, 친구톡 형태의 메시지를 발송할 수 있는 서비스입니다.
-손쉬운 연동을 위한 RESTful API를 제공합니다.
+KakaoTalk Bizmessage provides Alimtalk and Friendtalk to send messages to KakaoTalk users based on mobile phone numbers, with no need of adding friends.
+RESTful API is provided for easy integration.
 
-## 알림톡 vs 친구톡
-| 구분    | 알림톡                                      | 친구톡                                      |
-| ----- | ---------------------------------------- | ---------------------------------------- |
-| 발송 내용 | 정보성 메시지 발송 가능                            | 광고성 메시지 발송 가능                            |
-| 발송 대상 | 친구 여부 관계 없음(전화번호 정보 필요)                  | 플러스친구와 친구를 맺은 이용자(전화번호 정보 필요)            |
-| 발송 형식 | 한/영 구분 없이 띄어쓰기 포함 1,000자 텍스트 + 메시지 하단 링크 버튼 | - 친구톡 텍스트: 한/영 구분 없이 띄어쓰기 포함 1,000자 텍스트 + 링크 버튼<br />- 친구톡 이미지: 텍스트 400자 + 이미지 1장 + 링크 버튼 |
-| 특이 사항 | - 정보형 비즈 메시지에 국한<br />- 승인된 템플릿 기반으로 발송  | - 야간 발송 제한(20:00~다음 날 08:00)             |
-
+## Alimtalk vs Friendtalk
+| Category     | Alimtalk                                                     | Friendtalk                                                   |
+| ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Message Type | Available to send informative messages                       | Available to send advertisement messages                     |
+| Target       | Friends not necessary (requires phone number information)    | Users who are friends to Plus Friend (requires phone number information) |
+| Format       | 1,000 characters including spaces, Korean or English + Link at the message bottom | - Friendtalk text: 1,000 characters of text in Korean or English + link button<br />- Friendtalk image: 400 characters of text + 1 page of image + link button |
+| Features     | - Restricted to informative biz messages <br />- Send by approved templates | - Delivery prohibited during night time  (20:00~ 08:00 on the following day) |
