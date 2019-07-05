@@ -1,45 +1,44 @@
-## Notification > KakaoTalk Bizmessage > 플러스친구 > 콘솔 가이드
+## Notification > KakaoTalk Bizmessage > Plus Friend> Console Guide
 
-## 플러스친구 등록/인증
-* 카카오톡 비즈 메시지를 발송하려면 플러스친구를 먼저 등록해야 합니다.
-* 플러스친구는 카카오톡 홈페이지( https://center-pf.kakao.com )에서 무료로 만들 수 있습니다.
-* 비즈니스 인증을 받은 플러스친구만 TOAST KakaoTalk Bizmessage 서비스에 추가할 수 있습니다.([[플러스친구 비즈니스 인증](https://static.toastoven.net/prod_alimtalk/plusfriend_business_certify_guide_20190311.pdf)] 참고)
+## Adding Plus Friends
 
-## 플러스친구 추가
+To add a Plus Friend, go to console and select **Notification > KakaoTalk Bizmessage > Plus Friend Management**.
 
-플러스친구 등록이 완료되면 관리자 휴대폰으로 카카오톡 토큰 메시지가 전달됩니다.
-관리자로 등록된 휴대폰으로만 카카오톡 토큰 메시지가 전달됩니다.
+When it is completely registered, Kakaotalk token message is sent to administrator's mobile phone.  
+Only the administrator can receive such token messages.
 
 ![plusfriend_01_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_01_201904.png)
 
-* 플러스친구 ID는 플러스친구를 개설할 때 등록한 검색용 아이디를 입력해야 합니다.
-* 고객이 받는 카카오톡 비즈 메시지는 카카오톡에 등록한 플러스친구 이름으로 표시됩니다.
+* Make sure to enter ID of search purpose for Plus Friend ID which was registered when the Plus Friend service was requested.
+* Customers receive Kakaotalk Bizmessages in the name of the Plus Friend registered at Kakaotalk.
 
-## 토큰 등록
+## Token Registration
 
-관리자 휴대폰으로 받은 토큰 메시지를 입력하면 등록이 완료됩니다.
+Enter token message received on the administrator's phone and it is completely registered.
 
-![plusfriend_02_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_02_201904.png)
+![plusfriend_02_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_02_201904.png)                                                   
 
-<b><span style="color:red">플러스친구 등록 시, 초기 일별 최대 발송량은 1,000건으로 제한됩니다.</span></b>
-일별 최대 발송량을 변경하려면 고객 센터(support@toast.com)에 별도로 요청해야 합니다.
+<b><span style="color:red">With the registration of Plus Friend, the initial maximum daily delivery volume is limited to 1,000.</span></b>
+To change the maximum daily delivery volume, you must send request to Customer Center (support@toast.com).
 
-## 발송 실패 설정
+## Setting for Failed Delivery  
 
-플러스친구별로 '발송 실패 설정'을 할 수 있습니다.
+'Failed Delivery Setting' can be applied for each Plus Friend.
 
-* 발송 실패 설정을 한 플러스친구의 메시지만 LMS 또는 SMS로 대체 발송됩니다.
-* SMS 앱키 수정 시, 모든 플러스친구의 발송 실패 설정은 초기화됩니다.
+* Only such Plus Friend messages which are set up with failed delivery can be replaced by LMS or SMS. 발
+* With the modification of SMS appkey, failed delivery setting of all Plus Friends become initialized.
 
 ![plusfriend_03_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_03_201812.png)
 
-## 개인정보 수탁사 고지 안내
-'고객'이 TOAST > Notification > KakaoTalk Bizmessage 서비스 이용 시, '고객' - '당사' 간 개인정보 처리에 관한 업무 위수탁 관계가 발생하는 바 정보통신망법 및 개인정보보호법에 따라 위탁자인 '고객'은 개인정보 처리방침을 통해 '당사'에 개인정보를 위탁한 현황(수탁자 및 업무의 내용)을 공개해야 합니다.
+## Guide for Notice of Personal Information Assignor
+When the Customer uses TOAST > Notification > KakaoTalk Bizmessage Service, assignment of personal information between the Customer and the Company arises, and the assignee, the Customer, is obliged to disclose the status (assignor and content of business) of his assignment of personal information to the Company, through the personal information handling policy, in accordance with the Act on Promotion of Information and Communications Network Utilization and Information Protection, and the Personal Information Protection Act.
 
-이에, '당사'에서는 '고객'이 TOAST의 KakaoTalk Bizmessage 서비스를 이용함에 있어 관련 법령을 준수하고, 위탁 현황 미공개로 인하여 과태료 등의 불이익을 받지 않도록 아래와 같이 가이드할 수 있습니다.
+Accordingly, the Company may provide guidelines as below for the Customer, to abide by relevant regulations in the use of TOAST KakaoTalk Bizmessage Service and not to be adversely affected for not disclosing his assignment status:
 
-(예시)<br>
-[개인정보 수탁사 고지 안내]<br>
-KakaoTalk Bizmessage 서비스 이용 시 고객사에서 운영하는 '개인정보 처리방침 > 위탁 현황'에 다음의 내용을 표기해주세요.<br>
-수탁사: 엔에이치엔<br>
-업무의 내용: 카카오톡 비즈 메시지 발송 대행<br>
+(Example)
+
+[Notice of Personal Information Assignor]
+To use TOAST KakaoTalk Bizmessage Service, make sure the following is displayed for 'Personal Information Handling Policy' > Assignment Status of the Customer.
+
+Assignor: NHN
+Content of Business: Send KakaoTalk Bizmessage in lieu of customers

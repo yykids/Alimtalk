@@ -1,13 +1,13 @@
-## Notification > KakaoTalk Bizmessage > 친구톡 > API v1.1 Guide
+## Notification > KakaoTalk Bizmessage > Friendtalk > API v1.1 Guide
 
-## 친구톡
+## Friendtalk
 
-#### [API 도메인]
+#### [API Domain]
 
 <table>
 <thead>
 <tr>
-<th>도메인</th>
+<th>Domain</th>
 </tr>
 </thead>
 <tbody>
@@ -17,8 +17,8 @@
 </tbody>
 </table>
 
-## 메시지 발송
-#### 발송 요청
+## Send Messages
+#### Request of Sending
 
 [URL]
 
@@ -29,9 +29,9 @@ Content-Type: application/json;charset=UTF-8
 
 [Path parameter]
 
-| 값      | 타입     | 설명     |
-| ------ | ------ | ------ |
-| appkey | String | 고유의 앱키 |
+| Value  | Type   | Description     |
+| ------ | ------ | --------------- |
+| appkey | String | Original appkey |
 
 [Header]
 ```
@@ -39,9 +39,9 @@ Content-Type: application/json;charset=UTF-8
   "X-Secret-Key": String
 }
 ```
-| 값            | 타입     | 필수   | 설명                                       |
-| ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+| Value        | Type   | Required | Description                                                  |
+| ------------ | ------ | -------- | ------------------------------------------------------------ |
+| X-Secret-Key | String | O        | Can be created on console. [[Reference](./plus-friend-console-guide/#x-secret-key)] |
 
 [Request body]
 
@@ -70,34 +70,35 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 값                | 타입      | 필수   | 설명                                       |
-| ---------------- | ------- | ---- | ---------------------------------------- |
-| plusFriendId     | String  | X    | 플러스친구 ID                                 |
-| requestDate      | String  | X    | 요청 일시(yyyy-MM-dd HH:mm), 필드를 보내지 않을 경우, 즉시 발송 |
-| recipientList    | List    | O    | 수신자 목록(최대 1000명)                         |
-| - recipientNo    | String  | O    | 수신 번호                                    |
-| - content        | String  | O    | 내용(최대 1000자)<br>이미지 포함 시, 최대 400자        |
-| - imageSeq       | Integer | X    | 이미지 번호                                   |
-| - imageLink      | String  | X    | 이미지 링크(이미지 번호를 입력할 경우 필수)                |
-| - buttons        | List    | X    | 버튼                                       |
-| -- ordering      | Integer | X    | 버튼 순서(버튼이 있는 경우 필수)                      |
-| -- type          | String  | X    | 버튼 타입(WL:웹 링크, AL:앱 링크, BK:봇 키워드, MD:메시지 전달) |
-| -- name          | String  | X    | 버튼 이름(버튼이 있는 경우 필수)                      |
-| -- linkMo        | String  | X    | 모바일 웹 링크(WL 타입일 경우 필수 필드)                |
-| -- linkPc        | String  | X    | PC 웹 링크 (WL 타입일 경우 선택 필드)                |
-| -- schemeIos     | String  | X    | iOS 앱 링크(AL 타입일 경우 필수 필드)                |
-| -- schemeAndroid | String  | X    | Android 앱 링크(AL 타입일 경우 필수 필드)            |
-| - isAd           | Boolean | X    | 광고 여부(기본값 true)                          |
+| Value            | Type    | Required | Description                                                  |
+| ---------------- | ------- | -------- | ------------------------------------------------------------ |
+| plusFriendId     | String  | X        | Plus Friend ID                                               |
+| requestDate      | String  | X        | Date and time of request (yyyy-MM-dd HH:mm), sent immediately if the field is not sent |
+| recipientList    | List    | O        | List of recipients (up to 1000 persons)                      |
+| - recipientNo    | String  | O        | Recipient number                                             |
+| - content        | String  | O        | Body message (up to 1000 characters)<br>Up to 400 characters, if image is included |
+| - imageSeq       | Integer | X        | Image number                                                 |
+| - imageLink      | String  | X        | Image link (required to enter image number)                  |
+| - buttons        | List    | X        | Button                                                       |
+| -- ordering      | Integer | X        | Button sequence (required if there is a button)              |
+| -- type          | String  | X        | Button type (WL: Web Link, AL: App Link, BK: Bot Keyword, MD: Message Delivery) |
+| -- name          | String  | X        | Button name (required if there is a button)                  |
+| -- linkMo        | String  | X        | Mobile web link (required for the WL type)                   |
+| -- linkPc        | String  | X        | PC web link (optional for the WL type)                       |
+| -- schemeIos     | String  | X        | iOS app link (required for the AL type)                      |
+| -- schemeAndroid | String  | X        | Android app link (required for the AL type)                  |
+| - isAd           | Boolean | X        | Ad or not (default is true)                                  |
 
-* <b>플러스친구 ID 필드를 보내지 않을 경우, 첫 번째 등록한 플러스친구로 발송됩니다.</b>
-* <b>야간 발송 제한(20:00~다음 날 08:00)</b>
+* <b> Send the first-registered Plus Friend, if Plus Friend ID field is not sent.</b>
+* <b> Delivery restricted during night (20:00~08:00 on the following day)</b>
 
-[예시]
+[Example]
+
 ```
-curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/friendtalk/v1.1/appkeys/{appkey}/messages -d '{"plusFriendId":"@플러스친구","requestDate":"yyyy-MM-dd HH:mm","recipientList":[{"recipientNo":"010-0000-0000","imageSeq":1,"imageLink":"https://toast.com","content":"내용","buttons":[{"ordering":1,"type":"WL","name":"버튼1","linkMo":"https://toast.com","linkPc":"https://toast.com"}]}]}'
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/friendtalk/v1.1/appkeys/{appkey}/messages -d '{"plusFriendId":"@plusfriend","requestDate":"yyyy-MM-dd HH:mm","recipientList":[{"recipientNo":"010-0000-0000","imageSeq":1,"imageLink":"https://toast.com","content":"message","buttons":[{"ordering":1,"type":"WL","name":"button1","linkMo":"https://toast.com","linkPc":"https://toast.com"}]}]}'
 ```
 
-#### 응답
+#### Response
 
 ```
 {
@@ -112,18 +113,18 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 }
 ```
 
-| 값               | 타입      | 설명     |
-| --------------- | ------- | ------ |
-| header          | Object  | 헤더 영역  |
-| - resultCode    | Integer | 결과 코드  |
-| - resultMessage | String  | 결과 메시지 |
-| - isSuccessful  | Boolean | 성공 여부  |
-| message         | Object  | 본문 영역  |
-| - requestId     | String  | 요청 ID  |
+| Value           | Type    | Description       |
+| --------------- | ------- | ----------------- |
+| header          | Object  | Header area       |
+| - resultCode    | Integer | Result code       |
+| - resultMessage | String  | Result message    |
+| - isSuccessful  | Boolean | Successful or not |
+| message         | Object  | Body area         |
+| - requestId     | String  | Request ID        |
 
-## 발송 리스트 조회
+## List Deliveries
 
-#### 요청
+#### Request
 
 [URL]
 
@@ -134,9 +135,9 @@ Content-Type: application/json;charset=UTF-8
 
 [Path parameter]
 
-| 값      | 타입     | 설명     |
-| ------ | ------ | ------ |
-| appkey | String | 고유의 앱키 |
+| Value  | Type   | Description     |
+| ------ | ------ | --------------- |
+| appkey | String | Original appkey |
 
 [Header]
 ```
@@ -144,25 +145,25 @@ Content-Type: application/json;charset=UTF-8
   "X-Secret-Key": String
 }
 ```
-| 값            | 타입     | 필수   | 설명                                       |
-| ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+| Value        | Type   | Required | Description                                                  |
+| ------------ | ------ | -------- | ------------------------------------------------------------ |
+| X-Secret-Key | String | O        | Can be created on console. [[Reference](./plus-friend-console-guide/#x-secret-key)] |
 
-[Query parameter] 1번 or 2번 조건 필수
+[Query parameter] No.1 or 2 is conditionally required
 
-| 값                | 타입      | 필수        | 설명                                |
-| ---------------- | ------- | --------- | --------------------------------- |
-| requestId        | String  | 조건 필수(1번) | 요청 ID                             |
-| startRequestDate | String  | 조건 필수(2번) | 발송 요청 날짜 시작 값(yyyy-MM-dd HH:mm)   |
-| endRequestDate   | String  | 조건 필수(2번) | 발송 요청 날짜 끝 값(yyyy-MM-dd HH:mm)    |
-| recipientNo      | String  | X         | 수신 번호                             |
-| plusFriendId     | String  | X         | 플러스친구 ID                          |
-| messageStatus    | String  | X         | 요청 상태(COMPLETED: 성공, FAILED: 실패 ) |
-| resultCode       | String  | X         | 발송 결과(MRC01: 성공 MRC02: 실패 )       |
-| pageNum          | Integer | X         | 페이지 번호(기본: 1)                     |
-| pageSize         | Integer | X         | 조회 건수(기본: 15)                     |
+| Value            | Type    | Required                      | Description                                            |
+| ---------------- | ------- | ----------------------------- | ------------------------------------------------------ |
+| requestId        | String  | Conditionally required (no.1) | Request ID                                             |
+| startRequestDate | String  | Conditionally required (no.2) | Start date of delivery request (yyyy-MM-dd HH:mm)      |
+| endRequestDate   | String  | Conditionally required (no.2) | End date of delivery request (yyyy-MM-dd HH:mm)        |
+| recipientNo      | String  | X                             | Recipient number                                       |
+| plusFriendId     | String  | X                             | Plus Friend ID                                         |
+| messageStatus    | String  | X                             | Request status (COMPLETED: Successful, FAILED: Failed) |
+| resultCode       | String  | X                             | Delivery result (MRC01: Successful, MRC02: Failed)     |
+| pageNum          | Integer | X                             | Page number (default: 1)                               |
+| pageSize         | Integer | X                             | Number of queries (default: 15)                        |
 
-#### 응답
+#### Response
 ```
 {
   "header" : {
@@ -191,44 +192,46 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 값                           | 타입      | 설명                                |
-| --------------------------- | ------- | --------------------------------- |
-| header                      | Object  | 헤더 영역                             |
-| - resultCode                | Integer | 결과 코드                             |
-| - resultMessage             | String  | 결과 메시지                            |
-| - isSuccessful              | Boolean | 성공 여부                             |
-| messageSearchResultResponse | Object  | 본문 영역                             |
-| - messages                  | List    | 메시지 리스트                           |
-| -- requestId                | String  | 요청 ID                             |
-| -- recipientSeq             | Integer | 수신자 시퀀스 번호(v1.1부터 필드 추가)          |
-| -- plusFriendId             | String  | 플러스친구 ID                          |
-| -- recipientNo              | String  | 수신 번호                             |
-| -- requestDate              | String  | 요청 일시                             |
-| -- content                  | String  | 본문                                |
-| -- messageStatus            | String  | 요청 상태(COMPLETED: 성공, FAILED: 실패 ) |
-| -- resendStatus             | String  | 재발송 상태 코드                         |
-| -- resendStatusName         | String  | 재발송 상태 코드명                        |
-| -- resultCode               | String  | 수신 결과 코드                          |
-| -- resultCodeName           | String  | 수신 결과 코드명                         |
-| - totalCount                | Integer | 총 개수                              |
+| Value                       | Type    | Description                                            |
+| --------------------------- | ------- | ------------------------------------------------------ |
+| header                      | Object  | Header area                                            |
+| - resultCode                | Integer | Result code                                            |
+| - resultMessage             | String  | Result message                                         |
+| - isSuccessful              | Boolean | Successful or not                                      |
+| messageSearchResultResponse | Object  | Body area                                              |
+| - messages                  | List    | List of messages                                       |
+| -- requestId                | String  | Request ID                                             |
+| -- recipientSeq             | Integer | Number of recipient sequence (to add field from v1.1)  |
+| -- plusFriendId             | String  | Plus Friend ID                                         |
+| -- recipientNo              | String  | Recipient number                                       |
+| -- requestDate              | String  | Date and time of request                               |
+| -- content                  | String  | Body message                                           |
+| -- messageStatus            | String  | Request status (COMPLETED: Successful, FAILED: Failed) |
+| -- resendStatus             | String  | Status code of resending                               |
+| -- resendStatusName         | String  | Status code name of resending                          |
+| -- resultCode               | String  | Result code of receiving                               |
+| -- resultCodeName           | String  | Result code name of receiving                          |
+| - totalCount                | Integer | Total count                                            |
 
-[예시]
+[Example]
+
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.1/appkeys/{appkey}/messages?startRequestDate=2018-05-01%2000:00&endRequestDate=2018-05-30%2023:59"
 ```
 
-#### 재발송 상태
-| 값     | 설명                              |
-| ----- | ------------------------------- |
-| RSC01 | 재발송 미대상                         |
-| RSC02 | 재발송 대상(발송 결과 실패 시, 재발송이 진행됩니다.) |
-| RSC03 | 재발송 중                           |
-| RSC04 | 재발송 성공                          |
-| RSC05 | 재발송 실패                          |
+#### Status of Resending
 
-## 발송 단건 조회
+| Value | Description                                      |
+| ----- | ------------------------------------------------ |
+| RSC01 | No target of resending                           |
+| RSC02 | Target of resending (resent, if delivery fails.) |
+| RSC03 | Resending underway                               |
+| RSC04 | Resending successful                             |
+| RSC05 | Resending failed                                 |
 
-#### 요청
+## Get Deliveries
+
+#### Request
 
 [URL]
 
@@ -239,33 +242,35 @@ Content-Type: application/json;charset=UTF-8
 
 [Path parameter]
 
-| 값      | 타입     | 설명     |
-| ------ | ------ | ------ |
-| appkey | String | 고유의 앱키 |
+| Value  | Type   | Description     |
+| ------ | ------ | --------------- |
+| appkey | String | Original appkey |
 
 [Header]
+
 ```
 {
   "X-Secret-Key": String
 }
 ```
-| 값            | 타입     | 필수   | 설명                                       |
-| ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+| Value        | Type   | Required | Description                                                  |
+| ------------ | ------ | -------- | ------------------------------------------------------------ |
+| X-Secret-Key | String | O        | Can be created on console. [[Reference](./plus-friend-console-guide/#x-secret-key)] |
 
 [Query parameter]
 
-| 값            | 타입      | 필수   | 설명         |
-| ------------ | ------- | ---- | ---------- |
-| requestId    | String  | O    | 요청 ID      |
-| recipientSeq | Integer | O    | 수신자 시퀀스 번호 |
+| Vaue         | Type    | Required | Description                 |
+| ------------ | ------- | -------- | --------------------------- |
+| requestId    | String  | O        | Request ID                  |
+| recipientSeq | Integer | O        | Recipient's sequence number |
 
-[예시]
+[Example]
+
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.1/appkeys/{appkey}/messages/{requestId}/{recipientSeq}"
 ```
 
-#### 응답
+#### Response
 ```
 {
   "header" : {
@@ -306,43 +311,46 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 }
 ```
 
-| 값                  | 타입      | 설명                                       |
-| ------------------ | ------- | ---------------------------------------- |
-| header             | Object  | 헤더 영역                                    |
-| - resultCode       | Integer | 결과 코드                                    |
-| - resultMessage    | String  | 결과 메시지                                   |
-| - isSuccessful     | Boolean | 성공 여부                                    |
-| message            | Object  | 메시지                                      |
-| - requestId        | String  | 요청 ID                                    |
-| - recipientSeq     | Integer | 수신자 시퀀스 번호                               |
-| - plusFriendId     | String  | 플러스친구 ID                                 |
-| - recipientNo      | String  | 수신 번호                                    |
-| - requestDate      | String  | 요청 일시                                    |
-| - receiveDate      | String  | 수신 일시                                    |
-| - content          | String  | 본문                                       |
-| - messageStatus    | String  | 요청 상태(COMPLETED : 성공, FAILED : 실패 )      |
-| - resendStatus     | String  | 재발송 상태 코드                                |
-| - resendStatusName | String  | 재발송 상태 코드명                               |
-| - resultCode       | String  | 수신 결과 코드                                 |
-| - resultCodeName   | String  | 수신 결과 코드명                                |
-| - imageSeq         | Integer | 이미지 번호                                   |
-| - imageName        | String  | 이미지명(업로드한 파일명)                           |
-| - imageUrl         | String  | 이미지 URL                                  |
-| - imageLink        | String  | 이미지 링크(이미지 번호를 입력할 경우 필수)                |
-| - buttons          | List    | 버튼 목록                                    |
-| -- ordering        | Integer | 버튼 순서                                    |
-| -- type            | String  | 버튼 타입(WL:웹 링크, AL:앱 링크, BK:봇 키워드, MD:메시지 전달) |
-| -- name            | String  | 버튼 이름                                    |
-| -- linkMo          | String  | 모바일 웹 링크(WL 타입일 경우 필수 필드)                |
-| -- linkPc          | String  | PC 웹 링크 (WL 타입일 경우 선택 필드)                |
-| -- schemeIos       | String  | iOS 앱 링크(AL 타입일 경우 필수 필드)                |
-| -- schemeAndroid   | String  | Android 앱 링크(AL 타입일 경우 필수 필드)            |
-| - isAd             | Boolean | 광고 여부                                    |
+| Value              | Type    | Description                                                  |
+| ------------------ | ------- | ------------------------------------------------------------ |
+| header             | Object  | Header area                                                  |
+| - resultCode       | Integer | Result code                                                  |
+| - resultMessage    | String  | Result message                                               |
+| - isSuccessful     | Boolean | Successful or not                                            |
+| message            | Object  | Message                                                      |
+| - requestId        | String  | Request ID                                                   |
+| - recipientSeq     | Integer | Recipient sequence number                                    |
+| - plusFriendId     | String  | Plus Friend ID                                               |
+| - recipientNo      | String  | Recipient number                                             |
+| - requestDate      | String  | Date and time of request                                     |
+| - receiveDate      | String  | Date and time of receiving                                   |
+| - content          | String  | Body                                                         |
+| - messageStatus    | String  | Status of request (COMPLETED: successful, FAILED: failed)    |
+| - resendStatus     | String  | Status code of resending                                     |
+| - resendStatusName | String  | Status code name of resending                                |
+| - resultCode       | String  | Result code of receiving                                     |
+| - resultCodeName   | String  | Result code name of receiving                                |
+| - imageSeq         | Integer | Image number                                                 |
+| - imageName        | String  | Image name (name of uploaded file)                           |
+| - imageUrl         | String  | Image URL                                                    |
+| - imageLink        | String  | Image link (required to enter image number)                  |
+| - buttons          | List    | List of buttons                                              |
+| -- ordering        | Integer | Button sequence                                              |
+| -- type            | String  | Button type (WL: Web Link, AL: App Link, BK: Bot Keyword, MD: Message Delivery) |
+| -- name            | String  | Button name                                                  |
+| -- linkMo          | String  | Mobile web link (required for the WL type)                   |
+| -- linkPc          | String  | PC web link (optional for the WL type)                       |
+| -- schemeIos       | String  | iOS app link (required for the AL type)                      |
+| -- schemeAndroid   | String  | Android app link (required for the AL type)                  |
+| - isAd             | Boolean | Ad or not                                                    |
+|                    |         |                                                              |
+|                    |         |                                                              |
 
-## 이미지 관리
+## Image Management
 
-### 이미지 등록
-#### 요청
+### Register Images
+
+#### Request
 
 [URL]
 
@@ -353,9 +361,9 @@ Content-Type: multipart/form-data
 
 [Path parameter]
 
-| 값      | 타입     | 설명     |
-| ------ | ------ | ------ |
-| appkey | String | 고유의 앱키 |
+| Value  | Type   | Description     |
+| ------ | ------ | --------------- |
+| appkey | String | Original appkey |
 
 [Header]
 ```
@@ -363,22 +371,23 @@ Content-Type: multipart/form-data
   "X-Secret-Key": String
 }
 ```
-| 값            | 타입     | 필수   | 설명                                       |
-| ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+| Value        | Type   | Required | Description                                                  |
+| ------------ | ------ | -------- | ------------------------------------------------------------ |
+| X-Secret-Key | String | O        | Can be created on console. [[Reference](./plus-friend-console-guide/#x-secret-key)] |
 
 [Request parameter]
 
-| 값     | 타입   | 필수   | 설명   |
-| ----- | ---- | ---- | ---- |
-| image | File | O    | 이미지  |
+| Value | Type | Required | Description |
+| ----- | ---- | -------- | ----------- |
+| image | File | O        | Image       |
 
-[예시]
+[Example]
+
 ```
 curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.1/appkeys/{appkey}/images" -F "image=@friend-ricecake02.jpeg"
 ```
 
-#### 응답
+#### Response
 ```
 
 {
@@ -395,20 +404,20 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 }
 ```
 
-| 값               | 타입      | 설명                     |
-| --------------- | ------- | ---------------------- |
-| header          | Object  | 헤더 영역                  |
-| - resultCode    | Integer | 결과 코드                  |
-| - resultMessage | String  | 결과 메시지                 |
-| - isSuccessful  | Boolean | 성공 여부                  |
-| image           | Object  | 본문 영역                  |
-| - imageSeq      | Integer | 이미지 번호(친구톡 메시지 발송시 사용) |
-| - imageUrl      | String  | 이미지 URL                |
-| - imageName     | String  | 이미지명(업로드한 파일명)         |
+| Value           | Type    | Description                                |
+| --------------- | ------- | ------------------------------------------ |
+| header          | Object  | Header area                                |
+| - resultCode    | Integer | Result code                                |
+| - resultMessage | String  | Result message                             |
+| - isSuccessful  | Boolean | Successful or not                          |
+| image           | Object  | Body area                                  |
+| - imageSeq      | Integer | Image number (to send Friendtalk messages) |
+| - imageUrl      | String  | Image URL                                  |
+| - imageName     | String  | Image name (name of uploaded file)         |
 
+### Query Images
 
-### 이미지 조회
-#### 요청
+#### Request
 
 [URL]
 
@@ -419,9 +428,9 @@ Content-Type: application/json;charset=UTF-8
 
 [Path parameter]
 
-| 값      | 타입     | 설명     |
-| ------ | ------ | ------ |
-| appkey | String | 고유의 앱키 |
+| Value  | Type   | Description     |
+| ------ | ------ | --------------- |
+| appkey | String | Original appkey |
 
 [Header]
 ```
@@ -429,23 +438,24 @@ Content-Type: application/json;charset=UTF-8
   "X-Secret-Key": String
 }
 ```
-| 값            | 타입     | 필수   | 설명                                       |
-| ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+| Value        | Type   | Required | Description                                                  |
+| ------------ | ------ | -------- | ------------------------------------------------------------ |
+| X-Secret-Key | String | O        | Can be created on console. [[Reference](./plus-friend-console-guide/#x-secret-key)] |
 
 [Query parameter]
 
-| 값        | 타입      | 필수   | 설명            |
-| -------- | ------- | ---- | ------------- |
-| pageNum  | Integer | X    | 페이지 번호(기본: 1) |
-| pageSize | Integer | X    | 조회 건수(기본: 15) |
+| Value    | Type    | Required | Description                     |
+| -------- | ------- | -------- | ------------------------------- |
+| pageNum  | Integer | X        | Page number (default: 1)        |
+| pageSize | Integer | X        | Number of queries (default: 15) |
 
-[예시]
+[Example]
+
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.1/appkeys/{appkey}/images?pageNum=1&pageSize=15"
 ```
 
-#### 응답
+#### Response
 ```
 
 {
@@ -469,24 +479,25 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 }
 ```
 
-| 값               | 타입      | 설명                     |
-| --------------- | ------- | ---------------------- |
-| header          | Object  | 헤더 영역                  |
-| - resultCode    | Integer | 결과 코드                  |
-| - resultMessage | String  | 결과 메시지                 |
-| - isSuccessful  | Boolean | 성공 여부                  |
-| imagesResponse  | Object  | 본문 영역                  |
-| - image         | Object  | 본문 영역                  |
-| -- imageSeq     | Integer | 이미지 번호(친구톡 메시지 발송시 사용) |
-| -- imageUrl     | String  | 이미지 URL                |
-| -- imageName    | String  | 이미지명(업로드한 파일명)         |
-| -- createDate   | String  | 생성 일자                  |
-| - totalCount    | Integer | 총 개수                   |
+| Value           | Type    | Description                                |
+| --------------- | ------- | ------------------------------------------ |
+| header          | Object  | Header area                                |
+| - resultCode    | Integer | Result code                                |
+| - resultMessage | String  | Result message                             |
+| - isSuccessful  | Boolean | Successful or not                          |
+| imagesResponse  | Object  | Body area                                  |
+| - image         | Object  | Body area                                  |
+| -- imageSeq     | Integer | Image number (to send Friendtalk messages) |
+| -- imageUrl     | String  | Image URL                                  |
+| -- imageName    | String  | Image name (name of uploaded file)         |
+| -- createDate   | String  | Date and time of creation                  |
+| - totalCount    | Integer | Total count                                |
 
-* 이미지는 최근 등록한 순대로 정렬되어 응답합니다.
+* Response is sent in the order of latest registration.
 
-### 이미지 삭제
-#### 요청
+### Delete Images
+
+#### Request
 
 [URL]
 
@@ -497,9 +508,9 @@ Content-Type: application/json;charset=UTF-8
 
 [Path parameter]
 
-| 값      | 타입     | 설명     |
-| ------ | ------ | ------ |
-| appkey | String | 고유의 앱키 |
+| Value  | Type   | Description     |
+| ------ | ------ | --------------- |
+| appkey | String | Original appkey |
 
 [Header]
 ```
@@ -507,22 +518,23 @@ Content-Type: application/json;charset=UTF-8
   "X-Secret-Key": String
 }
 ```
-| 값            | 타입     | 필수   | 설명                                       |
-| ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | 콘솔에서 생성할 수 있다. [[참고](./plus-friend-console-guide/#x-secret-key)] |
+| Value        | Type   | Required | Description                                                  |
+| ------------ | ------ | -------- | ------------------------------------------------------------ |
+| X-Secret-Key | String | O        | Can be created on console. [[Reference](./plus-friend-console-guide/#x-secret-key)] |
 
 [Query parameter]
 
-| 값        | 타입     | 필수   | 설명     |
-| -------- | ------ | ---- | ------ |
-| imageSeq | String | O    | 이미지 번호 |
+| Value    | Type   | Required | Description  |
+| -------- | ------ | -------- | ------------ |
+| imageSeq | String | O        | Image number |
 
-[예시]
+[Example]
+
 ```
 curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/friendtalk/v1.1/appkeys/{appkey}/images?imageSeq=1,2,3"
 ```
 
-#### 응답
+#### Response
 ```
 
 {
@@ -534,9 +546,9 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 }
 ```
 
-| 값               | 타입      | 설명     |
-| --------------- | ------- | ------ |
-| header          | Object  | 헤더 영역  |
-| - resultCode    | Integer | 결과 코드  |
-| - resultMessage | String  | 결과 메시지 |
-| - isSuccessful  | Boolean | 성공 여부  |
+| Value           | Type    | Description       |
+| --------------- | ------- | ----------------- |
+| header          | Object  | Header area       |
+| - resultCode    | Integer | Result code       |
+| - resultMessage | String  | Result message    |
+| - isSuccessful  | Boolean | Successful or not |
