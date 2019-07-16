@@ -1,4 +1,9 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
+### 2019. 07. 30.
+* [Console] Field Added for Result Code of Alternative SMS Delivery Request
+    - To query details of alternative delivery message, result code of SMS request has been added.
+* [System] Server Replacement for Service Stabilization
+
 ### 2019. 06. 27.
 * [Console] Allowed alternative delivery, and added split delivery, for mass delivery of Friendtalk messages
     - Fields related to alternative delivery can be specified, such as content of alternative delivery/sender number/alternative delivery.
