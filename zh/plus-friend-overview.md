@@ -1,26 +1,26 @@
-## Notification > KakaoTalk Bizmessage > 플러스친구 > 개요
+## Notification > KakaoTalk Bizmessage > Plus Friend > Overview
 
-### 플러스친구 생성
-카카오톡 비즈메시지를 발송하려면 플러스친구를 먼저 등록해야 합니다. 플러스친구는 카카오톡 비즈니스 아이디입니다. 카카오 홈페이지에서 무료로 만들 수 있습니다. <a target="_blank" href="https://center-pf.kakao.com">[플러스친구 신청]</a>
+### Creating a PlusFriend
+To send KakaoTalk Bizmessages, a Plus Friend must be registered first. Plus Friend referst to a business ID of KakaoTalk, which is available for free on its website. <a target="_blank" href="https://center-pf.kakao.com">[Apply for Plus Friend]</a>
 
-<b>* 2017년 5월 24일 옐로아이디에서 플러스친구로 변경되었습니다.</b>
+<b>* As of May 24, 2017, Yellow ID is changed to Plus Friend.  </b>
 
-![[그림 1] 플러스친구 개설하기](http://static.toastoven.net/prod_alimtalk/plus_friend_overview_01.png)
+![[Figure 1] Creating Plus Friend](http://static.toastoven.net/prod_alimtalk/plus_friend_overview_01.png)
 
-<b>인증을 위해 등록 이후 **홈 공개**로 설정을 변경해야 합니다.</b>
+<b> For authentication, settings must be changed to **Open Home to the Public**  after registration. </b>
 ![[그림 2] 홈 공개 변경](http://static.toastoven.net/prod_alimtalk/plus_friend_overview_02.png)
 
-### 플러스친구 상태
-#### TOAST 플러스친구 상태
-* TOAST에 등록한 플러스친구 상태를 의미합니다.
-* 플러스친구 - 콘솔 사용 가이드를 참고하여, 플러스친구를 등록하고 토큰 인증까지 완료하면, 정상 사용 가능합니다.
+### Status of Plus Friend
+#### Status of TOAST Plus Friend
+* Refers to the status of Plus Friend who is registered to TOAST.
+* Register your Plus Friend and authenticate tokens, in reference of the console guide, and the service is enabled.
 
-#### 카카오 플러스친구 프로필 상태
-* 알림톡/친구톡을 발송하기 위한 발신 키 상태를 의미합니다.
-* 프로필 장기 미사용, 사업자 정보 불일치 등의 경우 차단될 수 있습니다.
-* 해당 상태가 정상이 아닌 경우 TOAST 고객 센터로 플러스친구 ID와 함께 차단 해제를 요청해주시기 바랍니다.
+#### Profile Status of KakaoTalk Plus Friend
+* Refers to the status of sender key to send Alimtalk/Friendtalk.
+* May be blocked if profile is not in use for a long time or business information is not consistent.
+* If status is not normal, send request to TOAST Customer Center, along with Plus Friend ID, to ask for the release of blockage.
 
-#### 카카오 플러스친구 상태
-* 카카오톡 비즈니스 ID의 상태를 의미합니다.
-* 플러스친구 장기 미사용 등의 경우 차단될 수 있습니다.
-* 해당 상태가 정상이 아닌 경우 TOAST 고객 센터로 플러스친구 ID와 함께 차단 해제를 요청해주시기 바랍니다.
+#### Status of KakoTalk Plus Friend
+* Refers to the status of KakaoTalk business ID.
+* May be blocked if Plus Friend is not in use for a long time.
+* If status is not normal, send request to TOAST Customer Center, along with the Plus Friend ID, for the release of blockage.
