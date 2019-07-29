@@ -1,35 +1,42 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
+### 2019. 07. 30.
+* [Console] Field Added for Result Code of Alternative SMS Delivery Request
+    - To query details of alternative delivery message, result code of SMS request has been added.
+* [System] Server Replacement for Service Stabilization
+
 ### 2019. 06. 27.
-* [Console] 친구톡 대량 발송 시, <b>대체 발송 지정 기능, 분할 발송 기능</b> 추가
-    - 대체 발송 내용, 발신 번호, 대체 발송 여부 등 대체 발송 관련 필드를 지정할 수 있는 기능을 추가했습니다.
-    - 분할 횟수, 시간 간격을 지정 분할 발송할 수 있는 기능이 추가되었습니다.
-* [API] 친구톡 예약 발송 취소 API 추가
-    - 친구톡 예약 메시지를 발송 전이라면 취소할 수 있습니다.
-* [API] 인증 알림톡 예약 발송 취소 API 추가
-    - 인증 알림톡 예약 메시지를 발송 전이라면 취소할 수 있습니다.
-* [Console] 알림톡/친구톡 대량 발송 개선
-    - [검수 후 진행] 기능을 이용할 경우, [발송] 버튼을 누르지 않으면 알림 메일이 발송됩니다.
-      + 메일 수신 대상자: 프로젝트 멤버 전체
-      + 메일 발송 조건: [검수 후 진행] 클릭한 뒤 1일 후 1번, 6일 후 1번 총 2회 발송
-    - 대량 예약 발송 시, 검수 후 진행 기능을 이용할 수 없습니다.
-* [Console] 플러스친구 조회 화면 개선
-    - 플러스친구 조회 시, 조건 검색 기능을 추가했습니다.
-* [Console] 문구 버그 수정
-    - 플러스친구 상태, 템플릿 삭제 문구 오류가 있어 수정하였습니다.
-* [Console] 플러스친구 등록 시, <b>비지니스 인증 도입</b>
-    - 플러스친구 등록 시 플러스친구의 <b>비즈니스 인증</b>된 경우만 등록 가능하도록 변경됩니다.​ [[관련 공지사항](https://center-pf.kakao.com/notices/311)]
+* [Console] Allowed alternative delivery, and added split delivery, for mass delivery of Friendtalk messages
+    - Fields related to alternative delivery can be specified, such as content of alternative delivery/sender number/alternative delivery.
+    - Features have been added to send in splits by specifying split times/interval.
+* [API] Added API to cancel scheduled delivery of Friendtalk   
+    - Scheduled Friendtalk message can be cancelled, if it is yet to be delivered.
+* [API] Added API to cancel scheduled delivery of Alimtalk for authentication
+    - Scheduled Alimtalk message for authentication can be cancelled, if it is yet to be delivered
+* [Console] Improved mass delivery of Alimtalk/Friendtalk  
+    - With [Proceed after Inspect], notification mail is sent, unless Send is clicked.  
+      + Email receiving targets: All project members
+      + Mail delivery condition: Click [Proceed after Inspect], and send two times in total, including one time after a day, and another in 6 days
+    - For mass scheduled delivery, Proceed after Inspect is not available.
+* [Console] Improved Search of Plus Friends
+    - To search for a Plus Friend, search by conditions has been added.
+* [Console] Fixed bugs in messages  
+    - Fixed errors in messages for the status of Plus Friend, and deleting templates.
+* [Console] For registring PlusFriend, <b>must be certified for business</b>
+    - For registring PlusFriend, <b>must be certified for business</b> [[Related announcements](https://center-pf.kakao.com/notices/311)]
+
 
 ### 2019.05.28
-* [API] 발송 시, 국가코드가 포함된 수신번호 발송 기능
-    - 발송 시, recipientNo 필드에 국가코드를 입력할 수 있도록 개선되었습니다.
-    - 카카오 어플에서 해외 휴대폰 번호로 인증한 사용자에게 발송 가능합니다.
-* [API] 알림톡 발송 v1.3 추가
-    - 알림톡 발송 API의 대체 발송 관련 필드 형상이 친구톡 발송 API와 동일하게 개선되었습니다.
-* [API] 대체발송 설정 API 추가
-    - 플러스친구 대체발송 설정 API가 추가되었습니다.
-* [API] 플러스친구 조회 API 개선
-    - 플러스친구 조회 API에 pagination 기능이 추가되었습니다.
-    - 플러스친구 조회 API에 알림톡/친구톡 대체발송 응답 필드가 추가되었습니다. (v1.3)
+* [API] For delivery, country code can be included to recipient numbers.  
+    - The recipientNo field can now include country code for delivery.
+    - Available to send to users authenticated for overseas mobile phone on the Kakaotalk appliation.
+* [API] Added v1.3 for Alimtalk Delivery
+    - The field configuration related for alternative delivery for Alimtalk Delivery API has been updated to the same level of Friendtalk Delivery API.  
+* [API] Added Set Alternative Delivery API
+    - Set Alternative Delivery API for PlusFriend has been added.
+* [API] Updated Query PlusFriend API
+    - Pagination has been added to Query PlusFriend API.
+    - Response field of Alimtalk/Friendtalk alternative delivery has been added to Query PlusFriend API.  (v1.3)
+
 
 ### 2019.04.30
 * [Console] 플러스친구 등록 시, 비지니스 인증 방식 롤백
