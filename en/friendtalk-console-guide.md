@@ -1,78 +1,62 @@
-## Notification > KakaoTalk Bizmessage > 친구톡 > 콘솔 사용 가이드
+## Notification > KakaoTalk Bizmessage > Friendtalk > Console Guide
 
-## 친구톡 일반 발송
+## General Delivery
 
-플러스친구를 설정하고 내용을 입력하여 친구톡 형태의 메시지를 발송할 수 있습니다.
-친구톡을 발송하려면  콘솔에서 **Notification > KakaoTalk Bizmessage > 친구톡**을 선택합니다.
+Set up Plus Friend, and enter messages to send Friendtalk messages.
+To send Friendtalk messages, go to the console and **Notification > KakaoTalk Bizmessage > Friendtalk**.
 
 ![friendtalk_01_201812.png](https://static.toastoven.net/prod_alimtalk/friendtalk_01_201812.png)
 
-메시지에 이미지를 첨부하려면, 먼저 **이미지 관리** 탭에서 이미지를 등록해야 합니다.
-수신자는 휴대폰 번호 형태로 작성할 수 있습니다.
+To attach an image to your message, first go to **Image Management** and register it.  
+You may substitute recipients with mobile phone numbers.   
 
-### 광고성 메시지 전송 시 유의 사항
+### Caution for Sending Ad Messages
 
-**광고 여부**에서 **광고**로 선택할 경우, 광고성 메시지로 간주합니다.
+Messages are considered as ad messages, if **Advertisement** is selected for **Ad or Not**.
 
 ![[그림 3] 친구톡 광고 메시지](http://static.toastoven.net/prod_alimtalk/friendtalk_02.png)
 
-* 광고성 메시지의 경우 정보통신통망법상 광고성 정보 전송 시 명시적으로 표시해야 합니다. 메시지 맨앞에 '(광고)' 표시, 수신 거부 방식(홈 > 친구 차단)이 표시됩니다.
+* Ad messages must be specifically displayed in accordance with the Act on Promotion of Information and Communications Network Utilization and Information Protection. '(Ad)', as well as a rejection method of  receiving (home > Block Friend), come before a message.  
 
-## 친구톡 대량 발송
+## Mass Delivery
 
-### 대량 발송 요청
-하단 탭에서 **대량 발송**을 선택합니다.
+### Request for Mass Delivery
+Select **Mass Delivery** at the bottom.
 
-![[그림 4] 친구톡 대량 발송](http://static.toastoven.net/prod_alimtalk/friendtalk_mass_04.png)
+![[Figure 4] Mass Delivery of Friendtalk](http://static.toastoven.net/prod_alimtalk/friendtalk_mass_04.png)
 
-* 내용에 템플릿 치환자를 '#{이름}' 형식으로 입력한 후, **템플릿 다운로드** 버튼을 클릭하면 템플릿 치환자가 포함된 CSV 파일을 다운로드할 수 있습니다.
-* CSV 파일을 Excel로 열어 저장할 때, 한글이 제대로 저장되지 않을 수 있습니다. '검수 후 발송'으로 치환이 제대로 되었는지 확인하는 것을 권장합니다.
-* CSV 파일만 업로드할 수 있습니다. 크기는 최대 20MB이며, 발송할 수 있는 최대 수신자는 10,000명입니다.
+* Enter template replacer in the '#{name}' format, and click **Download Templates** to download CSV file including the template replacer.
+* Korean may not be properly saved, if CSV file is open and saved in excel. It is recommended to 'Send after inspect' to see if it has been properly replaced.   
+* Only csv files can be uploaded: available no more than 20 MB, sent up to 10,000 recipients.
 
 ![[그림 5] 친구톡 대량 csv](http://static.toastoven.net/prod_alimtalk/friendtalk_mass_05.png)
 
-* 각 수신자별, 템플릿 치환자의 값을 입력할 수 있습니다.
-* 만약 템플릿 치환자가 없이 내용을 입력하면, 같은 내용으로 모든 수신자에게 발송됩니다.
+* Template replacer value can be entered for each recipient.
+* Without a template replacer, all recipients receive same messages.
 
-## 발송 결과 조회
+## Query of Delivery Result
 
-**발송 결과 조회** 탭에서 친구톡 메시지를 조회할 수 있습니다.
+Go to **Query Delivery Result** to query Friendtalk messages.
 ![friendtalk_02_201812.png](https://static.toastoven.net/prod_alimtalk/friendtalk_02_201812.png)
 
-## 이미지 관리
+## Image Management
 
-### 이미지 등록, 삭제, 조회
+### Register, Delete, and Search Images
 
-친구톡에 사용할 이미지를 등록, 삭제할 수 있습니다.
+Images for Friendtalk can be registered or deleted.
 
 ![friendtalk_03_201812.png](https://static.toastoven.net/prod_alimtalk/friendtalk_03_201812.png)
 
-#### 이미지 업로드 허용 범위
-* 권장 사이즈: 720px * 720px
-* 제한 사이즈: 가로 500px 미만 또는 '가로 : 세로 비율'이 2:1 미만이거나 '가로 : 세로 비율'이 3:4를 초과하면 업로드할 수 없음
-* 파일 형식: JPG, PNG
-* 파일 크기: 최대 500KB
+#### Available Range of Image Uploads  
+* Recommended size: 720px * 720px
+* Restricted size: Unavailable to upload, if the width is below 500px, or if the 'width:length' ratio is below 2:1, or above 3:4  
+* File format: JPG or PNG
+* File size: Up to 500KB
 
-## 대체 발송 관리
+## Statistics
 
-* 알림톡/친구톡 각 메시지 타입에 따라 플러스친구의 대체 발송을 설정할 수 있습니다.
-* 대체 발송을 설정한 플러스친구의 메시지만 LMS 또는 SMS로 대체 발송됩니다.
-* SMS 앱키를 수정하면 모든 플러스친구의 대체 발송 설정은 초기화됩니다.
-* SMS 서비스로 대체 발송되므로, SMS 서비스의 발송 API 명세에 따라 필드를 입력해야 합니다.(SMS 서비스에 등록된 발신 번호, 각종 필드 길이 제한 등)
-* 지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송이 될 수 있습니다.([[SMS 주의 사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)
-* 친구톡 광고 메시지는 광고 SMS API로 대체 발송되므로, 반드시 080 수신 거부 번호를 등록해야 대체 발송됩니다.
-* 친구톡 광고 메시지의 resendContent 필드를 입력할 경우, SMS 광고 API의 <span style="color:red">광고 문구</span>를 필수로 입력해야 대체 발송됩니다. `(광고)내용[무료 수신거부]080XXXXXXX`
-* 친구톡 광고 메시지의 resendContent 필드가 없다면, 등록된 080 수신 거부 번호로 <span style="color:red">광고 문구</span>를 자동 생성해서 대체 발송됩니다.
+Statistics on delivered messages are displayed on graphs and numbers.
 
-![plusfriend_03_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_03-1_201904.png)
-
-
-## 통계
-
-발송한 메시지의 통계 내역을 그래프와 수치로 나타냅니다.
-
-특정 기간 동안의 요청, 성공, 실패, 대체 발송 건수를 확인할 수 있습니다.
+Check the number of requests, or successful, failed, or alternative delivery cases, during a specified period.   
 
 ![friendtalk_04_201812.png](https://static.toastoven.net/prod_alimtalk/friendtalk_04_201812.png)
-
-
