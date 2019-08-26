@@ -1954,3 +1954,118 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- statusName        | String  | Template status name                                         |
 | -- createDate        | String  | Date and time of creation                                    |
 | - totalCount         | Integer | Total count                                                  |
+
+### List Template modifications
+
+#### Request
+
+[URL]
+
+```
+GET  /alimtalk/v1.3/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}/modifications
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Value        | Type   | Description     |
+| ------------ | ------ | --------------- |
+| appkey       | String | Original appkey |
+| plusFriendId | String | PlusFriend ID   |
+| templateCode | String | Template code   |
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Value        | Type   | Required | Description                                                  |
+| ------------ | ------ | -------- | ------------------------------------------------------------ |
+| X-Secret-Key | String | O        | Can be created on console. [[Reference](./plus-friend-console-guide/#x-secret-key)] |
+
+[예시]
+```
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.3/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}/modifications"
+```
+
+#### Response
+```
+
+{
+  "header" : {
+      "resultCode" :  Integer,
+      "resultMessage" :  String,
+      "isSuccessful" :  boolean
+  },
+  "templateModificationsResponse": {
+      "templates": [
+          {
+              "plusFriendId": String,
+              "plusFriendType": String,
+              "templateCode": String,
+              "templateName": String,
+              "templateContent": String,
+              "buttons": [
+                {
+                    "ordering":Integer,
+                    "type": String,
+                    "name": String,
+                    "linkMo": String,
+                    "linkPc": String,
+                    "schemeIos": String,
+                    "schemeAndroid": String
+                }
+                ],
+                "comments": [
+                  {
+                      "id": Integer,
+                      "content": String,
+                      "userName": String,
+                      "createdAt": String,
+                      "status": String
+                    }  
+                ],
+                "status": String,
+                "statusName": String,
+                "activated": boolean,
+                "createDate": String
+            }
+        ],
+        "totalCount": Integer
+    }
+}
+```
+
+| Value                | Type    | Description                                                  |
+| -------------------- | ------- | ------------------------------------------------------------ |
+| header               | Object  | Header area                                                  |
+| - resultCode         | Integer | Result code                                                  |
+| - resultMessage      | String  | Result message                                               |
+| - isSuccessful       | Boolean | Successful or not                                            |
+| templateModificationsResponse | Object  | Body area                                                    |
+| - templates          | List    | Template list                                                |
+| -- plusFriendId      | String  | PlusFriend ID                                                |
+| -- plusFriendType    | String  | PlusFriend type (NORMAL, GROUP)                              |
+| -- templateCode      | String  | Template code                                                |
+| -- templateName      | String  | Template name                                                |
+| -- templateContent   | String  | Template body                                                |
+| -- buttons           | List    | List of buttons                                              |
+| --- ordering         | Integer | Button sequence (1~5)                                        |
+| --- type             | String  | Button type (WL: Web link, AL: App link, DS: Delivery search, BK: Bot keyword, MD: Message delivery) |
+| --- name             | String  | Button name                                                  |
+| --- linkMo           | String  | Mobile web link (required for the WL type)                   |
+| --- linkPc           | String  | PC web link (optional for the WL type)                       |
+| --- schemeIos        | String  | iOS app link (required for the AL type)                      |
+| --- schemeAndroid    | String  | Android app link (required for the AL type)                  |
+| -- comments          | List    | Inspection result                                            |
+| --- id               | Integer | Inquiry ID                                                   |
+| --- content          | String  | Inquiry content                                              |
+| ---userName          | String  | Creator                                                      |
+| ---createAt          | String  | Date of registration                                         |
+| ---status            | String  | Comment status (INQ: Inquired, APR: Approved, REJ: Returned, REP: Replied) |
+| -- status            | String  | Template status                                              |
+| -- statusName        | String  | Template status name                                         |
+| -- activated         | Boolean | activated or not                                             |
+| -- createDate        | String  | Date and time of creation                                    |
+| - totalCount         | Integer | Total count                                                  |
