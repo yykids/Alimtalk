@@ -2048,6 +2048,120 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- createDate        | String  | 作成日時                             |
 | - totalCount         | Integer | 総個数                               |
 
+### テンプレートの修正リスト照会
+
+#### リクエスト
+
+[URL]
+
+```
+GET  /alimtalk/v1.3/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}/modifications
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 値 | タイプ | 説明 |
+|---|---|---|
+| appkey       | String | 固有のアプリケーションキー |
+| plusFriendId | String | プラスフレンドID |
+| templateCode | String | テンプレートコード |
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| 値     | タイプ | 必須 | 説明                                |
+|---|---|---|---|
+| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./plus-friend-console-guide/#x-secret-key)] |
+
+[예시]
+```
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.3/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}/modifications"
+```
+
+#### レスポンス
+```
+
+{
+  "header" : {
+      "resultCode" :  Integer,
+      "resultMessage" :  String,
+      "isSuccessful" :  boolean
+  },
+  "templateModificationsResponse": {
+      "templates": [
+          {
+              "plusFriendId": String,
+              "plusFriendType": String,
+              "templateCode": String,
+              "templateName": String,
+              "templateContent": String,
+              "buttons": [
+                {
+                    "ordering":Integer,
+                    "type": String,
+                    "name": String,
+                    "linkMo": String,
+                    "linkPc": String,
+                    "schemeIos": String,
+                    "schemeAndroid": String
+                }
+                ],
+                "comments": [
+                  {
+                      "id": Integer,
+                      "content": String,
+                      "userName": String,
+                      "createdAt": String,
+                      "status": String
+                    }  
+                ],
+                "status": String,
+                "statusName": String,
+                "activated": boolean,
+                "createDate": String
+            }
+        ],
+        "totalCount": Integer
+    }
+}
+```
+
+| 値             | タイプ | 説明                                |
+| -------------------- | ------- | ---------------------------------------- |
+| header               | Object  | ヘッダ領域                             |
+| - resultCode         | Integer | 結果コード                             |
+| - resultMessage      | String  | 結果メッセージ                            |
+| - isSuccessful       | Boolean | 成否                              |
+| templateModificationsResponse | Object  | 本文領域                             |
+| - templates          | List    | テンプレートリスト                           |
+| -- plusFriendId      | String  | プラスフレンドID                                 |
+| -- plusFriendType    | String  | プラスフレンドタイプ(NORMAL、GROUP)                  |
+| -- templateCode      | String  | テンプレートコード                            |
+| -- templateName      | String  | テンプレート名                              |
+| -- templateContent   | String  | テンプレート本文                            |
+| -- buttons           | List    | ボタンリスト                             |
+| --- ordering         | Integer | ボタン順序(1~5)                               |
+| --- type             | String  | ボタンタイプ(WL：Webリンク、AL：アプリリンク、DS：配送照会、BK：Botキーワード、MD：メッセージ伝達) |
+| --- name             | String  | ボタン名                             |
+| --- linkMo           | String  | モバイルWebリンク(WLタイプの場合は必須フィールド)                |
+| --- linkPc           | String  | PC Webリンク(WLタイプの場合は任意フィールド)                 |
+| --- schemeIos        | String  | iOSアプリリンク(ALタイプの場合は必須フィールド)                |
+| --- schemeAndroid    | String  | Androidアプリリンク(ALタイプの場合は必須フィールド)            |
+| -- comments          | List    | 検収結果                             |
+| --- id               | Integer | お問い合わせID                                   |
+| --- content          | String  | お問い合わせ内容                             |
+| ---userName          | String  | 作成者                                |
+| ---createAt          | String  | 登録日                             |
+| ---status            | String  | 応答状態(INQ：お問い合わせ、APR：承認、REJ：差し戻し、REP：返信) |
+| -- status            | String  | テンプレートのステータス                            |
+| -- statusName        | String  | テンプレートのステータス名                            |
+| -- activated         | Boolean  | 有効かどうか                             |
+| -- createDate        | String  | 作成日時                             |
+| - totalCount         | Integer | 総個数                               |
 
 ## 代替送信管理
 ### SMS AppKey 登録
