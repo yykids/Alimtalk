@@ -1,4 +1,16 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
+
+### Sept. 24, 2019
+* [Console] Canceling Scheduled Delivery of Alimtalk/FriendTalk
+    - Added the feature of canceling scheduled delivery of Alimtalk/FriendTalk from the **Query Delivery Result** tab, if it is yet to be delivered.
+    - Canceling is available by querying time after scheduled delivery is requested.
+* [Console] Validity Checks Added for Uploading Bulk Files for Alimtalk/FriendTalk Delivery
+    - With validity checks for uploading bulk delivery files, you can receive feedbacks before delivery.
+* [Console] Maximum Recipients Raised for Bulk Alimtalk/FriendTalk Delivery
+    - Increased the number of maximum recipients for Alimtalk/FriendTalk from 10,000 to 100,000.
+* [Console] Name Change from Kakaotalk PlusFriend to Kakaotalk Channel
+    - As of September 17 of 2019, the service name has changed from 'PlusFriend' to 'Kakaotalk Channel'.
+
 ### 2019. 07. 30.
 * [Console] Field Added for Result Code of Alternative SMS Delivery Request
     - To query details of alternative delivery message, result code of SMS request has been added.

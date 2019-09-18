@@ -17,7 +17,6 @@
 </tbody>
 </table>
 
-
 ## Overview of v1.3 API
 * senderGroupingKey and recipientGroupingKey have been added to Send API and Query API.
 * Request Successful and Failed fields have been added to response for Send API.
@@ -62,11 +61,13 @@ Content-Type: application/json;charset=UTF-8
         "templateParameter": {
             String: String
         },
-        "isResend" : boolean,
-        "resendType" : String,
-        "resendTitle" : String,
-        "resendContent" : String,
-        "resendSendNo" : String,
+        "resendParameter": {
+          "isResend" : boolean,
+          "resendType" : String,
+          "resendTitle" : String,
+          "resendContent" : String,
+          "resendSendNo" : String
+        },
         "recipientGroupingKey": String
     }]
 }
@@ -83,14 +84,18 @@ Content-Type: application/json;charset=UTF-8
 | - templateParameter    | Object  | X        | Template parameter<br>(required, if it includes a variable to be replaced for template) |
 | -- key                 | String  | X        | Replacement key (#{key})                                     |
 | -- value               | String  | X        | Value which is mapped for replacement key                    |
-| - isResend             | boolean | X        | Whether to send text as alternative, if delivery fails<br/>Resent in default, if delivery failure is set on console. |
-| - resendType           | String  | X        | Alternative delivery type (SMS,LMS)<br/>Categorized by the length of template body if value is unavailable. |
-| - resendTitle          | String  | X        | Title of alternative delivery for LMS (up to 20 characters)<br/>(resent with PlusFriend ID if value is unavailable.) |
-| - resendContent        | String  | X        | Alternative delivery message (up to 1000 characters)<br/>(resent with template message if value is unavailable.) |
-| - resendSendNo         | String  | X        | Sender number for alternative delivery (up to 13 characters)<br/><span style="color:red">(Alternative delivery may fail, if the sender number is not registered on the SMS service.)</span> |
+| - resendParameter      |Object   | X        | Alternative delivery information                             |
+| -- isResend            | boolean | X        | Whether to send text as alternative, if delivery fails<br/>Resent in default, if delivery failure is set on console. |
+| -- resendType          | String  | X        | Alternative delivery type (SMS,LMS)<br/>Categorized by the length of template body if value is unavailable. |
+| -- resendTitle         | String  | X        | Title of alternative delivery for LMS (up to 20 characters)<br/>(resent with PlusFriend ID if value is unavailable.) |
+| -- resendContent       | String  | X        | Alternative delivery message (up to 1000 characters)<br/>(resent with template message if value is unavailable.) |
+| -- resendSendNo        | String  | X        | Sender number for alternative delivery (up to 13 characters)<br/><span style="color:red">(Alternative delivery may fail, if the sender number is not registered on the SMS service.)</span> |
 | - recipientGroupingKey | String  | X        | Recipient grouping key (up to 100 characters)                |
 
 * <b>Request date and time can be set up to 90 days since a point of calling.</b>
+* <b>SMS 서비스에서 대체 발송되므로, SMS 서비스의 발송 API 명세에 따라 필드를 입력해야 합니다.(SMS 서비스에 등록된 발신 번호, 각종 필드 길이 제한 등)</b>
+* <b>SMS 서비스는 국제 SMS만 지원합니다. 국제 수신자 번호일 경우, resendType(대체 발송 타입)을 SMS로 변경해야 정상적으로 대체 발송할 수 있습니다.</b>
+* <b>지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송될 수 있습니다.([[SMS 주의사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
 
 [Example]
 
@@ -188,11 +193,13 @@ Content-Type: application/json;charset=UTF-8
                     "schemeAndroid": String
                 }
             ],
-            "isResend" : boolean,
-            "resendType" : String,
-            "resendTitle" : String,
-            "resendContent" : String,
-            "resendSendNo" : String,
+            "resendParameter": {
+              "isResend" : boolean,
+              "resendType" : String,
+              "resendTitle" : String,
+              "resendContent" : String,
+              "resendSendNo" : String
+            },
             "recipientGroupingKey": String
         }
     ]
@@ -216,15 +223,19 @@ Content-Type: application/json;charset=UTF-8
 | -- linkPc              | String  | X        | PC web link (optional for the WL type, up to 200 characters) |
 | -- schemeIos           | String  | X        | iOS app link (required for the AL type, up to 200 characters) |
 | -- schemeAndroid       | String  | X        | Android app link (required for the AL type, up to 200 characters) |
-| - isResend             | boolean | X        | Whether to send text as alternative, if delivery fails <br/>Resent in default, if delivery failure is set on console. |
-| - resendType           | String  | X        | Alternative delivery type (SMS,LMS)<br/>Categorized by the length of template message, if value is unavailable. |
-| - resendTitle          | String  | X        | Title of alternative delivery for LMS (up to 20 characters)<br/>(resent with PlusFriend ID if value is unavailable.) |
-| - resendContent        | String  | X        | Alternative delivery message (up to 1000 characters)<br/>(resent template message, if value is unavailable.) |
-| - resendSendNo         | String  | X        | Sender number for alternative delivery (up to 13 characters)<br/><span style="color:red">(alternative delivery may fail, if sender number is not registered in the SMS service.)</span> |
+| - resendParameter      |Object   | X        | Alternative delivery information                             |
+| -- isResend            | boolean | X        | Whether to send text as alternative, if delivery fails <br/>Resent in default, if delivery failure is set on console. |
+| -- resendType          | String  | X        | Alternative delivery type (SMS,LMS)<br/>Categorized by the length of template message, if value is unavailable. |
+| -- resendTitle         | String  | X        | Title of alternative delivery for LMS (up to 20 characters)<br/>(resent with PlusFriend ID if value is unavailable.) |
+| -- resendContent       | String  | X        | Alternative delivery message (up to 1000 characters)<br/>(resent template message, if value is unavailable.) |
+| -- resendSendNo        | String  | X        | Sender number for alternative delivery (up to 13 characters)<br/><span style="color:red">(alternative delivery may fail, if sender number is not registered in the SMS service.)</span> |
 | - recipientGroupingKey | String  | X        | Recipient's grouping key (up to 100 characters)              |
 
 * <b>Enter data completed with replacement for the body and button. </b>
 * **Request date and time can be set up to 90 days since a point of calling.**
+* <b>SMS 서비스에서 대체 발송되므로, SMS 서비스의 발송 API 명세에 따라 필드를 입력해야 합니다.(SMS 서비스에 등록된 발신 번호, 각종 필드 길이 제한 등)</b>
+* <b>SMS 서비스는 국제 SMS만 지원합니다. 국제 수신자 번호일 경우, resendType(대체 발송 타입)을 SMS로 변경해야 정상적으로 대체 발송할 수 있습니다.</b>
+* <b>지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송될 수 있습니다.([[SMS 주의사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
 
 [Exapmle]
 
