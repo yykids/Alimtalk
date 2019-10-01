@@ -323,7 +323,7 @@ Content-Type: application/json;charset=UTF-8
 | messageStatus        | String  | X         | リクエストステータス(COMPLETED -> 成功、FAILED -> 失敗、CANCEL -> キャンセル) |
 | resultCode           | String  | X         | 送信結果(MRC01 -> 成功、MRC02 -> 失敗)          |
 | pageNum              | Integer | X         | ページ番号(基本：1)                            |
-| pageSize             | Integer | X         | 照会件数(基本：15)                            |
+| pageSize             | Integer | X         | 照会件数(基本：15, 最大 : 1000)                |
 
 * 90日以上前の送信リクエストデータは照会されません。
 * 送信リクエスト日時の範囲は最大30日です。
