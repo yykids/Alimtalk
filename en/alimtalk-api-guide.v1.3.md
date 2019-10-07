@@ -1,4 +1,4 @@
-## Notification > KakaoTalk Bizmessage > Alimtalk > API v1.4 Guide
+## Notification > KakaoTalk Bizmessage > Alimtalk > API v1.3 Guide
 
 ## Alimtalk
 
@@ -17,10 +17,9 @@
 </tbody>
 </table>
 
-## Overview of v1.4 API
-1. 인증 메시지 API에 대한 본문 유효성 검사가 추가되었습니다.
-   - 자세한 사항은 [[인증 메시지 API](./alimtalk-api-guide/#precautions-authword)] 참고하시기 바랍니다.
-
+## Overview of v1.3 API
+* senderGroupingKey and recipientGroupingKey have been added to Send API and Query API.
+* Request Successful and Failed fields have been added to response for Send API.
 
 ## General Messages
 
@@ -29,7 +28,7 @@
 [URL]
 
 ```
-POST  /alimtalk/v1.4/appkeys/{appkey}/messages
+POST  /alimtalk/v1.3/appkeys/{appkey}/messages
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -101,7 +100,7 @@ Content-Type: application/json;charset=UTF-8
 [Example]
 
 ```
-curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.4/appkeys/{appkey}/messages -d '{"plusFriendId":"{PlusFriend ID}","templateCode":"{template code}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{recipient number}","templateParameter":{"{replaced field}":"{replacement data}"}}]}'
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.3/appkeys/{appkey}/messages -d '{"plusFriendId":"{PlusFriend ID}","templateCode":"{template code}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{recipient number}","templateParameter":{"{replaced field}":"{replacement data}"}}]}'
 ```
 
 #### Response
@@ -150,7 +149,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 [URL]
 
 ```
-POST  /alimtalk/v1.4/appkeys/{appkey}/raw-messages
+POST  /alimtalk/v1.3/appkeys/{appkey}/raw-messages
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -241,7 +240,7 @@ Content-Type: application/json;charset=UTF-8
 [Exapmle]
 
 ```
-curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.4/appkeys/{appkey}/raw-messages -d '{"plusFriendId":"{PlusFriend ID}","templateCode":"{template code}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{recipient number}","content":"{body}","buttons":[{"ordering":"{button sequence}","type":"{button type}","name":"{button name}","linkMo":"{mobile web link}"}]}]}'
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.3/appkeys/{appkey}/raw-messages -d '{"plusFriendId":"{PlusFriend ID}","templateCode":"{template code}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{recipient number}","content":"{body}","buttons":[{"ordering":"{button sequence}","type":"{button type}","name":"{button name}","linkMo":"{mobile web link}"}]}]}'
 ```
 
 #### Response
@@ -292,7 +291,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 [URL]
 
 ```
-GET  /alimtalk/v1.4/appkeys/{appkey}/messages
+GET  /alimtalk/v1.3/appkeys/{appkey}/messages
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -412,7 +411,7 @@ Content-Type: application/json;charset=UTF-8
 
 [Example]
 ```
-curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.4/appkeys/{appkey}/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.3/appkeys/{appkey}/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
 #### Status of Sending SMS/LMS
@@ -431,7 +430,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 [URL]
 
 ```
-GET  /alimtalk/v1.4/appkeys/{appkey}/messages/{requestId}/{recipientSeq}
+GET  /alimtalk/v1.3/appkeys/{appkey}/messages/{requestId}/{recipientSeq}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -455,7 +454,7 @@ Content-Type: application/json;charset=UTF-8
 
 [Example]
 ```
-curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.4/appkeys/{appkey}/messages/{requestId}/{recipientSeq}"
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.3/appkeys/{appkey}/messages/{requestId}/{recipientSeq}"
 ```
 
 #### Response
@@ -529,22 +528,12 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - recipientGroupingKey | String  | Recipient grouping key                                       |
 
 ## Authentication Messages
-
-<span id="precautions-authword"></span>
-1. 인증 메시지 발송 시 포함되어야 할 인증 문구 안내
-   | 구분  | 인증 문구 |
-   | --- | --- | 
-   | 인증 메시지 | auth, password, verif, にんしょう, 認証, 비밀번호, 인증 |
-   - 예시 1-1) 인증 메시지 API 요청시 전문(템플릿 치환자 포함)에 인증 문구가 포함되어 있지 않은 경우 발송 실패됩니다.
-   - 예시 1-2) 인증 문구가 영문인 경우 대소문자 구분 없이 유효성 검사가 진행됩니다.
-
-
 ### Request of Sending Replaced Messages
 
 [URL]
 
 ```
-POST  /alimtalk/v1.4/appkeys/{appkey}/auth/messages
+POST  /alimtalk/v1.3/appkeys/{appkey}/auth/messages
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -609,7 +598,7 @@ Content-Type: application/json;charset=UTF-8
 
 [Example]
 ```
-curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.4/appkeys/{appkey}/auth/messages -d '{"plusFriendId":"{PlusFriend ID}","templateCode":"{template code}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{recipient number}","templateParameter":{"{replaced field}":"{replacement data}"}}]}'
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.3/appkeys/{appkey}/auth/messages -d '{"plusFriendId":"{PlusFriend ID}","templateCode":"{template code}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{recipient number}","templateParameter":{"{replaced field}":"{replacement data}"}}]}'
 ```
 
 #### Response
@@ -658,7 +647,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 [URL]
 
 ```
-POST  /alimtalk/v1.4/appkeys/{appkey}/auth/raw-messages
+POST  /alimtalk/v1.3/appkeys/{appkey}/auth/raw-messages
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -741,7 +730,7 @@ Content-Type: application/json;charset=UTF-8
 
 [Example]
 ```
-curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.4/appkeys/{appkey}/auth/raw-messages -d '{"plusFriendId":"{lusFriend ID}","templateCode":"{template code}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{recipient number}","content":"{body message}","buttons":[{"ordering":"{button sequence}","type":"{button type}","name":"{button name}","linkMo":"{mobile web link}"}]}]}'
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/alimtalk/v1.3/appkeys/{appkey}/auth/raw-messages -d '{"plusFriendId":"{lusFriend ID}","templateCode":"{template code}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{recipient number}","content":"{body message}","buttons":[{"ordering":"{button sequence}","type":"{button type}","name":"{button name}","linkMo":"{mobile web link}"}]}]}'
 ```
 
 #### Response
@@ -792,7 +781,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 [URL]
 
 ```
-GET  /alimtalk/v1.4/appkeys/{appkey}/auth/messages
+GET  /alimtalk/v1.3/appkeys/{appkey}/auth/messages
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -911,7 +900,7 @@ Content-Type: application/json;charset=UTF-8
 
 [Example]
 ```
-curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.4/appkeys/{appkey}/auth/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.3/appkeys/{appkey}/auth/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
 #### Status of Resending SMS/LMS
@@ -930,7 +919,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 [URL]
 
 ```
-GET  /alimtalk/v1.4/appkeys/{appkey}/auth/messages/{requestId}/{recipientSeq}
+GET  /alimtalk/v1.3/appkeys/{appkey}/auth/messages/{requestId}/{recipientSeq}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -954,7 +943,7 @@ Content-Type: application/json;charset=UTF-8
 
 [Example]
 ```
-curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.4/appkeys/{appkey}/auth/messages/{requestId}/{recipientSeq}"
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.3/appkeys/{appkey}/auth/messages/{requestId}/{recipientSeq}"
 ```
 
 #### Response
@@ -1035,7 +1024,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 [URL]
 
 ```
-DELETE  /alimtalk/v1.4/appkeys/{appkey}/messages/{requestId}
+DELETE  /alimtalk/v1.3/appkeys/{appkey}/messages/{requestId}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1084,7 +1073,7 @@ Content-Type: application/json;charset=UTF-8
 
 [Example]
 ```
-curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.4/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
+curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.3/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
 ```
 
 ### Query Updates of Message Result
@@ -1094,7 +1083,7 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 [URL]
 
 ```
-GET  /alimtalk/v1.4/appkeys/{appkey}/message-results
+GET  /alimtalk/v1.3/appkeys/{appkey}/message-results
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1204,7 +1193,7 @@ Content-Type: application/json;charset=UTF-8
 [Example]
 
 ```
-curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.4/appkeys/{appkey}/message-results?startUpdateDate=2018-05-01%20:00&endUpdateDate=2018-05-30%20:59"
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.3/appkeys/{appkey}/message-results?startUpdateDate=2018-05-01%20:00&endUpdateDate=2018-05-30%20:59"
 ```
 
 ## PlusFriends
@@ -1215,7 +1204,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 [URL]
 
 ```
-GET  /alimtalk/v1.4/appkeys/{appkey}/plus-friends/categories
+GET  /alimtalk/v1.3/appkeys/{appkey}/plus-friends/categories
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1299,7 +1288,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST  /alimtalk/v1.4/appkeys/{appkey}/business-licenses
+POST  /alimtalk/v1.3/appkeys/{appkey}/business-licenses
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1364,7 +1353,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST  /alimtalk/v1.4/appkeys/{appkey}/plus-friends
+POST  /alimtalk/v1.3/appkeys/{appkey}/plus-friends
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1430,7 +1419,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST  /alimtalk/v1.4/appkeys/{appkey}/plus-friends/{plusFriendId}/tokens
+POST  /alimtalk/v1.3/appkeys/{appkey}/plus-friends/{plusFriendId}/tokens
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1490,7 +1479,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-GET  /alimtalk/v1.4/appkeys/{appkey}/plus-friends
+GET  /alimtalk/v1.3/appkeys/{appkey}/plus-friends
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1588,7 +1577,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST  /alimtalk/v1.4/appkeys/{appkey}/plus-friends/{plusFriendId}/templates
+POST  /alimtalk/v1.3/appkeys/{appkey}/plus-friends/{plusFriendId}/templates
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1670,7 +1659,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-PUT  /alimtalk/v1.4/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}
+PUT  /alimtalk/v1.3/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1751,7 +1740,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-DELETE  /alimtalk/v1.4/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}
+DELETE  /alimtalk/v1.3/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1795,7 +1784,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-PUT  /alimtalk/v1.4/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}/comments
+PUT  /alimtalk/v1.3/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}/comments
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1854,7 +1843,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-GET  /alimtalk/v1.4/appkeys/{appkey}/templates
+GET  /alimtalk/v1.3/appkeys/{appkey}/templates
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1895,7 +1884,7 @@ Content-Type: application/json;charset=UTF-8
 [Example]
 
 ```
-curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.4/appkeys/{appkey}/templates?plusFriendId={PlusFriend ID}&templateStatus={template status code}"
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.3/appkeys/{appkey}/templates?plusFriendId={PlusFriend ID}&templateStatus={template status code}"
 ```
 
 #### Response
@@ -1984,7 +1973,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 [URL]
 
 ```
-GET  /alimtalk/v1.4/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}/modifications
+GET  /alimtalk/v1.3/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}/modifications
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -2008,7 +1997,7 @@ Content-Type: application/json;charset=UTF-8
 
 [예시]
 ```
-curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.4/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}/modifications"
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.3/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}/modifications"
 ```
 
 #### Response
