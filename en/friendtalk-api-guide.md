@@ -183,7 +183,7 @@ Content-Type: application/json;charset=UTF-8
 | messageStatus        | String  | X                             | Request status (COMPLETED: successful, FAILED: failed) |
 | resultCode           | String  | X                             | Delivery result (MRC01: successful, MRC02: failed)     |
 | pageNum              | Integer | X                             | Page number (default: 1)                               |
-| pageSize             | Integer | X                             | Number of queries (default: 15)                        |
+| pageSize             | Integer | X                             | Number of queries (default: 15, max: 1000)             |
 
 #### Response
 ```
