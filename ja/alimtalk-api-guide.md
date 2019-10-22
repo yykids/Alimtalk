@@ -528,7 +528,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <span id="precautions-authword"></span>
 1. 인증 메시지 발송 시 포함되어야 할 인증 문구 안내
    | 구분  | 인증 문구 |
-   | --- | --- | 
+   | --- | --- |
    | 인증 메시지 | auth, password, verif, にんしょう, 認証, 비밀번호, 인증 |
    - 예시 1-1) 인증 메시지 API 요청시 전문(템플릿 치환자 포함)에 인증 문구가 포함되어 있지 않은 경우 발송 실패됩니다.
    - 예시 1-2) 인증 문구가 영문인 경우 대소문자 구분 없이 유효성 검사가 진행됩니다.
@@ -830,7 +830,7 @@ Content-Type: application/json;charset=UTF-8
 | messageStatus        | String  | X         | リクエストステータス(COMPLETED -> 成功、FAILED -> 失敗、CANCEL -> キャンセル) |
 | resultCode           | String  | X         | 送信結果(MRC01 -> 成功、MRC02 -> 失敗)          |
 | pageNum              | Integer | X         | ページ番号(基本：1)                            |
-| pageSize             | Integer | X         | 照会件数(基本：15)                            |
+| pageSize             | Integer | X         | 照会件数(基本：15, 最大 : 1000)                |
 
 * 90日以上前の送信リクエストデータは照会されません。
 * 送信リクエスト日時の範囲は最大30日です。
@@ -1125,7 +1125,7 @@ Content-Type: application/json;charset=UTF-8
 | endUpdateDate       | String  | O    | 結果アップデート照会終了時間(yyyy-MM-dd HH:mm) |
 | alimtalkMessageType | String  | X    | お知らせトークメッセージタイプ(NORMAL、AUTH)           |
 | pageNum             | Integer | X    | ページ番号(基本：1)                      |
-| pageSize            | Integer | X    | 照会件数(基本：15)                      |
+| pageSize            | Integer | X    | 照会件数(基本：15, 最大 : 1000)          |
 
 #### レスポンス
 ```
@@ -1602,7 +1602,7 @@ Content-Type: application/json;charset=UTF-8
 | status              | String  | X    | プラスフレンドステータスコード <br>(YSC02：トークン認証待機中、YSC03：正常登録) |
 | isSearchKakaoStatus | boolean | X    | カカオステータスを照会するかどうか(falseの場合、カカオステータス関連フィールド(kakaoStatus、kakaoProfileStatusなど) null値)<br>default値：true |
 | pageNum        | Integer | X    | ページ番号(基本：1) |
-| pageSize       | Integer | X    | 照会件数(基本：15) |
+| pageSize       | Integer | X    | 照会件数(基本：15, 最大 : 1000) |
 
 #### レスポンス
 ```
@@ -1969,7 +1969,7 @@ Content-Type: application/json;charset=UTF-8
 | templateName   | String  | X    | テンプレート名 |
 | templateStatus | String  | X    | テンプレートステータスコード |
 | pageNum        | Integer | X    | ページ番号(基本：1) |
-| pageSize       | Integer | X    | 照会件数(基本：15) |
+| pageSize       | Integer | X    | 照会件数(基本：15, 最大 : 1000) |
 
 | テンプレートステータスコード | 説明 |
 | --------- | ---- |

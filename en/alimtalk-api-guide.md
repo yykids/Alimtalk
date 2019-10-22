@@ -533,7 +533,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <span id="precautions-authword"></span>
 1. 인증 메시지 발송 시 포함되어야 할 인증 문구 안내
    | 구분  | 인증 문구 |
-   | --- | --- | 
+   | --- | --- |
    | 인증 메시지 | auth, password, verif, にんしょう, 認証, 비밀번호, 인증 |
    - 예시 1-1) 인증 메시지 API 요청시 전문(템플릿 치환자 포함)에 인증 문구가 포함되어 있지 않은 경우 발송 실패됩니다.
    - 예시 1-2) 인증 문구가 영문인 경우 대소문자 구분 없이 유효성 검사가 진행됩니다.
@@ -827,7 +827,7 @@ Content-Type: application/json;charset=UTF-8
 | messageStatus        | String  | X                             | Request status (COMPLETED -> successful, FAILED -> failed, CANCEL -> canceled ) |
 | resultCode           | String  | X                             | Delivery result (MRC01 -> successful, MRC02 -> failed )      |
 | pageNum              | Integer | X                             | Page number (default: 1)                                     |
-| pageSize             | Integer | X                             | Number of queries (default: 15)                              |
+| pageSize             | Integer | X                             | Number of queries (default: 15, max : 1000)                  |
 
 * Delivery request data before 90 days cannot be queried.
 * Delivery can be requested within 30 days to the maximum.   
@@ -1122,7 +1122,7 @@ Content-Type: application/json;charset=UTF-8
 | endUpdateDate       | String  | O        | End date of querying result updates (yyyy-MM-dd HH:mm)   |
 | alimtalkMessageType | String  | X        | Alimtalk message type (NORMAL, AUTH)                     |
 | pageNum             | Integer | X        | Page number (default: 1)                                 |
-| pageSize            | Integer | X        | Number of queries (default: 15)                          |
+| pageSize            | Integer | X        | Number of queries (default: 15, max : 1000)              |
 
 #### Response
 ```
@@ -1883,7 +1883,7 @@ Content-Type: application/json;charset=UTF-8
 | templateName   | String  | X        | Template name                   |
 | templateStatus | String  | X        | Template status code            |
 | pageNum        | Integer | X        | Page number (default:1)         |
-| pageSize       | Integer | X        | Number of queries (default: 15) |
+| pageSize       | Integer | X        | Number of queries (default: 15, max : 1000) |
 
 | Template Status Code | Description |
 | -------------------- | ----------- |

@@ -216,7 +216,7 @@ Content-Type: application/json;charset=UTF-8
 | messageStatus    | String  | X         | リクエストステータス(COMPLETED -> 成功、FAILED -> 失敗) |
 | resultCode       | String  | X         | 送信結果(MRC01 -> 成功MRC02 -> 失敗)       |
 | pageNum          | Integer | X         | ページ番号(基本：1)                         |
-| pageSize         | Integer | X         | 照会件数(基本：15)                         |
+| pageSize         | Integer | X         | 照会件数(基本：15, 最大 : 1000)             |
 
 #### レスポンス
 ```
@@ -339,7 +339,7 @@ Content-Type: application/json;charset=UTF-8
 | templateName   | String  | X    | テンプレート名   |
 | templateStatus | String  | X    | テンプレートステータスコード |
 | pageNum        | Integer | X    | ページ番号(基本：1) |
-| pageSize       | Integer | X    | 照会件数(基本：15) |
+| pageSize       | Integer | X    | 照会件数(基本：15, 最大 : 1000) |
 
 | テンプレートステータスコード | 説明 |
 | --------- | ---- |

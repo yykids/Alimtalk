@@ -820,7 +820,7 @@ Content-Type: application/json;charset=UTF-8
 | messageStatus        | String  | X         | リクエストステータス(COMPLETED -> 成功、FAILED -> 失敗、CANCEL -> キャンセル) |
 | resultCode           | String  | X         | 送信結果(MRC01 -> 成功、MRC02 -> 失敗)          |
 | pageNum              | Integer | X         | ページ番号(基本：1)                            |
-| pageSize             | Integer | X         | 照会件数(基本：15)                            |
+| pageSize             | Integer | X         | 照会件数(基本：15, 最大 : 1000)                |
 
 * 90日以上前の送信リクエストデータは照会されません。
 * 送信リクエスト日時の範囲は最大30日です。
@@ -1115,7 +1115,7 @@ Content-Type: application/json;charset=UTF-8
 | endUpdateDate       | String  | O    | 結果アップデート照会終了時間(yyyy-MM-dd HH:mm) |
 | alimtalkMessageType | String  | X    | お知らせトークメッセージタイプ(NORMAL、AUTH)           |
 | pageNum             | Integer | X    | ページ番号(基本：1)                      |
-| pageSize            | Integer | X    | 照会件数(基本：15)                      |
+| pageSize            | Integer | X    | 照会件数(基本：15, 最大 : 1000)          |
 
 #### レスポンス
 ```
@@ -1592,7 +1592,7 @@ Content-Type: application/json;charset=UTF-8
 | status              | String  | X    | プラスフレンドステータスコード <br>(YSC02：トークン認証待機中、YSC03：正常登録) |
 | isSearchKakaoStatus | boolean | X    | カカオステータスを照会するかどうか(falseの場合、カカオステータス関連フィールド(kakaoStatus、kakaoProfileStatusなど) null値)<br>default値：true |
 | pageNum        | Integer | X    | ページ番号(基本：1) |
-| pageSize       | Integer | X    | 照会件数(基本：15) |
+| pageSize       | Integer | X    | 照会件数(基本：15, 最大 : 1000) |
 
 #### レスポンス
 ```
@@ -1959,7 +1959,7 @@ Content-Type: application/json;charset=UTF-8
 | templateName   | String  | X    | テンプレート名 |
 | templateStatus | String  | X    | テンプレートステータスコード |
 | pageNum        | Integer | X    | ページ番号(基本：1) |
-| pageSize       | Integer | X    | 照会件数(基本：15) |
+| pageSize       | Integer | X    | 照会件数(基本：15, 最大 : 1000) |
 
 | テンプレートステータスコード | 説明 |
 | --------- | ---- |
