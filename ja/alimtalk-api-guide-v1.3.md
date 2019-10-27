@@ -94,7 +94,7 @@ Content-Type: application/json;charset=UTF-8
 
 * <b>リクエスト日時は呼び出す時点から90日後まで設定可能です。</b>
 * <b>SMSサービスで代替送信されるため、SMSサービスの送信APIの仕様に応じてフィールドを入力する必要があります。(SMSサービスに登録された発信番号、各種フィールドの長さ制限など)</b>
-* <b>SMS 서비스는 국제 SMS만 지원합니다. 국제 수신자 번호일 경우, resendType(대체 발송 타입)을 SMS로 변경해야 정상적으로 대체 발송할 수 있습니다.</b>
+* <b>SMSサービスは、国際SMSのみサポートします。国際受信者番号の場合、 resendType(代替送信タイプ)をSMSに変更すると正常に代替送信できます。</b>
 * <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)</b>
 
 [例]
@@ -820,7 +820,7 @@ Content-Type: application/json;charset=UTF-8
 | messageStatus        | String  | X         | リクエストステータス(COMPLETED -> 成功、FAILED -> 失敗、CANCEL -> キャンセル) |
 | resultCode           | String  | X         | 送信結果(MRC01 -> 成功、MRC02 -> 失敗)          |
 | pageNum              | Integer | X         | ページ番号(基本：1)                            |
-| pageSize             | Integer | X         | 照会件数(基本：15)                            |
+| pageSize             | Integer | X         | 照会件数(基本：15, 最大 : 1000)                |
 
 * 90日以上前の送信リクエストデータは照会されません。
 * 送信リクエスト日時の範囲は最大30日です。
@@ -1115,7 +1115,7 @@ Content-Type: application/json;charset=UTF-8
 | endUpdateDate       | String  | O    | 結果アップデート照会終了時間(yyyy-MM-dd HH:mm) |
 | alimtalkMessageType | String  | X    | お知らせトークメッセージタイプ(NORMAL、AUTH)           |
 | pageNum             | Integer | X    | ページ番号(基本：1)                      |
-| pageSize            | Integer | X    | 照会件数(基本：15)                      |
+| pageSize            | Integer | X    | 照会件数(基本：15, 最大 : 1000)          |
 
 #### レスポンス
 ```
@@ -1592,7 +1592,7 @@ Content-Type: application/json;charset=UTF-8
 | status              | String  | X    | プラスフレンドステータスコード <br>(YSC02：トークン認証待機中、YSC03：正常登録) |
 | isSearchKakaoStatus | boolean | X    | カカオステータスを照会するかどうか(falseの場合、カカオステータス関連フィールド(kakaoStatus、kakaoProfileStatusなど) null値)<br>default値：true |
 | pageNum        | Integer | X    | ページ番号(基本：1) |
-| pageSize       | Integer | X    | 照会件数(基本：15) |
+| pageSize       | Integer | X    | 照会件数(基本：15, 最大 : 1000) |
 
 #### レスポンス
 ```
@@ -1959,7 +1959,7 @@ Content-Type: application/json;charset=UTF-8
 | templateName   | String  | X    | テンプレート名 |
 | templateStatus | String  | X    | テンプレートステータスコード |
 | pageNum        | Integer | X    | ページ番号(基本：1) |
-| pageSize       | Integer | X    | 照会件数(基本：15) |
+| pageSize       | Integer | X    | 照会件数(基本：15, 最大 : 1000) |
 
 | テンプレートステータスコード | 説明 |
 | --------- | ---- |

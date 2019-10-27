@@ -300,7 +300,7 @@ Content-Type: application/json;charset=UTF-8
 | messageStatus    | String  | X         | 요청 상태(COMPLETED -> 성공, FAILED -> 실패, CANCEL -> 취소 ) |
 | resultCode       | String  | X         | 발송 결과(MRC01 -> 성공 MRC02 -> 실패 )          |
 | pageNum          | Integer | X         | 페이지 번호(기본: 1)                            |
-| pageSize         | Integer | X         | 조회 건수(기본: 15)                            |
+| pageSize         | Integer | X         | 조회 건수(Default : 15, Max : 1000)           |
 
 #### 응답
 ```
@@ -1139,7 +1139,7 @@ Content-Type: application/json;charset=UTF-8
 | templateName   | String  | X    | 템플릿 이름        |
 | templateStatus | String  | X    | 템플릿 상태 코드     |
 | pageNum        | Integer | X    | 페이지 번호(기본: 1) |
-| pageSize       | Integer | X    | 조회 건수(기본: 15) |
+| pageSize       | Integer | X    | 조회 건수(Default : 15, Max : 1000) |
 
 | 템플릿 상태 코드 | 설명   |
 | --------- | ---- |
