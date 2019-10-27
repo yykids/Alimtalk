@@ -1,5 +1,10 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
 
+### Oct. 29, 2019
+* [API] 인증 메시지 발송 시 인증 문구 유효성 검사 강화 
+    * 인증용 메시지 발송 시 인증 문구가 포함되어 있지 않은 경우 메시지 발송이 불가능합니다.
+    * 자세한 사항은 [[API 가이드](./alimtalk-api-guide/#precautions-authword)] 참고하시기 바랍니다
+
 ### Sept. 24, 2019
 * [Console] Canceling Scheduled Delivery of Alimtalk/FriendTalk
     - Added the feature of canceling scheduled delivery of Alimtalk/FriendTalk from the **Query Delivery Result** tab, if it is yet to be delivered.
@@ -11,12 +16,12 @@
 * [Console] Name Change from Kakaotalk PlusFriend to Kakaotalk Channel
     - As of September 17 of 2019, the service name has changed from 'PlusFriend' to 'Kakaotalk Channel'.
 
-### 2019. 07. 30.
+### 2019.07.30
 * [Console] Field Added for Result Code of Alternative SMS Delivery Request
     - To query details of alternative delivery message, result code of SMS request has been added.
 * [System] Server Replacement for Service Stabilization
 
-### 2019. 06. 27.
+### 2019.06.27
 * [Console] Allowed alternative delivery, and added split delivery, for mass delivery of Friendtalk messages
     - Fields related to alternative delivery can be specified, such as content of alternative delivery/sender number/alternative delivery.
     - Features have been added to send in splits by specifying split times/interval.
