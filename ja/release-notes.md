@@ -1,9 +1,9 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
 
 ### 2019.10.29
-* [API] 인증 메시지 발송 시 인증 문구 유효성 검사 강화 
-    * 인증용 메시지 발송 시 인증 문구가 포함되어 있지 않은 경우 메시지 발송이 불가능합니다.
-    * 자세한 사항은 [[API 가이드](./alimtalk-api-guide/#precautions-authword)] 참고하시기 바랍니다
+* [API]認証用メッセージの送信時、認証文言の有効性チェックを強化
+    * 認証用メッセージの送信時、認証文言が含まれていない場合、メッセージを送信できません。
+    * 詳細は[[APIガイド](./alimtalk-api-guide/#precautions-authword)]を参照してください。
     
 ### 2019.09.24
 * [Console]お知らせトーク/カカともへのメッセージの予約送信キャンセル機能を追加
