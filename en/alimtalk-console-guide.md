@@ -44,6 +44,13 @@ To check details of each delivery message, click search result and **Query Detai
 
 ![alimtalk_06_201812.png](https://static.toastoven.net/prod_alimtalk/alimtalk_06_201812.png)
 
+### Canceling Delivery
+
+Scheduled delivery which is requested for a future date can be canceled.
+By searching for a request of scheduled delivery, you can find a checkbox on the left of a request ID.
+Check boxes are available only for those scheduled delivery requests which are not canceled. To cancel a request, check the box you need to cancel, and press **Cancel Selected Schedule**.
+The whole list can be selected and canceled, by selecting the check box on top of the list.
+
 ## Query Mass Delivery
 
 ### Send/Cancel
