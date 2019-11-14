@@ -39,6 +39,13 @@ Select **Mass Delivery** at the bottom.
 Go to **Query Delivery Result** to query Friendtalk messages.
 ![friendtalk_02_201812.png](https://static.toastoven.net/prod_alimtalk/friendtalk_02_201812.png)
 
+### Canceling Delivery
+
+Scheduled delivery which is requested for a future date can be canceled.
+By searching for a request of scheduled delivery, you can find a checkbox on the left of a request ID.
+Check boxes are available only for those scheduled delivery requests which are not canceled. To cancel a request, check the box you need to cancel, and press **Cancel Selected Schedule**.
+The whole list can be selected and canceled, by selecting the check box on top of the list.
+
 ## Image Management
 
 ### Register, Delete, and Search Images
