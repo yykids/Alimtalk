@@ -1,5 +1,13 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
 
+### Nov. 26, 2019
+* [Console] Template Registration Using File Uploads
+    * Added the feature of file uploading for mass templates
+* [Console] Template Query Upgrades
+    * Added the feature of querying both original template status and approval status for final templates
+* [Console] Query by Registered Date for Delivery Results
+    * Added the feature of querying by registered date for the query of delivery results
+
 ### Oct. 29, 2019
 * [API] 인증 메시지 발송 시 인증 문구 유효성 검사 강화 
     * 인증용 메시지 발송 시 인증 문구가 포함되어 있지 않은 경우 메시지 발송이 불가능합니다.
