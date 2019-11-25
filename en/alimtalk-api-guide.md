@@ -18,8 +18,8 @@
 </table>
 
 ## Overview of v1.4 API
-1. 인증 메시지 API에 대한 본문 유효성 검사가 추가되었습니다.
-   - 자세한 사항은 [[인증 메시지 API](./alimtalk-api-guide/#precautions-authword)] 참고하시기 바랍니다.
+1. Validity checks for the main text for Authentication Messages API has been added.
+   - For more details, see [[Authentication Messages API](./alimtalk-api-guide/#precautions-authword)].
 
 
 ## General Messages
@@ -531,14 +531,14 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ## Authentication Messages
 
 <span id="precautions-authword"></span>
-1. 인증 메시지 발송 시 포함되어야 할 인증 문구 안내
+1. Guide for authentication words required to be included for Authentication Messages API
 
-| 구분  | 인증 문구 |
+| Category | Authentication Words |
 | --- | --- |
-| 인증 메시지 | auth, password, verif, にんしょう, 認証, 비밀번호, 인증 |
+| Authentication Messages | auth, password, verif, にんしょう, 認証, 비밀번호, 인증 |
 
-- 예시 1-1) 인증 메시지 API 요청시 전문(템플릿 치환자 포함)에 인증 문구가 포함되어 있지 않은 경우 발송 실패됩니다.
-- 예시 1-2) 인증 문구가 영문인 경우 대소문자 구분 없이 유효성 검사가 진행됩니다.
+- Example 1) Delivery shall fail if the full text (including template replacement) does not include authentication words, in the request of Authentication Messages API (for emergency) 
+- Example 2) Validity for English words shall be checked regardless of small or capital letters 
 
 
 ### Request of Sending Replaced Messages
@@ -2008,7 +2008,7 @@ Content-Type: application/json;charset=UTF-8
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console. [[Reference](./plus-friend-console-guide/#x-secret-key)] |
 
-[예시]
+[Example]
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.4/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}/modifications"
 ```
