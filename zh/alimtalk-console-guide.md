@@ -40,6 +40,7 @@ Date and time of sending are required.
 
 ![alimtalk_05_201812.png](https://static.toastoven.net/prod_alimtalk/alimtalk_05_201812.png)
 
+It is available to query by selecting only one of **Registered Date, or Sent Date**, which is a required condition.
 To check details of each delivery message, click search result and **Query Details** pops up.  
 
 ![alimtalk_06_201812.png](https://static.toastoven.net/prod_alimtalk/alimtalk_06_201812.png)
@@ -89,6 +90,7 @@ Click **Register Templates** to register a template.
 * Register a template replacer, like #{replacer}.
 * To use a replacer for a button link, make sure to enter http:// or https:// protocol.
   e.g.) http://#{URL} or https://#{URL}
+* Mass registration is available in excel. If there is any duplicate or invalid template for mass registration, only normal templates can be registered.
 * For template registration, it is updated in the order of  <b>Requested -> Inspection Underway -> Approved/Returned</b>.
 * If template is returned, you may request for re-inspection via <b>Register Inquiries</b> and <b>Modify</b>.
 * Returned templates can be re-registered after **deleted**.
