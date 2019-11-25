@@ -18,8 +18,8 @@
 </table>
 
 ## Overview of v1.4 API
-1. 인증 메시지 API에 대한 본문 유효성 검사가 추가되었습니다.
-   - 자세한 사항은 [[인증 메시지 API](./alimtalk-api-guide/#precautions-authword)] 참고하시기 바랍니다.
+1. Validity checks for the main text for Authentication Messages API has been added.
+   - For more details, see [[Authentication Messages API](./alimtalk-api-guide/#precautions-authword)].
 
 
 ## General Messages
@@ -94,9 +94,9 @@ Content-Type: application/json;charset=UTF-8
 | - recipientGroupingKey | String  | X        | Recipient grouping key (up to 100 characters)                |
 
 * <b>Request date and time can be set up to 90 days since a point of calling.</b>
-* <b>SMS 서비스에서 대체 발송되므로, SMS 서비스의 발송 API 명세에 따라 필드를 입력해야 합니다.(SMS 서비스에 등록된 발신 번호, 각종 필드 길이 제한 등)</b>
-* <b>SMS 서비스는 국제 SMS만 지원합니다. 국제 수신자 번호일 경우, resendType(대체 발송 타입)을 SMS로 변경해야 정상적으로 대체 발송할 수 있습니다.</b>
-* <b>지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송될 수 있습니다.([[SMS 주의사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
+* <b>Since alternative delivery is made in the SMS service, field values must follow the API specifications for SMS (e.g. Sender number registered at the SMS service, or restriction in the field length). </b>
+* <b>The SMS Service supports international SMS only. For international receiver numbers, the resendType (alternative delivery type) must be changed to SMS to allow sending without fail. </b>
+* <b>Title or content for alternative delivery that exceeds specified byte size may be cut for delivery. (see [[Caution](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] for reference)</b>
 
 [Example]
 
@@ -531,14 +531,14 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ## Authentication Messages
 
 <span id="precautions-authword"></span>
-1. 인증 메시지 발송 시 포함되어야 할 인증 문구 안내
+1. Guide for authentication words required to be included for Authentication Messages API
 
-| 구분  | 인증 문구 |
+| Category | Authentication Words |
 | --- | --- |
-| 인증 메시지 | auth, password, verif, にんしょう, 認証, 비밀번호, 인증 |
+| Authentication Messages | auth, password, verif, にんしょう, 認証, 비밀번호, 인증 |
 
-- 예시 1-1) 인증 메시지 API 요청시 전문(템플릿 치환자 포함)에 인증 문구가 포함되어 있지 않은 경우 발송 실패됩니다.
-- 예시 1-2) 인증 문구가 영문인 경우 대소문자 구분 없이 유효성 검사가 진행됩니다.
+- Example 1) Delivery shall fail if the full text (including template replacement) does not include authentication words, in the request of Authentication Messages API (for emergency) 
+- Example 2) Validity for English words shall be checked regardless of small or capital letters 
 
 
 ### Request of Sending Replaced Messages
@@ -2008,7 +2008,7 @@ Content-Type: application/json;charset=UTF-8
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console. [[Reference](./plus-friend-console-guide/#x-secret-key)] |
 
-[예시]
+[Example]
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://api-alimtalk.cloud.toast.com/alimtalk/v1.4/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}/modifications"
 ```
