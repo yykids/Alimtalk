@@ -55,6 +55,7 @@
 | Common  | false     | -4100      | Invalid query period                                         |
 | Common  | false     | -4101      | Invalid query parameter for statistics                       |
 | Common  | false     | -4103      | Start/End time value of delivery request is unavailable for queries |
+| Common  | false     | -4200      | Invalid alternative delivery message                                       |
 | Common  | false     | -5000      | Invalid recipient number                                     |
 | Common  | false     | -5001      | Recipient list unavailable for sending                       |
 | Common  | false     | -7000      | Vendor request API failed                                    |
@@ -69,8 +70,7 @@
 | Common  | false     | -9999      | Error in system                                              |
 
 
-## Result Code of Sending ATA V.1.0.9
-- ATA Version : ATA V1.0.9 or higher
+## Delivery Result Codes 
 
 <table class="table table-striped table-hover">
 <thead>
@@ -94,39 +94,67 @@
 	</tr>
   <tr>
 		<td>1003</td>
-		<td>Format error in reply number </td>
+		<td>Invalid sender profile key </td>
 	</tr>
   <tr>
-		<td>1009</td>
-		<td>CLIENT_MSG_KEY N/A</td>
+		<td>1004</td>
+		<td>Cannot find name from request body(JSON)</td>
 	</tr>
   <tr>
-		<td>1010</td>
-		<td>CONTENT N/A</td>
+		<td>1006</td>
+		<td>Deleted sender profile (contact Customer Center)</td>
+	</tr>
+	<tr>
+		<td>1007</td>
+		<td>Blocked sender profile (contact Customer Center)</td>
+	</tr>
+	<tr>
+		<td>1011</td>
+		<td>Contract information is not found (contact Customer Center) </td>
 	</tr>
   <tr>
 		<td>1012</td>
-		<td>RECIPIENT_INFO N/A</td>
+		<td>Invalid user key request format</td>
 	</tr>
   <tr>
 		<td>1013</td>
-		<td>SUBJECT N/A</td>
+		<td>Invalid app connection</td>
+	</tr>
+	<tr>
+		<td>1014</td>
+		<td>Invalid business registration number</td>
+	</tr>
+	<tr>
+		<td>1015</td>
+		<td>Invalid app user ID request </td>
+	</tr>
+	<tr>
+		<td>1016</td>
+		<td>Inconsistent business registration number</td>
 	</tr>
   <tr>
-		<td>1018</td>
-		<td>Unauthorized to send</td>
+		<td>1021</td>
+		<td>Blocked Kakaotalk channel </td>
 	</tr>
-  <tr>
-		<td>1019</td>
-		<td>TTL exceeded</td>
+	<tr>
+		<td>1022</td>
+		<td>Blocked Kakaotalk channel </td>
 	</tr>
-  <tr>
-		<td>1020</td>
-		<td>Charset conversion error</td>
+	<tr>
+		<td>1023</td>
+		<td>Deleted Kakaotalk channel </td>
 	</tr>
-  <tr>
-		<td>1099</td>
-		<td>Authentication failed</td>
+	<tr>
+		<td>1024</td>
+		<td>Kakaotalk channel waiting for deletion </td>
+	</tr>
+	<tr>
+		<td>1025</td>
+		<td>Kakaotalk channel blocked for message </td>
+	</tr>
+	<tr>
+		<td>1030</td>
+		<td>Invalid parameter request</td>
 	</tr>
 	<tr>
 		<td>2000</td>
@@ -137,8 +165,44 @@
 		<td>Unable to send messages (due to unexpected error)</td>
 	</tr>
 	<tr>
+		<td>2004</td>
+		<td>Error occurred when template consistency is checked (internal error occurred)</td>
+	</tr>
+	<tr>
+		<td>3000</td>
+		<td>Unexpected error occurred</td>
+	</tr>
+	<tr>
+		<td>3005</td>
+		<td>Message is delievered but receipt is not confirmed (Uncertain if successful; Encrypted and saved in server and available for sending within 3 days)</td>
+	</tr>
+	<tr>
+		<td>3006</td>
+		<td>Message delivery failed due to internal system error </td>
+	</tr>
+	<tr>
+		<td>3008</td>
+		<td>Phone number error </td>
+	</tr>
+	<tr>
 		<td>3009</td>
 		<td>Format error in message </td>
+	</tr>
+	<tr>
+		<td>3010</td>
+		<td>Unexpected error occurred </td>
+	</tr>
+	<tr>
+		<td>3011</td>
+		<td>Message does not exist </td>
+	</tr>
+	<tr>
+		<td>3012</td>
+		<td>Message serial number is redundant </td>
+	</tr>
+	<tr>
+		<td>3013</td>
+		<td>Message is empty </td>
 	</tr>
 	<tr>
 		<td>3014</td>
@@ -158,7 +222,7 @@
 	</tr>
 	<tr>
 		<td>3025</td>
-		<td>Message delivery failed  (for tests, not between friends)</td>
+		<td>Exceeded the limit of variable character count </td>
 	</tr>
 	<tr>
 		<td>3026</td>
@@ -169,8 +233,12 @@
 		<td>Non-Kakaotalk user (phone number error/050 safe number)</td>
 	</tr>
 	<tr>
+		<td>3028</td>
+		<td>Message highlited title does not match template </td>
+	</tr>
+	<tr>
 		<td>3029</td>
-		<td>Message is unavailable </td>
+		<td>Exceeded limit of length in message highlighted title (50 characters)</td>
 	</tr>
 	<tr>
 		<td>3030</td>
@@ -257,6 +325,14 @@
   <tr>
 		<td>3060</td>
 		<td>Sent to user but not sure if received (Polling)</td>
+	</tr>
+	<tr>
+		<td>4000</td>
+		<td>Message delivery result is not found </td>
+	</tr>
+	<tr>
+		<td>4001</td>
+		<td>Unknown message status </td>
 	</tr>
   <tr>
 		<td>9998</td>
