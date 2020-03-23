@@ -55,6 +55,7 @@
 | Common  | false     | -4100      | Invalid query period                                         |
 | Common  | false     | -4101      | Invalid query parameter for statistics                       |
 | Common  | false     | -4103      | Start/End time value of delivery request is unavailable for queries |
+| Common  | false     | -4200      | 유효하지 않은 대체 발송 메시지                                      |
 | Common  | false     | -5000      | Invalid recipient number                                     |
 | Common  | false     | -5001      | Recipient list unavailable for sending                       |
 | Common  | false     | -7000      | Vendor request API failed                                    |
@@ -69,8 +70,7 @@
 | Common  | false     | -9999      | Error in system                                              |
 
 
-## Result Code of Sending ATA V.1.0.9
-- ATA Version : ATA V1.0.9 or higher
+## 발송 결과 코드
 
 <table class="table table-striped table-hover">
 <thead>
@@ -92,41 +92,69 @@
 		<td>1002</td>
 		<td>Format error of recipient number</td>
 	</tr>
-  <tr>
+	<tr>
 		<td>1003</td>
-		<td>Format error in reply number </td>
+		<td>발신 프로필 키가 유효하지 않음</td>
+	</tr>
+	<tr>
+		<td>1004</td>
+		<td>Request Body(JSON)에서 name을 찾을 수 없음</td>
 	</tr>
   <tr>
-		<td>1009</td>
-		<td>CLIENT_MSG_KEY N/A</td>
+		<td>1006</td>
+		<td>삭제된 발신 프로필(고객센터에게 문의)</td>
 	</tr>
-  <tr>
-		<td>1010</td>
-		<td>CONTENT N/A</td>
+	<tr>
+		<td>1007</td>
+		<td>차단 상태의 발신 프로필(고객센터에게 문의)</td>
+	</tr>
+	<tr>
+		<td>1011</td>
+		<td>계약 정보를 찾을 수 없음(고객센터에게 문의)</td>
 	</tr>
   <tr>
 		<td>1012</td>
-		<td>RECIPIENT_INFO N/A</td>
+		<td>잘못된 형식의 사용자키 요청</td>
 	</tr>
   <tr>
 		<td>1013</td>
-		<td>SUBJECT N/A</td>
+		<td>유효하지 않은 앱 연결</td>
+	</tr>
+	<tr>
+		<td>1014</td>
+		<td>유효하지 않은 사업자번호</td>
+	</tr>
+	<tr>
+		<td>1015</td>
+		<td>유효하지 않은 app user id 요청</td>
+	</tr>
+	<tr>
+		<td>1016</td>
+		<td>사업자등록번호 불일치</td>
 	</tr>
   <tr>
-		<td>1018</td>
-		<td>Unauthorized to send</td>
+		<td>1021</td>
+		<td>차단 상태의 카카오톡 채널</td>
 	</tr>
-  <tr>
-		<td>1019</td>
-		<td>TTL exceeded</td>
+	<tr>
+		<td>1022</td>
+		<td>차단 상태의 카카오톡 채널</td>
 	</tr>
-  <tr>
-		<td>1020</td>
-		<td>Charset conversion error</td>
+	<tr>
+		<td>1023</td>
+		<td>삭제된 카카오톡 채널</td>
 	</tr>
-  <tr>
-		<td>1099</td>
-		<td>Authentication failed</td>
+	<tr>
+		<td>1024</td>
+		<td>삭제 대기 상태의 카카오톡 채널</td>
+	</tr>
+	<tr>
+		<td>1025</td>
+		<td>메시지 차단 상태의 카카오톡 채널</td>
+	</tr>
+	<tr>
+		<td>1030</td>
+		<td>잘못된 파라미터 요청</td>
 	</tr>
 	<tr>
 		<td>2000</td>
@@ -137,8 +165,44 @@
 		<td>Unable to send messages (due to unexpected error)</td>
 	</tr>
 	<tr>
+		<td>2004</td>
+		<td>템플릿 일치 확인 시 오류 발생(내부 오류 발생)</td>
+	</tr>
+	<tr>
+		<td>3000</td>
+		<td>예기치 않은 오류 발생</td>
+	</tr>
+	<tr>
+		<td>3005</td>
+		<td>메시지를 발송했으나 수신 확인이 안 됨(성공 불확실, 서버에는 암호화되어 보관되며 3일 이내 수신 가능)</td>
+	</tr>
+	<tr>
+		<td>3006</td>
+		<td>내부 시스템 오류로 메시지 전송 실패</td>
+	</tr>
+	<tr>
+		<td>3008</td>
+		<td>전화번호 오류</td>
+	</tr>
+	<tr>
 		<td>3009</td>
 		<td>Format error in message </td>
+	</tr>
+	<tr>
+		<td>3010</td>
+		<td>예기치 않은 오류 발생</td>
+	</tr>
+	<tr>
+		<td>3011</td>
+		<td>메시지가 존재하지 않음</td>
+	</tr>
+	<tr>
+		<td>3012</td>
+		<td>메시지 일련번호가 중복됨</td>
+	</tr>
+	<tr>
+		<td>3013</td>
+		<td>메시지가 비어 있음</td>
 	</tr>
 	<tr>
 		<td>3014</td>
@@ -158,7 +222,7 @@
 	</tr>
 	<tr>
 		<td>3025</td>
-		<td>Message delivery failed  (for tests, not between friends)</td>
+		<td>변수 글자 수 제한 초과</td>
 	</tr>
 	<tr>
 		<td>3026</td>
@@ -169,8 +233,12 @@
 		<td>Non-Kakaotalk user (phone number error/050 safe number)</td>
 	</tr>
 	<tr>
+		<td>3028</td>
+		<td>메시지 강조 표기 타이틀이 템플릿과 일치하지 않음</td>
+	</tr>
+	<tr>
 		<td>3029</td>
-		<td>Message is unavailable </td>
+		<td>메시지 강조 표기 타이틀 길이 제한 초과(50자)</td>
 	</tr>
 	<tr>
 		<td>3030</td>
@@ -257,6 +325,14 @@
   <tr>
 		<td>3060</td>
 		<td>Sent to user but not sure if received (Polling)</td>
+	</tr>
+	<tr>
+		<td>4000</td>
+		<td>메시지 전송 결과를 찾을 수 없음</td>
+	</tr>
+	<tr>
+		<td>4001</td>
+		<td>알 수 없는 메시지 상태</td>
 	</tr>
   <tr>
 		<td>9998</td>
